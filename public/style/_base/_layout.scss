@@ -6,9 +6,8 @@
 }
 
 .stack {
-  --stack-gap: var(--s2);
   display: grid;
-  gap: var(--s2);
+  gap: var(--stack-gap, --s2);
 }
 
 .flow > * + * {
@@ -35,12 +34,12 @@
   justify-items: start;
 }
 
-.layoutContainer *:not(figure, .full-width) {
+.layoutContainer > *:not(figure, .full-width) {
     grid-column-start: 2;
     grid-column-end: 3;
   }
 
-.layoutContainer figure, .full-width {
+.layoutContainer > figure,  .layoutContainer > .full-width {
     grid-column-start: 1;
     grid-column-end: 4;
 }
@@ -52,13 +51,12 @@
 }
 
 .with-sidebar {
-  --gap: var(--s2);
-  --minSize: 32rem;
+  --min-size: 50%;
 
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap);
+  gap: var(--sidebar-gap, var(--s2));
 }
 
 .with-sidebar [data-aside] {
@@ -69,5 +67,5 @@
 .with-sidebar [data-grow] {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: var(--minSize);
+    min-width: var(--min-size);
 }

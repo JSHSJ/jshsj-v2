@@ -1,4 +1,10 @@
-button, .CTA-button {
+.buttonReset {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.CTA-button {
   padding: var(--s-1);
   background-color: var(--text1);
   color: var(--surface1);
@@ -21,7 +27,7 @@ button, .CTA-button {
 
   // box-shadow: var(--s-5) var(--s-5) 0 var(--s-5) var(--surface1), var(--s-4)  var(--s-4) 0 var(--s-5) var(--text1);
 
-  box-shadow: 0 0 0 var(--s-5) var(--text2), var(--s-5) var(--s-5) 0 var(--s-5) var(--surface4), var(--s-4)  var(--s-4) 0 var(--s-5) var(--text1);
+  // box-shadow: 0 0 0 var(--s-5) var(--text2), var(--s-5) var(--s-5) 0 var(--s-5) var(--surface4), var(--s-4)  var(--s-4) 0 var(--s-5) var(--text1);
   transition: box-shadow .15s;
 
 
@@ -44,16 +50,16 @@ button, .CTA-button {
   // }
 
   &.-secondary {
-    background-color: var(--surface1);
+    background-color: var(--surface3);
     color: var(--text1);
     border-color: var(--surface1);
-    box-shadow: 0 0 0 var(--s-5) var(--text2), var(--s-5) var(--s-5) 0 var(--s-5) var(--surface4), var(--s-4)  var(--s-4) 0 var(--s-5) var(--text1);
+    // box-shadow: 0 0 0 var(--s-5) var(--text2), var(--s-5) var(--s-5) 0 var(--s-5) var(--surface4), var(--s-4)  var(--s-4) 0 var(--s-5) var(--text1);
   }
 
   &.-secondary:hover {
     background-color: var(--surface1);
     color: var(--text1);
     // border-color: var(--text1);
-    box-shadow: 0 0 0 var(--s-5) var(--text2), var(--s-5) var(--s-5) 0 var(--s-5) var(--brand), var(--s-4)  var(--s-4) 0 var(--s-5) var(--text1);
+    box-shadow: 0 0 0 var(--s-5) var(--text2);
   }
 }

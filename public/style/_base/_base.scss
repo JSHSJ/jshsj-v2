@@ -1,5 +1,9 @@
 /* ELEMENT RESETS / BASE STYLES */
 
+* {
+  box-sizing: border-box;
+}
+
 p,h1,h2,h3,h4,h5,h6,ul,ol,dl,figure,blockquote {
   margin-block: 0;
 }
@@ -52,7 +56,6 @@ input, button, textarea, select {
 p,li,dd,dt,summary {
   max-inline-size: var(--measure);
   font-size: var(--s0);
-  --fontWeight: var(--fontWeightRegular);
   line-height: var(--lineHeight);
 }
 
@@ -73,8 +76,6 @@ li, dd {
 }
 
 dt {
-  font-weight: bolder;
-
   &:not(:first-of-type) {
     margin-top: var(--s0);
   }
