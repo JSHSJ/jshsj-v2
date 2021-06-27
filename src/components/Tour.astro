@@ -1,0 +1,152 @@
+---
+import { Markdown } from 'astro/components';
+---
+<article>
+    <div class="banner">
+        <p><strong>🧑‍🚀 Seasoned astronaut?</strong> Delete this file. Have fun!</p>
+    </div>
+
+    <section>
+        <Markdown>
+            ## 🚀 Project Structure
+
+            Inside of your Astro project, you'll see the following folders and files:
+
+            ```
+            /
+            ├── public/
+            │   ├── robots.txt
+            │   └── favicon.ico
+            ├── src/
+            │   ├── components/
+            │   │   └── Tour.astro
+            │   └── pages/
+            │       └── index.astro
+            └── package.json
+            ```
+
+            Astro looks for `.astro` or `.md` files in the `src/pages/` directory.
+            Each page is exposed as a route based on its file name.
+
+            There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+            Any static assets, like images, can be placed in the `public/` directory.
+        </Markdown>
+    </section>
+
+     <section>
+        <h2>👀 Want to learn more?</h2>
+        <p>Feel free to check <a href="https://github.com/snowpackjs/astro">our documentation</a> or jump into our <a href="https://astro.build/chat">Discord server</a>.</p>
+    </section>
+
+    <section class="section">
+        <div class="flow layoutContainer">
+          <h1>"Miau" sagt die Katze.</h1>
+          <h2>"Miau" sagt die Katze.</h2>
+          <h3>"Miau" sagt die Katze.</h3>
+          <h4>"Miau" sagt die Katze.</h4>
+          <h5>"Miau" sagt die Katze.</h5>
+          <h6>"Miau" sagt die Katze.</h6>
+          <small>I'm a small</small>
+          <p>Yo <sup>3</sup></p>
+          <p>I &lt;3 you</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="layoutContainer flow">
+          <p>
+            Es wird Zeit herauszufinden, über den Telerand herauszugucken, nachzuschauen,
+            <a href="#">zu lernen</a> und dann können wir diese Frage vielleicht beantworten.
+          </p>
+
+          <ul>
+            <li>re-breathing value?</li>
+            <li>Boromir's thing value? Fisherman thinks Gollum's stove call</li>
+            <li>
+              Boromir's destroy perils Bilbo Baggins regain seems! g value? Fisherman thinks
+              Gollum's stove call
+            </li>
+            <li>value? Fisherman thinks Gollum's stove call</li>
+            <li>
+              Wider Treebeard quietly faced hesitate fire-breathing value? Fisherman thinks Gollum's
+              stove call
+            </li>
+          </ul>
+
+          <ol>
+            <li>re-breathing value?</li>
+            <li>Boromir's thing value? Fisherman thinks Gollum's stove call</li>
+            <li>
+              Boromir's destroy perils Bilbo Baggins regain seems! g value? Fisherman thinks
+              Gollum's stove call
+            </li>
+            <li>value? Fisherman thinks Gollum's stove call</li>
+            <li>
+              Wider Treebeard quietly faced hesitate fire-breathing value? Fisherman thinks Gollum's
+              stove call
+            </li>
+          </ol>
+
+          <dl>
+            <dt>Horror</dt>
+            <dd>
+              Boromir's destroy perils Bilbo Baggins regain seems! Wider Treebeard quietly faced
+              hesitate fire-breathing value? Fisherman thinks Gollum's stove call
+            </dd>
+            <dd>LOTR</dd>
+
+            <dt>Comedy</dt>
+            <dd>
+              Boromir's destroy perils Bilbo Baggins regain seems! Wider Treebeard quietly faced
+              hesitate fire-breathing value? Fisherman thinks Gollum's stove call
+            </dd>
+            <dd>
+              Boromir's destroy perils Bilbo Baggins regain seems! Wider Treebeard quietly faced
+              hesitate fire-breathing value? Fisherman thinks Gollum's stove call
+            </dd>
+            <dd>Movie 3</dd>
+            <dd>Movie 4</dd>
+          </dl>
+
+          <hr />
+
+          <details>
+            <summary>Read More</summary>
+            <p>
+              European minnow priapumfish mosshead warbonnet shrimpfish bigscale. Cutlassfish
+              porbeagle
+              <a href="#">shark</a> ricefish walking catfish glassfish Black swallower.
+            </p>
+          </details>
+
+          <figure>
+            <picture>
+              <img src="https://picsum.photos/1920/1080" alt="" width="1920" height="1080" />
+            </picture>
+            <figcaption>This is an animal.</figcaption>
+          </figure>
+
+          <blockquote>
+            <p>"Die Katze macht <s>Wau</s> <mark>Miau</mark>"</p>
+            <footer>- <cite>Katze</cite></footer>
+          </blockquote>
+
+          <div class="cluster">
+            <button>Primary</button>
+            <button class="CTA-button -secondary">Secondary</button>
+          </div>
+          <a href="#">Link to somewhere</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="layoutContainer">
+          <div class="input-container">
+            <label for="example">Label</label>
+            <input type="text" id="example" />
+          </div>
+        </div>
+      </section>
+
+</article>

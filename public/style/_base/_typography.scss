@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope-vf.ttf');
+  font-display: optional;
+  font-weight: 200 800;
+	font-stretch: 25% 151%;
+}
+
+:root {
+    /* TYPOGRAPHY */
+
+  --measure: 64ch;
+  --fontFamily: "Manrope", system-ui, sans-serif;
+  --fontFamily-serif: serif;
+  --fontFamily-mono: monospace;
+  --fontWeightRegular: 320;
+  --fontWeightBold: 640;
+  --lineHeight: var(--ratio);
+  --lineHeight-small: calc(0.8*var(--ratio));
+}

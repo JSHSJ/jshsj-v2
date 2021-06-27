@@ -1,0 +1,73 @@
+// Layout classes that handle 80% of the layout
+
+.box {
+  padding-inline: var(--defaultPadding-horizontal);
+  padding-block: var(--defaultPadding-vertical);
+}
+
+.stack {
+  --stack-gap: var(--s2);
+  display: grid;
+  gap: var(--s2);
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-gap, var(--s2));
+}
+
+.flow .breakAfter {
+    margin-block-end: auto;
+}
+
+.section {
+  margin-block: var(--sectionPadding);
+}
+
+.layoutContainer {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--containerMaxWidth);
+  padding-inline: var(--defaultPadding-horizontal);
+
+  padding-block: var(--s2);
+  display: grid;
+  grid-template-columns: 1fr minmax(10rem, var(--measure)) 1fr;
+  justify-items: start;
+}
+
+.layoutContainer *:not(figure, .full-width) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+.layoutContainer figure, .full-width {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.with-sidebar {
+  --gap: var(--s2);
+  --minSize: 32rem;
+
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.with-sidebar [data-aside] {
+    flex-grow: 1;
+    /* min-width -> should be set in % */
+}
+
+.with-sidebar [data-grow] {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: var(--minSize);
+}
