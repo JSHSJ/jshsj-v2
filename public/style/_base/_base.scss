@@ -186,7 +186,7 @@ body {
 
 
 a {
-  color: var(--text1);
+  color: inherit;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.1em;
   --fontWeight: var(--fontWeightBold);
