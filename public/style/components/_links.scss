@@ -1,0 +1,13 @@
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content:  center;
+
+  > *:first-child {
+    margin-right: var(--s-3);
+  }
+
+  span {
+    display: inline-block;
+  }
+}

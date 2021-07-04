@@ -1,26 +1,16 @@
 ---
 import Welcome from '../components/Welcome.astro';
+import ProjectReel from '../components/ProjectReel.astro';
+import Circle from '../components/Circle.astro';
 import Tour from '../components/Tour.astro';
-import Header from '../components/Header.astro';
+
+
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
-
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astro</title>
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-    <link rel="stylesheet" href="/style/global.css">
-</head>
-<body>
-    <Header></Header>
-
-    <main>
-        <Welcome></Welcome>
-        <Tour></Tour>
-    </main>
-</body>
-</html>
+<DefaultLayout>
+<div>
+    <Welcome></Welcome>
+    <ProjectReel></ProjectReel>
+    <Tour></Tour>
+</div>
+</DefaultLayout>
