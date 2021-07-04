@@ -16,7 +16,7 @@ import NotionTitle from "./notion/NotionTitle.astro"
           <NotionURL content={project.url}>
             Anschauen
           </NotionURL>
-          <a href="">Zur Detailseite</a>
+          <a href={`/projekte/${project.slug}`}>Zur Detailseite</a>
           </div>
         </article>
       ))}

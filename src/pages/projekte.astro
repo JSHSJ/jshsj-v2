@@ -1,4 +1,6 @@
 ---
+import {getAllProjects} from "../scripts/notion"
+
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 import Circle from '../components/Circle.astro';
@@ -6,25 +8,7 @@ import ProjectList from "../components/ProjectList.astro"
 
 import IconPageLink from "../components/icons/Icon-PageLink.astro"
 
-import { Client } from '@notionhq/client';
-
-// Initializing a client
-const notion = new Client({
-  auth: process.env.NOTION_KEY //process.env.NOTION_TOKEN
-});
-
-
-// const d = await notion.pages.retrieve({page_id: 'bdbabbec15604ec68353de3f3160c7fd'})
-const allProjectsQuery = await notion.databases.query({database_id: '407731b52d4642d6a91e326ea9eb3a98'});
-const allProjects = allProjectsQuery.results.map(page => ({
-  id: page.id,
-  url: page.url,
-  techStack: page.properties.Techstack, // richtext
-  // preview: page.properties.Preview
-  description: page.properties.Description, // richtext
-  url: page.properties.URL, // url
-  name: page.properties.Name // plain text
-})).filter(p => p.name.title.length > 0)
+const allProjects = await getAllProjects()
 ---
 <DefaultLayout>
 <div class="layoutContainer mt-header">
