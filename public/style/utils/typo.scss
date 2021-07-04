@@ -65,5 +65,9 @@
 }
 
 .-bold {
-  font-weight: var(--fontWeightBold);
+  --fontWeight: var(--fontWeightBold);
+}
+
+.-medium {
+  --fontWeight: var(--fontWeightMedium)
 }

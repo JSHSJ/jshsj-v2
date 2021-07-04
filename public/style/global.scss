@@ -1,6 +1,8 @@
 @use "./_base/index.scss";
 
 @use "./utils/typo.scss";
+@use "./utils/spacings.scss";
 
 @use "./components/buttons";
 @use "./components/links";
+@use "./components/headlines";

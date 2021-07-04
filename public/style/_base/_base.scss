@@ -55,7 +55,7 @@ input, button, textarea, select {
 
 p,li,dd,dt,summary {
   max-inline-size: var(--measure);
-  font-size: var(--s0);
+  font-size: inherit;
   line-height: var(--lineHeight);
 }
 
@@ -130,31 +130,31 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
   font-size: var(--s3);
-  font-weight: var(--fontWeightBold);
+  --fontWeight: var(--fontWeightBold);
 }
 
 h2 {
   font-size: var(--s3);
-  font-weight: var(--fontWeightRegular);
+  --fontWeight: var(--fontWeightRegular);
 }
 
 h3 {
   font-size: var(--s2);
-  font-weight: var(--fontWeightBold);
+  --fontWeight: var(--fontWeightBold);
 }
 
 h4 {
   font-size: var(--s2);
-  font-weight: var(--fontWeightRegular);
+  --fontWeight: var(--fontWeightRegular);
 }
 h5 {
   font-size: var(--s1);
-  font-weight: var(--fontWeightBold);
+  --fontWeight: var(--fontWeightBold);
 }
 
 h6 {
   font-size: var(--s1);
-  font-weight: var(--fontWeightRegular);
+  --fontWeight: var(--fontWeightRegular);
 }
 
 // HTML AND BODY
@@ -200,15 +200,16 @@ a {
     text-shadow: 0px 0px 1px var(--text2);
   }
 
-  &[href^="https://"], &[href^="http://"] {
+  &[href^="https://"], &[href^="http://"], &[data-external] {
 
-  :after {
+  &:after {
     content: "(Extern)";
     display: inline-block;
     font-size: calc(100% / var(--ratio));
     font-variation-settings: 'wght' var(--fontWeightRegular);
     margin-left: var(--s-5);
     transform: translateY(-0.125em);
+    text-decoration: none;
   }
 }
 }
