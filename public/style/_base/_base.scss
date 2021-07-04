@@ -196,8 +196,19 @@ a {
     color: color(display-p3 .5 0 1);
   }
 
-
   &:hover {
     text-shadow: 0px 0px 1px var(--text2);
   }
+
+  &[href^="https://"], &[href^="http://"] {
+
+  :after {
+    content: "(Extern)";
+    display: inline-block;
+    font-size: calc(100% / var(--ratio));
+    font-variation-settings: 'wght' var(--fontWeightRegular);
+    margin-left: var(--s-5);
+    transform: translateY(-0.125em);
+  }
+}
 }

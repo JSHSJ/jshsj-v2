@@ -7,11 +7,11 @@
 
 .stack {
   display: grid;
-  gap: var(--stack-gap, --s2);
+  gap: var(--gap, var(--s2));
 }
 
 .flow > * + * {
-  margin-block-start: var(--flow-gap, var(--s2));
+  margin-block-start: var(--gap, var(--s2));
 }
 
 .flow .breakAfter {
@@ -56,7 +56,7 @@
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sidebar-gap, var(--s2));
+  gap: var(--gap, var(--s2));
 }
 
 .with-sidebar [data-aside] {
@@ -68,4 +68,31 @@
     flex-basis: 0;
     flex-grow: 999;
     min-width: var(--min-size);
+}
+
+.-layout-xl {
+  --gap: var(--s3)
+}
+
+.-layout-l {
+  --gap: var(--s2)
+}
+
+.-layout-m {
+  --gap: var(--s1)
+}
+
+.-layout-s {
+  --gap: var(--s0)
+}
+
+.-layout-xs {
+  --gap: var(--s-1)
+}
+
+.-layout-2xs {
+  --gap: var(--s-2)
+}
+.-layout-3xs {
+  --gap: var(--s-3)
 }

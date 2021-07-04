@@ -40,6 +40,7 @@
   color: var(--surface1);
   background: var(--text1);
   padding: 0.1em;
+  max-width: max-content;
 }
 
 
@@ -59,10 +60,10 @@
   font-size: var(--s2);
 }
 
-.typo-lg {
+.typo-l {
   font-size: var(--s1);
 }
 
-.bold {
+.-bold {
   font-weight: var(--fontWeightBold);
 }
