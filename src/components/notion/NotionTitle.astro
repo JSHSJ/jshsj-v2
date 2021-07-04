@@ -1,0 +1,13 @@
+---
+const {content} = Astro.props
+---
+{content.title.map(part => {
+  switch (part.type) {
+    case "text": {
+      return part.text.content
+    }
+    default: {
+      return
+    }
+  }
+})}
