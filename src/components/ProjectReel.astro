@@ -1,9 +1,7 @@
 ---
-import NotionRichText from "./notion/NotionRichText.astro"
-import NotionURL from "./notion/NotionURL.astro"
-import NotionTitle from "./notion/NotionTitle.astro"
-
 import IconPageLink from "./icons/Icon-PageLink.astro"
+
+import ProjectList from "./ProjectList.astro"
 
 import { Client } from '@notionhq/client';
 
@@ -26,35 +24,13 @@ const allProjects = allProjectsQuery.results.map(page => ({
 })).filter(p => p.name.title.length > 0).slice(0, 3)
 ---
 
-<style>
-.projectReel {
 
-}
-
-/* h2 {
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-  } */
-
-</style>
 <section class="layoutContainer | projectReel">
   <div class="stack">
-  <h2 class="typo-hollow typo-3xl -bold" data-aside>Projekte</h2>
-  <div class="stack">
-    {allProjects.map((project) => (
-        <article class="stack -layout-3xs">
-          <h3 class="typo-l -bold"><NotionTitle content={project.name}></NotionTitle></h3>
-          <NotionRichText content={project.description}></NotionRichText>
-          <div class="cluster">
-          <NotionURL content={project.url}>
-            Besuchen
-          </NotionURL>
-          <a href="">Mehr</a>
-          </div>
-        </article>
-      ))}
-      <div class="cluster box" style="border: var(--s-2) solid var(--brand);">
-        <a href="" class="link-with-icon">
+  <h2 class="typo-hollow typo-3xl -bold -with-dot" data-aside>Projekte</h2>
+    <ProjectList projects={allProjects}></ProjectList>
+      <div class="cluster box" style="border: var(--s-5) solid var(--text2); background: var(--surface2)">
+        <a href="/projekte" class="link-with-icon">
         <IconPageLink></IconPageLink><span>Alle Projekte</span></a>
         <a href="https://github.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitHub</span></a>
       </div>

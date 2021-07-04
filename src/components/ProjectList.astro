@@ -1,0 +1,23 @@
+---
+const {projects} = Astro.props;
+
+import NotionRichText from "./notion/NotionRichText.astro"
+import NotionURL from "./notion/NotionURL.astro"
+import NotionTitle from "./notion/NotionTitle.astro"
+
+---
+
+<section class="stack">
+{projects.map((project) => (
+        <article class="stack -layout-3xs">
+          <h3 class="typo-l -medium"><NotionTitle content={project.name}></NotionTitle></h3>
+          <NotionRichText content={project.description}></NotionRichText>
+          <div class="cluster">
+          <NotionURL content={project.url}>
+            Anschauen
+          </NotionURL>
+          <a href="">Zur Detailseite</a>
+          </div>
+        </article>
+      ))}
+</section>

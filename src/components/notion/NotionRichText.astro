@@ -2,7 +2,6 @@
 const { content } = Astro.props
 ---
 
-<div>
 {content.rich_text.map(part => {
   switch (part.type) {
     case "text": {
@@ -13,4 +12,3 @@ const { content } = Astro.props
     }
   }
 })}
-</div>
