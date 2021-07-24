@@ -1,0 +1,42 @@
+<style lang="scss">
+
+.mobileOpen {
+  // position: fixed;
+  // top: 100px;
+  // left: 50%;
+  // transform: translateX(-50%);
+
+  [mobile-close] {
+    visibility: hidden;
+
+    &:target {
+      visibility: visible;
+    }
+  }
+}
+
+#menu-open {
+  visibility: hidden;
+
+  &:target {
+    visibility: visible;
+  }
+}
+</style>
+
+<div class="mobileOpen">
+<a href="#menu-open" mobile-open>
+  Open
+</a>
+<a href="#" mobile-close onclick="window.history.back()">
+  Close
+</a>
+</div>
+<nav class="mobileNav" id="menu-open">
+MAYBE WE NEED CONTENT
+
+</nav>
+
+<script lang="ts">
+
+</script>

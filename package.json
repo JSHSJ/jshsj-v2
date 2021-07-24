@@ -7,9 +7,6 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "astro": "^0.16.1"
-  },
-  "dependencies": {
-    "@notionhq/client": "^0.2.1"
+    "astro": "^0.17.2"
   }
 }
