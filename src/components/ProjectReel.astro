@@ -1,18 +1,17 @@
 ---
-import {getAllProjects} from  "../scripts/notion"
+const {projects} = Astro.props;
+
 import IconPageLink from "./icons/Icon-PageLink.astro"
 
 import ProjectList from "./ProjectList.astro"
-
-const allProjects = await getAllProjects()
 ---
 
 
-<section class="layoutContainer | projectReel">
+<section class="layout-container | projectReel">
   <div class="stack">
-  <h2 class="typo-hollow typo-3xl -bold -with-dot" data-aside>Projekte</h2>
-    <ProjectList projects={allProjects.slice(0, 3)}></ProjectList>
-      <div class="cluster box" style="border: var(--s-5) solid var(--text2); background: var(--surface2)">
+  <h2 class="typo-hollow typo-3xl -bold -with-dot" data-aside><span>Projekte</span></h2>
+    <ProjectList projects={projects.slice(0, 3)}></ProjectList>
+      <div class="cluster extra-links">
         <a href="/projekte" class="link-with-icon">
         <IconPageLink></IconPageLink><span>Alle Projekte</span></a>
         <a href="https://github.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitHub</span></a>

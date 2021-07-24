@@ -1,5 +1,5 @@
 ---
-import {getAllProjects} from "../scripts/notion"
+import { slugify } from '../scripts/slugify';
 
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
@@ -8,13 +8,20 @@ import ProjectList from "../components/ProjectList.astro"
 
 import IconPageLink from "../components/icons/Icon-PageLink.astro"
 
-const allProjects = await getAllProjects()
+const allProjects = await Astro.fetchContent("../content/Projekte/*.md");
+const formattedProjects = allProjects.map(project => ({
+    ...project,
+    slug: slugify(project.title),
+}))
+
 ---
 <DefaultLayout>
-<div class="layoutContainer mt-header">
+<div class="layout-container mt-header">
     <div class="stack">
     <h2 class="typo-hollow typo-3xl -bold -with-dot -dot-top" data-aside>Projekte</h2>
-    <ProjectList projects={allProjects}></ProjectList>
+    <ProjectList projects={formattedProjects}></ProjectList>
+          <p>IN PROGRESS</p>
+
     </div>
 </div>
 </DefaultLayout>

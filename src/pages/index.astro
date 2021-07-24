@@ -1,16 +1,27 @@
 ---
+import { slugify} from "../scripts/slugify"
+
 import Welcome from '../components/Welcome.astro';
 import ProjectReel from '../components/ProjectReel.astro';
+import PersonalReel from '../components/PersonalReel.astro';
 import Circle from '../components/Circle.astro';
 import Tour from '../components/Tour.astro';
+import ShareTheMeal from "../components/ShareTheMeal.astro";
 
 
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+
+const allProjects = await Astro.fetchContent("../content/Projekte/*.md");
+const formattedProjects = allProjects.map(project => ({
+    ...project,
+    slug: slugify(project.title),
+}))
 ---
 <DefaultLayout>
-<div>
+<div class="stack -layout-xl">
     <Welcome></Welcome>
-    <ProjectReel></ProjectReel>
-    <Tour></Tour>
+    <ShareTheMeal></ShareTheMeal>
+    <ProjectReel projects={formattedProjects}></ProjectReel>
+    <PersonalReel></PersonalReel>
 </div>
 </DefaultLayout>

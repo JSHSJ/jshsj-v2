@@ -1,40 +1,43 @@
 ---
 const { collection } = Astro.props;
+import { Markdown } from 'astro/components';
 
 import { slugify} from "../scripts/slugify"
-import { getAllProjects } from "../scripts/notion"
-
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
-import Circle from '../components/Circle.astro';
-
-import NotionRichText from "../components/notion/NotionRichText.astro"
-import NotionURL from "../components/notion/NotionURL.astro"
-import NotionTitle from "../components/notion/NotionTitle.astro"
+import circle from '../components/Circle.astro';
 
 import IconPageLink from "../components/icons/Icon-PageLink.astro"
 
 export async function createCollection() {
-const allProjects = await getAllProjects()
-
+const allProjects = await Astro.fetchContent("../content/Projekte/*.md");
 
   return  {
     routes: allProjects.map((p, i) => {
-      return {slug: p.slug, index: i}
+      return {slug: slugify(p.title), index: i}
     }),
     permalink: ({params}) => `/projekte/${params.slug}`,
     async data({ params }) {
-      return [allProjects[params.index]];
+      return allProjects[params.index];
     },
   }
-
 }
 ---
 <DefaultLayout>
-<div class="layoutContainer mt-header">
-    <a href="/projekte">Zurücj</a>
+<div class="layout-container mt-header">
+    <div class="breadcrumbs">
+    <a href="/projekte">Projekte</a>
+    <span>{collection.data[0].title}</span>
+    </div>
     <h2 class="typo-hollow typo-3xl -bold -with-dot -dot-top" data-aside>
-    <NotionTitle content={collection.data[0].name}></NotionTitle>
+    {collection.data[0].title}
     </h2>
+    <div class="flow">
+      <Markdown content={collection.data[0].astro.html}>
+      </Markdown>
+          <p>IN PROGRESS</p>
+
+
+    </div>
 </div>
 </DefaultLayout>
