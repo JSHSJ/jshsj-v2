@@ -1,13 +1,16 @@
 .link-with-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content:  center;
+  position: inline-block;
 
   > *:first-child {
     margin-right: var(--s-3);
   }
 
+  svg {
+    position: relative;
+    top: 0.125em;
+  }
+
   span {
-    display: inline-block;
+    display: inline;
   }
 }

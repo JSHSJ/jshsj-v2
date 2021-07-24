@@ -96,7 +96,7 @@ sup, small, figcaption {
 
 details {
   width: 100%;
-  background-color: var(--surface3);
+  background-color: var(--surface2);
   padding-inline: var(--defaultPadding-horizontal);
   padding-block: var(--defaultPadding-vertical);
   border-radius: 0;
@@ -112,7 +112,7 @@ details {
   }
 
   &[open=""] {
-    border: var(--border-thin) solid var(--surface-4);
+    border: var(--border-thin) solid var(--surface2);
   }
 }
 
@@ -208,6 +208,7 @@ a {
     font-size: calc(100% / var(--ratio));
     font-variation-settings: 'wght' var(--fontWeightRegular);
     margin-left: var(--s-5);
+    margin-right: var(--s-5);
     transform: translateY(-0.125em);
     text-decoration: none;
   }

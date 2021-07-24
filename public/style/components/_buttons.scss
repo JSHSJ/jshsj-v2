@@ -27,13 +27,18 @@
 
   transition: box-shadow .15s;
 
+  text-decoration: unset;
+
+  // remove link (external) display
+  &:after {
+    content: '' !important;
+  }
+
 
   &:hover {
-    background-color: var(--text2);
+    background-color: var(--brand);
     color: var(--surface1);
-    border-color: var(--text2);
-    box-shadow: calc(var(--s-1) * -1) calc(var(--s-1) * -1) 0 var(--s-5) var(--surface1), calc(var(--s-1) * -1) calc(var(--s-1) * -1) 0 var(--s-4) var(--text1);
-
+    border-color: var(--brand);
   }
 
   &.-secondary {
@@ -43,8 +48,8 @@
   }
 
   &.-secondary:hover {
-    background-color: var(--surface2);
-    color: var(--text2);
-    box-shadow: calc(var(--s-1) * -1) calc(var(--s-1) * -1) 0 var(--s-5) var(--text1), calc(var(--s-1) * -1) calc(var(--s-1) * -1) 0 var(--s-4) var(--text1);
+    background-color: var(--surface1);
+    color: var(--brand);
+    border-color: var(--brand);
   }
 }

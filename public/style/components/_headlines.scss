@@ -5,7 +5,7 @@
     content: '';
     position: absolute;
     left: -1em;
-    top: 0.24em;
+    top: -0.24em;
     width: 2em;
     height: 2em;
     border-radius: 50%;
@@ -16,5 +16,11 @@
   &.-dot-top:before {
     left: -0.64em;
     top: -0.64em;
+  }
+
+  &.-dot-top-right:before {
+    right: 0.48em;
+    top: -0.96em;
+    left: unset;
   }
 }

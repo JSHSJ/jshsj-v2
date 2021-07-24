@@ -1,46 +1,13 @@
 
 .typo-hollow {
-  color: var(--surface1);
-
-  --stroke-width: var(--s-5);
-  --stroke-color: var(--text1);
-  text-shadow: calc(var(--stroke-width) * 1) calc(var(--stroke-width) * 0) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * 0.3827) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * 0.7071) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * 0.9239) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * 1) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * 0.9239) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * 0.7071) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * 0.3827) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -1) calc(var(--stroke-width) * 0) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * -0.3827) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * -0.7071) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * -0.9239) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * -1) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * -0.9239) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * -0.7071) 0
-      var(--stroke-color),
-    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * -0.3827) 0
-      var(--stroke-color);
-
-  color: var(--surface1);
-  background: var(--text1);
-  padding: 0.1em;
-  max-width: max-content;
+    > span {
+      color: var(--surface1);
+      background: var(--text1);
+      box-decoration-break: clone;
+      padding: 0.048em 0.096em;
+      max-width: max-content;
+      display: inline;
+  }
 }
 
 
@@ -49,7 +16,11 @@
 }
 
 .typo-3xl {
-  font-size: var(--s4);
+  font-size: var(--s3);
+
+  @media screen and (min-width: 32rem) {
+    font-size: var(--s4);
+  }
 }
 
 .typo-2xl {
