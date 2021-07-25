@@ -24,12 +24,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn build
       - name: Deploy to FTP
         run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
