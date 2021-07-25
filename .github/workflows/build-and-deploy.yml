@@ -19,8 +19,11 @@ jobs:
         run: sudo apt install lftp
       - run: mkdir -p src/content/Projekte
       - run: mkdir -p public/assets/attachments
+      - run: ls content/flow/Projekte/attachments/
+      - run: ls content/flow/Projekte/
       - run: mv content/flow/Projekte/*.md src/content/Projekte
-      - run: mv content/flow/Projekte/attachments/ public/assets/attachments/
+      - run: mv content/flow/Projekte/attachments/ public/assets/attachments
+      - run: ls src/content/Projekte
       - run: ls public/assets/attachments
       - name: Use node.js ${{ matrix.node-version }}
         uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2
