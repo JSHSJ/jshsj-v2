@@ -7,7 +7,6 @@ export interface Props{
 }
 
 const {crumbs} = Astro.props;
-
 ---
 
 <style lang="scss">
@@ -35,10 +34,7 @@ const {crumbs} = Astro.props;
 
 
 <section class="box -layout-s | breadcrumbs">
-  {crumbs.map((part) => (
-    <>
-    <a href={part.url}>{part.name}</a>
-    </>
+  {crumbs.map((part) => (<a href={part.url}>{part.name}</a>
   ))}
 </section>
 

@@ -116,6 +116,16 @@ details {
   }
 }
 
+
+
+blockquote {
+  margin-inline: 0;
+  padding-inline: var(--defaultPadding-horizontal);
+  padding-block: var(--defaultPadding-vertical);
+  background-color: var(--surface2);
+  border-left: var(--border-thick) solid var(--text2);
+}
+
 hr {
   width: 100%;
   height: var(--s-5);
