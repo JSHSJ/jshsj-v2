@@ -9,11 +9,12 @@ jobs:
         node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           repository: JSHSJ/flow
           path: content
           token: ${{ secrets.REPO_PAT }}
-      - uses: actions/checkout@v2
+      - run: ls -l
       - run: mkdir -p src/content/Projekte
       - run: mkdir -p public/assets/attachments
       - run: mv content/flow/Projekte/*.md src/content/Projekte
@@ -25,3 +26,5 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build --if-present
+      - name: Deploy to FTP
+        run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_USERNAME }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
