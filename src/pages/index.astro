@@ -1,5 +1,6 @@
 ---
-import { slugify} from "../scripts/slugify"
+import { slugify } from "../scripts/slugify"
+import { sortByDateDesc } from "../scripts/sortByDate"
 
 import Welcome from '../components/Welcome.astro';
 import ProjectReel from '../components/ProjectReel.astro';
@@ -15,7 +16,7 @@ const allProjects = await Astro.fetchContent("../content/Projekte/*.md");
 const formattedProjects = allProjects.map(project => ({
     ...project,
     slug: slugify(project.title),
-}))
+})).sort(sortByDateDesc)
 ---
 <DefaultLayout>
 <div class="stack -layout-xl">

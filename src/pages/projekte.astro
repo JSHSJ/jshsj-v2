@@ -1,5 +1,6 @@
 ---
 import { slugify } from '../scripts/slugify';
+import { sortByDateDesc } from '../scripts/sortByDate';
 
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
@@ -12,7 +13,7 @@ const allProjects = await Astro.fetchContent("../content/Projekte/*.md");
 const formattedProjects = allProjects.map(project => ({
     ...project,
     slug: slugify(project.title),
-}))
+})).sort(sortByDateDesc)
 
 ---
 <DefaultLayout>
