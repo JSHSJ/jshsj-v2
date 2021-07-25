@@ -1,0 +1,27 @@
+name: Build and deploy
+on: [push]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: JSHSJ/flow
+          path: content
+          token: ${{ secrets.REPO_PAT }}
+      - uses: actions/checkout@v2
+      - run: mkdir -p src/content/Projekte
+      - run: mkdir -p public/assets/attachments
+      - run: mv content/flow/Projekte/*.md src/content/Projekte
+      - run: mv content/flow/Projekte/attachments/ public/assets/attachments/
+      - name: Use node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
