@@ -32,4 +32,4 @@ jobs:
         with:
           cmd: build
       - name: Deploy to FTP
-        run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_USERNAME }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
+        run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
