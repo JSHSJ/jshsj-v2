@@ -26,6 +26,6 @@ jobs:
           node-version: '14'
           cache: 'npm'
       - run: npm install
-      - run: npm build
+      - run: npm run-script build
       - name: Deploy to FTP
         run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
