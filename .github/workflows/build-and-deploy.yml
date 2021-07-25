@@ -24,10 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: GitHub Action for Yarn
+      - name: Install with yarn
         uses: Borales/actions-yarn@v2.3.0
-        steps:
-          - run: install --frozen-lockfile
-          - run: build
+          with: install --frozen-lockfile
+      - name: Build with yarn
+        uses: Borales/actions-yarn@v2.3.0
+          with: build
       - name: Deploy to FTP
         run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_USERNAME }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
