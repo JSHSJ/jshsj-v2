@@ -216,3 +216,15 @@ a {
   }
 }
 }
+
+.relative {
+  position: relative;
+}
+
+.list-reset {
+  list-style: none;
+
+  li {
+    margin-inline: 0;
+  }
+}

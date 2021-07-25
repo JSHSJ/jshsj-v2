@@ -101,5 +101,8 @@
   --sectionPadding: var(--s2);
   --contentPadding: var(--defaultPadding-vertical) var(--defaultPadding-horizontal);
 
-  --containerMaxWidth: --containerMaxWidth: calc(1rem * pow(var(--ratio), 11));
+  --containerMaxWidth: var(--s11);
+  --sidebarMaxWidth: var(--s7);
+
+  --headerHeight: calc(var(--s5));
 }
