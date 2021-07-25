@@ -1,0 +1,52 @@
+---
+interface AstroMarkdownHeader {
+  depth: number;
+  slug: string;
+  text: string;
+};
+export interface Props {
+  headers: AstroMarkdownHeader[]
+};
+
+const { headers } = Astro.props;
+---
+
+<style lang="scss">
+.sidebarNav {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .sidebarNav {
+    display: block;
+    position: absolute;
+    // Height of main + margin of footer + offset of header
+    height: calc(100% + var(--s5) + var(--headerHeight));
+    left: 0;
+    top: calc(var(--headerHeight) * -1);
+    bottom: 0;
+    padding-inline: var(--defaultPadding-horizontal);
+    background: var(--surface1);
+    border-right: var(--border-thin) solid var(--text1);
+
+    width: calc(((100vw - var(--measure)) / 2) - var(--s4));
+    max-width: var(--sidebarMaxWidth);
+  }
+
+  .sidebarNav-list {
+    position: sticky;
+    top: var(--headerHeight);
+    padding-block: var(--s2);
+  }
+}
+
+</style>
+<div class="sidebarNav">
+<nav class="sidebarNav-list">
+  <ul class="list-reset">
+    {headers.map(header => (
+      <li><a href={`#${header.slug}`}>{header.text}</a></li>
+    ))}
+  </ul>
+</nav>
+</div>

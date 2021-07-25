@@ -4,7 +4,6 @@
 <style>
 .shareTheMeal {
   color: var(--text1);
-  padding-block: var(--s-1);
   border-top: var(--border-thin) solid var(--text1);
   border-bottom: var(--border-thin) solid var(--text1);
 }
@@ -13,11 +12,16 @@
   overflow: visible;
 }
 
+.shareTheMeal-content {
+  padding-block: var(--s0);
+}
+
 
 </style>
 
 <section>
-  <div class="layout-container shareTheMeal">
+  <div class="shareTheMeal">
+  <div class="layout-container | shareTheMeal-content">
     <div class="with-sidebar -layout-m justify-between | shareTheMeal-sidebar">
     <div data-grow style="--minSize: 80%">
     <p><b>Immer noch Hunger?</b>&nbsp;&nbsp;&nbsp;Mach was dagegen.</p>
@@ -25,6 +29,7 @@
     <a target="_blank" class="CTA-button" href="https://sharethemeal.org/donate" rel="noopener noreferrer">
     Essen teilen
     </a>
+    </div>
     </div>
   </div>
 </section>
