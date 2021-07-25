@@ -2,7 +2,7 @@ name: Build and deploy
 on: [push]
 
 jobs:
-  Build and deploy:
+  Build-and-Deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
