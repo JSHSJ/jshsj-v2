@@ -28,6 +28,7 @@
   transition: box-shadow .15s;
 
   text-decoration: unset;
+  box-shadow: var(--shadow-default);
 
   // remove link (external) display
   &:after {
@@ -39,6 +40,10 @@
     background-color: var(--brand);
     color: var(--surface1);
     border-color: var(--brand);
+  }
+
+  &:active {
+    box-shadow: none;
   }
 
   &.-secondary {

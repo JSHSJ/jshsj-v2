@@ -10,12 +10,16 @@
 
   --brand-light: hsl(var(--brand-hue) 100% 48%);
   --brand2-light: hsl(var(--brand2-hue) 100% 48%);
-  --text1-light: hsl(var(--brand-hue) 96% 8%);
-  --text2-light: hsl(var(--brand-hue) 4% 4%);
-  --surface1-light: hsl(var(--brand-hue) 12% 99%);
+  --text1-light: hsl(var(--brand-hue) 0% 8%);
+  --text2-light: hsl(var(--brand-hue) 3% 24%);
+  --surface1-light: hsl(var(--brand-hue) 0% 97%);
   --surface2-light: hsl(var(--brand-hue) 98% 96%);
-  --surface-shadow-light: var(--brand-hue) 12% 24%;
-  --shadow-strength-light: .02;
+  --shadow-strength-light: .48;
+  --shadow-color-light: var(--brand-hue), 4%, 8%;
+
+  --shadow-color-background-light: var(--brand-hue), 4%, 8%;
+  --shadow-strength-background-light: 0;
+
 
   /* DARK */
 
@@ -25,9 +29,12 @@
   --text2-dark: hsl(var(--brand-hue) 4% 96%);
   --surface1-dark: hsl(var(--brand-hue) 6% 1%);
   --surface2-dark: hsl(var(--brand-hue) 98% 12%);
-  --surface-shadow-dark: var(--brand-hue) 62% 13%;
 
-  --shadow-strength-dark: .8;
+  --shadow-strength-dark: .88;
+  --shadow-color-dark: var(--brand-hue), 4%, 8%;
+
+  --shadow-color-background-dark: var(--brand-hue), 92%, 88%;
+  --shadow-strength-background-dark: .48;
 
 
 

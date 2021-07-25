@@ -66,7 +66,6 @@ ol,ul,dl {
   gap: var(--s0);
   max-inline-size: max-content;
   padding-inline: 0;
-  --gap: var(--s2);
 }
 
 li, dd {
@@ -76,6 +75,7 @@ li, dd {
 }
 
 dt {
+  color: var(--text1);
   &:not(:first-of-type) {
     margin-top: var(--s0);
   }
@@ -160,7 +160,7 @@ h6 {
 // HTML AND BODY
 
 html {
-  font-size: calc(0.5vmin + 1em);
+  font-size: calc(0.3vmin + 1em);
 }
 
 body {
@@ -186,18 +186,19 @@ body {
 
 
 a {
-  color: inherit;
+  color: var(--text1);
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.1em;
   --fontWeight: var(--fontWeightBold);
-  text-decoration-color: var(--brand);
+  text-decoration-color: currentColor;
 
   &:visited {
     color: color(display-p3 .5 0 1);
   }
 
   &:hover {
-    text-shadow: 0px 0px 1px var(--text2);
+    // text-shadow: 0px 0px 1px var(--text2);
+    text-decoration-color: var(--brand);
   }
 
   &[href^="https://"], &[href^="http://"], &[data-external] {
@@ -211,6 +212,7 @@ a {
     margin-right: var(--s-5);
     transform: translateY(-0.125em);
     text-decoration: none;
+    color: var(--text2);
   }
 }
 }
