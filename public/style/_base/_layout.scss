@@ -56,7 +56,7 @@
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s1);
+  gap: var(--gap, var(--s1));
 }
 
 .with-sidebar {

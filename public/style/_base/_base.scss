@@ -62,7 +62,8 @@ p,li,dd,dt,summary {
 
 
 ol,ul,dl {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--s0);
   max-inline-size: max-content;
   padding-inline: 0;
@@ -79,6 +80,18 @@ dt {
   &:not(:first-of-type) {
     margin-top: var(--s0);
   }
+}
+
+dt {
+  --fontWeight: var(--fontWeightRegular);
+  color: var(--text2);
+}
+
+dd {
+  --fontWeight: var(--fontWeightMedium);
+  font-size: 124%;
+  color: var(--text1);
+  font-variation-settings: "wght" var(--fontWeight);
 }
 
 img {
@@ -170,7 +183,7 @@ h6 {
 // HTML AND BODY
 
 html {
-  font-size: calc(0.3vmin + 1em);
+  font-size: calc(0.36vmin + 1em);
 }
 
 body {
@@ -195,12 +208,14 @@ body {
 }
 
 
-a {
+a, .link {
   color: var(--text1);
+  text-decoration: underline;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.1em;
   --fontWeight: var(--fontWeightBold);
   text-decoration-color: currentColor;
+  cursor: pointer;
 
   &:visited {
     color: color(display-p3 .5 0 1);
