@@ -266,3 +266,8 @@ a, .link {
     margin-inline: 0;
   }
 }
+
+
+strong {
+  --fontWeight: var(--fontWeightMedium);
+}

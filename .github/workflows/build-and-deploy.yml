@@ -8,8 +8,8 @@ on:
 jobs:
   Build-and-Deploy:
     runs-on: ubuntu-latest
-    strategy:     
-      matrix:        
+    strategy:
+      matrix:
         node-version: [16]
     steps:
       - uses: actions/checkout@v2
@@ -21,9 +21,12 @@ jobs:
       - name: Install lftp
         run: sudo apt install lftp
       - run: mkdir -p src/content/Projekte
+      - run: mkdir -p src/content/Blog
       - run: mkdir -p public/assets/attachments
       - run: mv content/flow/Projekte/attachments/* public/assets/attachments/
+      - run: mv content/flow/Blog/attachments/* public/assets/attachments/
       - run: mv content/flow/Projekte/*.md src/content/Projekte/
+      - run: mv content/flow/Blog/*.md src/content/Blog/
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
