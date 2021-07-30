@@ -1,15 +1,20 @@
 ---
 const {projects} = Astro.props;
 ---
-
-<section class="stack">
-{projects.map((project) => (
+<section class="stack -layout-xl">
+{projects.map((project, projectIndex) => (
+    <div class="stack">
         <article class="stack -layout-3xs">
-          <h3 class="typo-l -medium">{project.title}</h3>
-          <p>{project.description}</p>
-          <div class="cluster mt-s0">
-          <a href={`/projekte/${project.slug}`} class="CTA-Button">Anschauen</a>
+          <h3 class="typo-xl -medium">
+          {project.title}
+          </h3>
+          <div class="cluster typo-s"><span>{project.year}</span> - <a href={project.url} target="_blank" rel="noopener noreferrer">{project.url}</a>
           </div>
+          <p>{project.description}</p>
+          <a href={`/projekte/${project.slug}`} class="CTA-Button mt-s0">Zu den Details</a>
         </article>
+      {projectIndex !== projects.length - 1 && (<hr />)}
+    </div>
       ))}
+
 </section>

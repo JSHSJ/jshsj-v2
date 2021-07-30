@@ -8,7 +8,7 @@ p,h1,h2,h3,h4,h5,h6,ul,ol,dl,figure,blockquote {
   margin-block: 0;
 }
 
-p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,figure,blockquote, a {
+* {
    font-variation-settings: 'wght' var(--fontWeight);
 }
 
@@ -148,7 +148,8 @@ hr {
   width: 100%;
   height: var(--s-5);
   border: none;
-  background-color: var(--text2);
+  background-color: var(--text1);
+  opacity: 0.64;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -225,7 +226,7 @@ a, .link {
   text-decoration: underline;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.1em;
-  --fontWeight: var(--fontWeightBold);
+  --fontWeight: var(--fontWeightMedium);
   text-decoration-color: currentColor;
   cursor: pointer;
 

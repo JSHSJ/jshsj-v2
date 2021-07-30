@@ -19,7 +19,7 @@ const formattedProjects = allProjects.map(project => ({
 })).sort(sortByDateDesc)
 ---
 <DefaultLayout>
-<div class="stack">
+<div class="stack -layout-xl">
     <Welcome></Welcome>
     <ShareTheMeal></ShareTheMeal>
     <ProjectReel projects={formattedProjects}></ProjectReel>
