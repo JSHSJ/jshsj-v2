@@ -10,17 +10,19 @@
   }
 }
 
+.section-title {
+  font-size: var(--s4);
+  font-weight: var(--fontWeightBold);
+  margin-bottom: var(--s2);
+}
+
 
 .typo-4xl {
   font-size: var(--s5);
 }
 
 .typo-3xl {
-  font-size: var(--s3);
-
-  @media screen and (min-width: 32rem) {
-    font-size: var(--s4);
-  }
+  font-size: var(--s4);
 }
 
 .typo-2xl {
