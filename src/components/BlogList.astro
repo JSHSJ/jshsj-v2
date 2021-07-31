@@ -27,6 +27,7 @@ const {blogPosts} = Astro.props;
       <div class="stack -layout-3xs">
           <h2 class="typo-xl -medium">
           {blogPost.title}</h2>
+          <p>{blogPost.description}</p>
           <div class="cluster typo-s -layout-3xs"><time class="date">vom {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags"><span>Es geht um: </span>{blogPost.tags.map((tag, i) => (
             <span class="tag">{tag}{i !== blogPost.tags.length - 1 && ','}</span>
           ))}

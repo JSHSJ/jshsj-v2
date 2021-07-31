@@ -25,6 +25,16 @@ const blogWithSlugs = allBlogPosts.map(bp => ({
     },
     async props({ params }) {
       return { blogpost: blogWithSlugs.find(bp => bp.slug === params.slug)}
+    },
+    rss: {
+      title: "Joshua's Gedanken",
+      description: "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte.",
+      customData: `<language>de-DE</language>`,
+      item: (blogPost) => ({
+        title: blogPost.title,
+        description: blogPost.description,
+        pubDate: item.date + "Z"
+      })
     }
   }
 }
@@ -48,7 +58,7 @@ dl {
 </style>
 
 
-<DefaultLayout title={blogpost.title} description={`${blogpost.title} - ${blogpost.tags.join(', ')}`} canonical={Astro.request.canonicalURL}></DefaultLayout>
+<DefaultLayout title={blogpost.title} description={`${blogpost.title} - ${blogpost.tags.join(', ')}`} canonical={Astro.request.canonicalURL}>
 <div class="layout-container mt-header">
   <SidebarNav headers={blogpost.astro.headers}></SidebarNav>
   <div class="stack -layout-xl">
