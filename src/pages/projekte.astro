@@ -16,7 +16,8 @@ const formattedProjects = allProjects.map(project => ({
 })).sort(sortByDateDesc)
 
 ---
-<DefaultLayout>
+<DefaultLayout title={"Meine Projekte"} description={"Alle möglichen und verschiedene Projekte, die ich gemacht habe. Meistens Webseiten."} canonical={Astro.request.canonicalURL}>
+
 <div class="section layout-container mt-header">
     <div class="stack -layout-xl">
     <h1 class="section-title -with-dot -dot-top">Projekte</h1>

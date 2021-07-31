@@ -48,7 +48,7 @@ dl {
 </style>
 
 
-<DefaultLayout>
+<DefaultLayout title={project.title} description={project.description} canonical={Astro.request.canonicalURL}>
 <div class="layout-container mt-header">
   <SidebarNav headers={project.astro.headers}></SidebarNav>
   <div class="stack -layout-xl">

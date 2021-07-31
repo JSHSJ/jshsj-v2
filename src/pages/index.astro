@@ -6,7 +6,6 @@ import Welcome from '../components/Welcome.astro';
 import ProjectReel from '../components/ProjectReel.astro';
 import PersonalReel from '../components/PersonalReel.astro';
 import Circle from '../components/Circle.astro';
-import Tour from '../components/Tour.astro';
 import ShareTheMeal from "../components/ShareTheMeal.astro";
 
 
@@ -18,7 +17,7 @@ const formattedProjects = allProjects.map(project => ({
     slug: slugify(project.title),
 })).sort(sortByDateDesc)
 ---
-<DefaultLayout>
+<DefaultLayout canonical={Astro.request.canonicalURL}>
 <div class="stack -layout-xl">
     <Welcome></Welcome>
     <ShareTheMeal></ShareTheMeal>

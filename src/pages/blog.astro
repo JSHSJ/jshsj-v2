@@ -11,8 +11,7 @@ const formattedBlogposts = allBlog.map(project => ({
     slug: slugify(project.title),
 })).sort(sortByDateDesc)
 ---
-
-<DefaultLayout>
+<DefaultLayout title={"Meine Blog | Joshua Stübner"} description={"Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."} canonical={Astro.request.canonicalURL}>
 <div class="section layout-container | mt-header">
   <div class="stack -layout-xl w-full">
     <h1 class="section-title -with-dot -dot-top">Blog</h1>
