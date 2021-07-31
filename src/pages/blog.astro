@@ -1,11 +1,22 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import BlogList from "../components/BlogList.astro"
+import { slugify } from '../scripts/slugify';
+import { sortByDateDesc } from '../scripts/sortByDate';
 
+
+const allBlog = await Astro.fetchContent("../content/Blog/*.md");
+const formattedBlogposts = allBlog.map(project => ({
+    ...project,
+    slug: slugify(project.title),
+})).sort(sortByDateDesc)
 ---
 
 <DefaultLayout>
-<div class="layout-container flow | mt-header">
-          <h1>Blog</h1>
-          <p>IN PROGRESS</p>
-        </div>
+<div class="section layout-container | mt-header">
+  <div class="stack -layout-xl w-full">
+    <h1 class="section-title -with-dot -dot-top">Blog</h1>
+    <BlogList blogPosts={formattedBlogposts}></BlogList>
+    </div>
+</div>
 </DefaultLayout>

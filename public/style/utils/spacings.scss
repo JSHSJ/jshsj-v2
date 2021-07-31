@@ -6,6 +6,18 @@
   margin-left: auto;
 }
 
+.mt-s0 {
+  margin-top: var(--s0);
+}
+
+.mt-s1 {
+  margin-top: var(--s1);
+}
+
+.mt-s2 {
+  margin-top: var(--s2);
+}
+
 .pblock-0 {
   padding-block: 0;
 }
@@ -16,4 +28,8 @@
 
 .justify-between {
   justify-content: space-between;
+}
+
+.w-full {
+  width: 100%;
 }

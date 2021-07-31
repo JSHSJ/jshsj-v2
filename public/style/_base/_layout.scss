@@ -15,12 +15,12 @@
   margin-block-start: var(--gap, var(--s2));
 }
 
-.flow > *:is(h1,h2,h3) {
-  --gap: var(--s4);
+.flow > *:is(h1,h2,h3,h4,h5,h6) {
+  --gap: var(--s3);
 }
 
-.flow > *:is(h3,h4,h5) {
-  --gap: var(--s3);
+.flow > p + p {
+  --gap: var(--s0);
 }
 
 .flow .breakAfter {
@@ -28,7 +28,7 @@
 }
 
 .section {
-  margin-block: var(--sectionPadding);
+  padding-block: var(--sectionPadding);
 }
 
 .layout-container {
@@ -36,8 +36,6 @@
   width: 100%;
   max-width: var(--containerMaxWidth);
   padding-inline: var(--defaultPadding-horizontal);
-
-  padding-block: var(--s2);
   display: grid;
   grid-template-columns: 1fr minmax(10rem, var(--measure)) 1fr;
   justify-items: start;
@@ -56,7 +54,7 @@
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s1);
+  gap: var(--gap, var(--s1));
 }
 
 .with-sidebar {

@@ -1,6 +1,6 @@
 :root {
   /* COLORS */
-  --brand-hue: 352;
+  --brand-hue: 336;
   --brand-saturation: 100%;
   --brand-lightness: 64%;
 
@@ -13,7 +13,7 @@
   --text1-light: hsl(var(--brand-hue) 0% 8%);
   --text2-light: hsl(var(--brand-hue) 3% 24%);
   --surface1-light: hsl(var(--brand-hue) 0% 97%);
-  --surface2-light: hsl(var(--brand-hue) 98% 96%);
+  --surface2-light: hsl(var(--brand-hue) 98% 92%);
   --shadow-strength-light: .48;
   --shadow-color-light: var(--brand-hue), 4%, 8%;
 
@@ -28,7 +28,7 @@
   --text1-dark: hsl(var(--brand-hue) 96% 98%);
   --text2-dark: hsl(var(--brand-hue) 4% 96%);
   --surface1-dark: hsl(var(--brand-hue) 6% 1%);
-  --surface2-dark: hsl(var(--brand-hue) 98% 12%);
+  --surface2-dark: hsl(var(--brand-hue) 98% 24%);
 
   --shadow-strength-dark: .88;
   --shadow-color-dark: var(--brand-hue), 4%, 8%;

@@ -8,6 +8,9 @@ on:
 jobs:
   Build-and-Deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/checkout@v2
@@ -18,18 +21,20 @@ jobs:
       - name: Install lftp
         run: sudo apt install lftp
       - run: mkdir -p src/content/Projekte
+      - run: mkdir -p src/content/Blog
       - run: mkdir -p public/assets/attachments
       - run: mv content/flow/Projekte/attachments/* public/assets/attachments/
+      - run: mv content/flow/Blog/attachments/* public/assets/attachments/
       - run: mv content/flow/Projekte/*.md src/content/Projekte/
-      - name: Use node.js ${{ matrix.node-version }}
-        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2
+      - run: mv content/flow/Blog/*.md src/content/Blog/
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          version: 6.10.0
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm build
+            node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - name: Build
+        run: |
+          npm run build
+          touch ./dist/.nojekyll
       - name: Deploy to FTP
         run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"

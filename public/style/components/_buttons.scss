@@ -57,4 +57,18 @@
     color: var(--brand);
     border-color: var(--brand);
   }
+
+  &.-stealth {
+    background-color: transparent;
+    color: var(--text1);
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &.-stealth:hover {
+    background-color: transparent;
+    color: var(--brand);
+    border-color: transparent;
+    box-shadow: none;
+  }
 }

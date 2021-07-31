@@ -1,0 +1,40 @@
+---
+const {blogPosts} = Astro.props;
+---
+
+<style lang="scss">
+.blogPost {
+
+  .tags {
+    --gap: var(--s-3);
+    align-items: baseline;
+    font-size: var(--s-1);
+    color: var(--text2);
+  }
+
+  .tag {
+    display: block;
+    color: var(--text2);
+    --fontWeight: var(--fontWeightMedium);
+  }
+
+}
+</style>
+
+<section class="stack -layout-xl w-full">
+{blogPosts.map((blogPost, postIndex) => (
+    <div class="stack | blogPost">
+      <div class="stack -layout-3xs">
+          <h2 class="typo-xl -medium">
+          {blogPost.title}</h2>
+          <div class="cluster typo-s -layout-3xs"><time class="date">vom {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags"><span>Es geht um: </span>{blogPost.tags.map((tag, i) => (
+            <span class="tag">{tag}{i !== blogPost.tags.length - 1 && ','}</span>
+          ))}
+          </div>
+          </div>
+          <a href={`/blog/${blogPost.slug}`} class="CTA-Button mt-s0">Lesen</a>
+          </div>
+        {postIndex !== blogPosts.length - 1 && (<hr />)}
+        </div>
+      ))}
+</section>

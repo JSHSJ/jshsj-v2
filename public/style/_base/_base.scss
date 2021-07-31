@@ -8,7 +8,7 @@ p,h1,h2,h3,h4,h5,h6,ul,ol,dl,figure,blockquote {
   margin-block: 0;
 }
 
-p,h1,h2,h3,h4,h5,h6,ul,ol,dl,figure,blockquote, a {
+* {
    font-variation-settings: 'wght' var(--fontWeight);
 }
 
@@ -61,12 +61,17 @@ p,li,dd,dt,summary {
 
 
 
-ol,ul,dl {
-  display: grid;
-  gap: var(--s0);
+ol,ul, dl{
+  display: flex;
+  flex-direction: column;
   max-inline-size: max-content;
   padding-inline: 0;
 }
+
+ol,ul {
+  gap: var(--gap, var(--s1));
+}
+
 
 li, dd {
   max-inline-size: calc(var(--measure) * 0.8);
@@ -75,9 +80,22 @@ li, dd {
 }
 
 dt {
+  --fontWeight: var(--fontWeightRegular);
+  color: var(--text2);
+}
+
+dd {
+  --fontWeight: var(--fontWeightMedium);
   color: var(--text1);
-  &:not(:first-of-type) {
-    margin-top: var(--s0);
+}
+
+dl {
+  * + * {
+    margin-top: var(--s-1);
+  }
+
+  * + dt {
+    margin-top: var(--s1);
   }
 }
 
@@ -130,22 +148,26 @@ hr {
   width: 100%;
   height: var(--s-5);
   border: none;
-  background-color: var(--text2);
+  background-color: var(--text1);
+  opacity: 0.64;
 }
 
 h1,h2,h3,h4,h5,h6 {
   line-height: var(--lineHeight-small);
   color: var(--text1);
+  overflow-wrap: break-word;
+  max-width: 100%;
+  hyphens: auto;
 }
 
 h1 {
-  font-size: var(--s3);
+  font-size: var(--s4);
   --fontWeight: var(--fontWeightBold);
 }
 
 h2 {
   font-size: var(--s3);
-  --fontWeight: var(--fontWeightRegular);
+  --fontWeight: var(--fontWeightBold);
 }
 
 h3 {
@@ -154,26 +176,30 @@ h3 {
 }
 
 h4 {
-  font-size: var(--s2);
-  --fontWeight: var(--fontWeightRegular);
+  font-size: var(--s1);
+  --fontWeight: var(--fontWeightBold);
 }
 h5 {
-  font-size: var(--s1);
+  font-size: var(--s0);
   --fontWeight: var(--fontWeightBold);
 }
 
 h6 {
-  font-size: var(--s1);
-  --fontWeight: var(--fontWeightRegular);
+  font-size: var(--s-1);
+  --fontWeight: var(--fontWeightBold);
 }
 
 // HTML AND BODY
 
 html {
-  font-size: calc(0.3vmin + 1em);
+  font-size: calc(0.36vw + 1em);
 }
 
 body {
+
+  --fontWeight: var(--fontWeightRegular);
+
+
   color: var(--text2);
   background-color: var(--surface1);
 
@@ -195,12 +221,14 @@ body {
 }
 
 
-a {
+a, .link {
   color: var(--text1);
+  text-decoration: underline;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.1em;
-  --fontWeight: var(--fontWeightBold);
+  --fontWeight: var(--fontWeightMedium);
   text-decoration-color: currentColor;
+  cursor: pointer;
 
   &:visited {
     color: color(display-p3 .5 0 1);
@@ -237,4 +265,9 @@ a {
   li {
     margin-inline: 0;
   }
+}
+
+
+strong {
+  --fontWeight: var(--fontWeightMedium);
 }
