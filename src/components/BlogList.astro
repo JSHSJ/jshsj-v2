@@ -21,10 +21,10 @@ const {blogPosts} = Astro.props;
 }
 </style>
 
-<section class="stack -layout-xl w-full">
+<ul class="list-reset stack -layout-xl w-full">
 {blogPosts.map((blogPost, postIndex) => (
-    <div class="stack | blogPost">
-      <div class="stack -layout-3xs">
+    <li class="stack | blogPost">
+      <article class="stack -layout-3xs">
           <h2 class="typo-xl -medium">
           {blogPost.title}</h2>
           <p>{blogPost.description}</p>
@@ -34,8 +34,8 @@ const {blogPosts} = Astro.props;
           </div>
           </div>
           <a href={`/blog/${blogPost.slug}`} class="CTA-Button mt-s0">Lesen</a>
-          </div>
+          </article>
         {postIndex !== blogPosts.length - 1 && (<hr />)}
-        </div>
+        </li>
       ))}
-</section>
+</ul>

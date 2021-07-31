@@ -1,9 +1,9 @@
 ---
 const {projects} = Astro.props;
 ---
-<section class="stack -layout-xl">
+<ul class="list-reset stack -layout-xl">
 {projects.map((project, projectIndex) => (
-    <div class="stack">
+    <li class="stack">
         <article class="stack -layout-3xs">
           <h3 class="typo-xl -medium">
           {project.title}
@@ -14,7 +14,7 @@ const {projects} = Astro.props;
           <a href={`/projekte/${project.slug}`} class="CTA-Button mt-s0">Zu den Details</a>
         </article>
       {projectIndex !== projects.length - 1 && (<hr />)}
-    </div>
+    </li>
       ))}
 
-</section>
+</ul>
