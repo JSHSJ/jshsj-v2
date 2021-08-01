@@ -1,0 +1,10 @@
+---
+const {href, target, rel, disabled, title, classes = "" } = Astro.props;
+
+
+---
+
+{disabled
+ ? <span class={classes} aria-disabled="true" title={title}><slot /></span>
+ : <a href={href} target={target} rel={rel} title={title} class={classes}><slot/></a>
+}

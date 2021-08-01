@@ -1,0 +1,41 @@
+---
+import DisableableLink from "./DisableableLink.astro";
+
+
+const {current, last, prev, next, basePath } = Astro.props;
+
+const hasOneMore = current+1 <= last;
+const hasTwoMore = current+2 <= last;
+---
+<div class="pagination">
+<nav class="cluster -layout-2xs | paginationNav">
+
+  <DisableableLink classes="paginationEl paginationIcon" disabled={!prev} title="Zum Anfang" href={basePath}>
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M52 52.44V11L24 32.28l28 20.16z" fill="currentColor" stroke="currentColor"/><path fill="currentColor" d="M12 9h8v46h-8z"/></svg>
+  </DisableableLink>
+
+  <DisableableLink classes="paginationEl paginationIcon" disabled={!prev} href={prev} title="Letzte Seite">
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M43 52.44V11L15 32.28l28 20.16z" fill="currentColor" stroke="currentColor"/></svg>
+  </DisableableLink>
+
+
+  {current - 2 >= 1 && <a class="paginationEl" href={current-2 > 1 ? `${basePath}/${current-2}` : basePath} title={`Seite ${current - 2}`}>{current-2}</a>}
+
+  {current-1 >= 1 && <a class="paginationEl" href={current-1 > 1 ? `${basePath}/${current-1}` : basePath} title={`Seite ${current-1}`}>{current-1}</a>}
+
+  <a class="paginationEl" href={`${basePath}/${current}`} aria-current="page" title="Aktuelle Seite">{current}</a>
+
+  {hasOneMore && <a class="paginationEl" href={`${basePath}/${current+1}`} title={`Seite ${current+1}`}>{current+1}</a>}
+
+  {hasTwoMore && <a class="paginationEl" href={`${basePath}/${current+2}`} title={`Seite ${current+2}`}>{current+2}</a>}
+
+  <DisableableLink classes="paginationEl paginationIcon" href={next} disabled={!next} title="Nächste Seite" >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M20 52.44V11l28 21.28-28 20.16z" fill="currentColor" stroke="currentColor"/></svg>
+  </DisableableLink>
+
+  <DisableableLink classes="paginationEl paginationIcon" href={`${basePath}/${last}`} title="Zum Ende" disabled={!next} >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M12 52.44V11l28 21.28-28 20.16z" fill="currentColor" stroke="currentColor"/><path fill="currentColor" d="M52 9h-8v46h8z"/>
+  </DisableableLink>
+
+</nav>
+</div>

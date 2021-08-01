@@ -271,3 +271,9 @@ a, .link {
 strong {
   --fontWeight: var(--fontWeightMedium);
 }
+
+[aria-disabled=true], .disabled, :disabled {
+  color: inherit;
+  opacity: 0.48;
+  cursor: not-allowed;
+}

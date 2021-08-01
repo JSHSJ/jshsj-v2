@@ -1,0 +1,69 @@
+---
+import { Markdown } from 'astro/components';
+
+import { slugify} from "../scripts/slugify"
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import SidebarNav from "../components/SidebarNav.astro";
+
+import IconPageLink from "../components/icons/Icon-PageLink.astro"
+
+export async function createCollection() {
+const allBlogPosts = await Astro.fetchContent("../content/Blog/*.md");
+const blogWithSlugs = allBlogPosts.map(bp => ({
+  ...bp,
+  slug: slugify(bp.title),
+}))
+  return  {
+    route: `/post/:slug`,
+    paths() {
+      return blogWithSlugs.map(bp => ({
+        params: {
+          slug: bp.slug,
+        }
+      }))
+    },
+    async props({ params }) {
+      return { blogpost: blogWithSlugs.find(bp => bp.slug === params.slug)}
+    }
+  }
+}
+
+const { blogpost, slug } = Astro.props;
+
+const blogpostCrumbs = [{
+  name: "Blog",
+  url: "/blog"
+},
+  {name: blogpost.title,
+  url: `/post/${blogpost.slug}`}
+]
+---
+<style>
+dl {
+  padding-block: var(--s1);
+  border-top: var(--border-thin) solid var(--text1);
+  border-bottom: var(--border-thin) solid var(--text1);
+}
+</style>
+
+
+<DefaultLayout title={blogpost.title} description={`${blogpost.title} - ${blogpost.tags.join(', ')}`} canonical={Astro.request.canonicalURL}>
+<div class="layout-container mt-header">
+  <SidebarNav headers={blogpost.astro.headers}></SidebarNav>
+  <div class="stack -layout-xl">
+  <div>
+    <Breadcrumbs crumbs={blogpostCrumbs}></Breadcrumbs>
+    <h2 class="typo-hollow typo-3xl -bold -with-dot -dot-top" data-aside>
+    <span>
+    {blogpost.title}
+    </span>
+    </h2>
+    </div>
+    <div class="flow">
+      <Markdown content={blogpost.astro.html}>
+      </Markdown>
+</div>
+    </div>
+</div>
+</DefaultLayout>
