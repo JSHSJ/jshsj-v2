@@ -40,6 +40,10 @@ return  {
       </author>
       `,
       item: (item) => {
+        const escapedMarkup = String(item.astro.html).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+
+
         return {
         title: item.title,
         description: item.description,
@@ -48,7 +52,7 @@ return  {
         customData: `
           <id>${Astro.site}post/${item.slug}</id>
           <content type="html">
-          ${item.astro.html}
+          ${escapedMarkup}
           </content>
         `
         }
