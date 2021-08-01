@@ -1,6 +1,11 @@
 {
-  "name": "@astrojs/starter-kit",
-  "version": "0.0.1",
+  "name": "website-v2",
+  "author": {
+    "name": "Joshua",
+    "email": "jshsj@hey.com",
+    "url": "https://joshuastuebner.com"
+  },
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "astro dev",
