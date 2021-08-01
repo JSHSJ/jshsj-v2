@@ -32,14 +32,25 @@ return  {
     rss: {
       title: title,
       description: description,
-      customData: `<language>de-DE</language>`,
+      customData: `
+      <language>de-DE</language>
+      <author>
+        <name>Joshua Stübner</name>
+        <email>jshsj@hey.com</email>
+      </author>
+      `,
       item: (item) => {
-
         return {
         title: item.title,
         description: item.description,
         pubDate: item.date,
-        link: `/post/${item.slug}`
+        link: `/post/${item.slug}`,
+        customData: `
+          <id>${Astro.site}post/${item.slug}</id>
+          <content type="html">
+          ${item.astro.html}
+          </content>
+        `
         }
       }
     }
