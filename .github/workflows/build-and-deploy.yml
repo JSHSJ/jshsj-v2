@@ -39,8 +39,9 @@ jobs:
       - name: Install pnpm
         run: curl -f https://get.pnpm.io/v6.7.js | node - add --global pnpm@6
       - run: pnpm install
-      - run: |
-        pnpm build
-        touch ./dist/.nojekyll
+      - name: Build
+        run: |
+          pnpm build
+          touch ./dist/.nojekyll
       - name: Deploy to FTP
         run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
