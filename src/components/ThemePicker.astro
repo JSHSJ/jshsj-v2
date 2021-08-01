@@ -68,12 +68,22 @@
 </div>
 
 <script lang="ts">
+const DARK = '(prefers-color-scheme: dark)'
+const LIGHT = '(prefers-color-scheme: light)'
+
 const colorScheme = localStorage?.getItem("color-scheme");
 const button = document.querySelector(".theme-toggle");
+
 
 if (colorScheme) {
   document.body.setAttribute('color-scheme', colorScheme);
   button.setAttribute('color-scheme', colorScheme);
+} else if (window.matchMedia(DARK)) {
+  document.body.setAttribute('color-scheme', dark);
+  button.setAttribute('color-scheme', dark);
+} else {
+  document.body.setAttribute('color-scheme', light);
+  button.setAttribute('color-scheme', light);
 }
 
 button.addEventListener('click', () => {
