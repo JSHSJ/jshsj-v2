@@ -277,3 +277,31 @@ strong {
   opacity: 0.48;
   cursor: not-allowed;
 }
+
+.text-assistive {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    -webkit-clip-path: none;
+    clip-path: none;
+    z-index: 999;
+    height: var(--s3);
+    line-height: var(--s3);
+    background: var(--surface2);
+    font-size: var(--s0);
+    text-decoration: none;
+    color: var(--text1);
+    text-align: center;
+    padding-inline: var(--s1);
+    --fontWeight: var(--fontWeightMedium);
+  }
+}
+#content-start:focus {
+  background: var(--surface2);
+  color: var(--text1);
+}

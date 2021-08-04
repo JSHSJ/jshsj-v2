@@ -5,13 +5,13 @@ import Footer from "../components/Footer.astro"
 
 const { content, title, description, canonical } = Astro.props;
 ---
-<!DOCTYPE html>
 <html lang="de">
 <head>
     <MainHead title={title} description={description} canonical={canonical} />
 </head>
   <body>
     <Header></Header>
+    <a href="#content-start" class="text-assistive" id="content-start">Hier fängt der Inhalt an</a>
     <main class="relative">
       <slot />
     </main>
