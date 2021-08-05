@@ -5,13 +5,12 @@ const {projects} = Astro.props;
 {projects.map((project, projectIndex) => (
     <li class="stack">
         <article class="stack -layout-3xs">
-          <h3 class="typo-xl -medium">
+          <a href={`/projekte/${project.slug}`}><h3 class="typo-xl -medium">
           {project.title}
-          </h3>
+          </h3></a>
           <div class="cluster typo-s"><span>{project.year}</span> - <a href={project.url} target="_blank" rel="noopener noreferrer">{project.url}</a>
           </div>
           <p>{project.description}</p>
-          <a href={`/projekte/${project.slug}`} class="CTA-Button mt-s0">Zu den Details</a>
         </article>
       {projectIndex !== projects.length - 1 && (<hr />)}
     </li>
