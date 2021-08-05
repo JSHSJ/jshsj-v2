@@ -12,7 +12,7 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "astro": "^0.18.1"
+    "astro": "^0.18.8"
   },
   "dependencies": {
     "@silvenon/remark-smartypants": "^1.0.0",
