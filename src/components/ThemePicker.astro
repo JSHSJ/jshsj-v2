@@ -79,11 +79,11 @@ if (colorScheme) {
   document.body.setAttribute('color-scheme', colorScheme);
   button.setAttribute('color-scheme', colorScheme);
 } else if (window.matchMedia(DARK)) {
-  document.body.setAttribute('color-scheme', dark);
-  button.setAttribute('color-scheme', dark);
+  document.body.setAttribute('color-scheme', 'dark');
+  button.setAttribute('color-scheme', 'dark');
 } else {
-  document.body.setAttribute('color-scheme', light);
-  button.setAttribute('color-scheme', light);
+  document.body.setAttribute('color-scheme', 'light');
+  button.setAttribute('color-scheme', 'light');
 }
 
 button.addEventListener('click', () => {
