@@ -23,7 +23,7 @@ return  {
     route: `${currentRoute}/:page?`,
     async props({ paginate }) {
       return {
-        posts: paginate(formattedBlogposts, {pageSize: 1}),
+        posts: paginate(formattedBlogposts, {pageSize: 10}),
         title,
         description,
         currentRoute
@@ -33,7 +33,6 @@ return  {
       title: title,
       description: description,
       customData: `
-      <language>de-DE</language>
       <author>
         <name>Joshua Stübner</name>
         <email>jshsj@hey.com</email>
