@@ -8,6 +8,7 @@
 .stack {
   display: grid;
   gap: var(--gap, var(--s2));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 
@@ -37,7 +38,7 @@
   max-width: var(--containerMaxWidth);
   padding-inline: var(--defaultPadding-horizontal);
   display: grid;
-  grid-template-columns: 1fr minmax(10rem, var(--measure)) 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, var(--measure)) minmax(0, 1fr);
   justify-items: start;
 }
 
