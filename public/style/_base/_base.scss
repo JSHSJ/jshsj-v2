@@ -69,7 +69,7 @@ ol,ul, dl{
 }
 
 ol,ul {
-  gap: var(--gap, var(--s1));
+  gap: var(--s1);
 }
 
 
@@ -158,6 +158,12 @@ h1,h2,h3,h4,h5,h6 {
   overflow-wrap: break-word;
   max-width: 100%;
   hyphens: auto;
+
+  > span {
+    overflow-wrap: break-word;
+    max-width: 100%;
+    hyphens: auto;
+  }
 }
 
 h1 {
@@ -304,4 +310,17 @@ strong {
 #content-start:focus {
   background: var(--surface2);
   color: var(--text1);
+}
+
+code {
+  font-family: var(--fontFamilyMono);
+}
+
+pre {
+  padding: var(--s0);
+  width: 100%;
+  max-width: var(--measure);
+  overflow-x: auto;
+  color: var(--text2);
+  border: var(--border-thin) dashed var(--text2);
 }
