@@ -15,6 +15,6 @@
   --fontWeightRegular: 324;
   --fontWeightMedium: 480;
   --fontWeightBold: 710;
-  --lineHeight: var(--ratio);
-  --lineHeight-small: calc(0.8*var(--ratio));
+  --lineHeight: calc(1ex / .32);
+  --lineHeight-small: calc(1ex / .40);
 }

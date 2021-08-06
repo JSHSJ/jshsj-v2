@@ -106,3 +106,7 @@
 .-layout-3xs {
   --gap: var(--s-3)
 }
+
+.-layout-reset {
+  --gap: initial;
+}

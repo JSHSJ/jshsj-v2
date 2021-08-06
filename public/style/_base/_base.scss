@@ -69,7 +69,7 @@ ol,ul, dl{
 }
 
 ol,ul {
-  gap: var(--s1);
+  gap: var(--gap, var(--s1));
 }
 
 
@@ -214,6 +214,7 @@ body {
   font-variation-settings: 'wght' var(--fontWeight);
   font-style:normal;
   font-feature-settings: "calt", "liga";
+
 }
 
 
