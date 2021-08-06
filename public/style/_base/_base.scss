@@ -148,8 +148,7 @@ hr {
   width: 100%;
   height: var(--s-5);
   border: none;
-  background-color: var(--text1);
-  opacity: 0.64;
+  background-color: var(--text2);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -268,9 +267,11 @@ a, .link {
 
 .list-reset {
   list-style: none;
+  max-inline-size: 100%;
 
   li {
     margin-inline: 0;
+    max-inline-size: 100%;
   }
 }
 
