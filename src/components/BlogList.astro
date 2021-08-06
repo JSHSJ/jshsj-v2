@@ -5,6 +5,11 @@ const {blogPosts} = Astro.props;
 <style lang="scss">
 .blogPost {
 
+  .meta {
+    line-height: 1;
+    align-items: center;
+  }
+
   .tags {
     --gap: var(--s-3);
     align-items: baseline;
@@ -22,8 +27,7 @@ const {blogPosts} = Astro.props;
     color: var(--text1);
     --fontWeight: var(--fontWeightRegular);
     border: 1px solid var(--text1);
-    padding-inline: var(--s-5);
-    margin-block: -1px;
+    padding: var(--s-5);
   }
 
 }
@@ -38,7 +42,7 @@ const {blogPosts} = Astro.props;
           </a>
           <p>
           {blogPost.description}</p>
-          <div class="cluster typo-s -layout-3xs">
+          <div class="cluster typo-s -layout-3xs | meta">
           <span class="lang">{blogPost.lang.toUpperCase()}</span>
           <time class="date">vom {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags"><span>Es geht um: </span>{blogPost.tags.map((tag, i) => (
             <span class="tag">{tag}{i !== blogPost.tags.length - 1 && ','}</span>
