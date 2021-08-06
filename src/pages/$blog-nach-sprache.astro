@@ -10,54 +10,48 @@ import { sortByDateDesc } from '../scripts/sortByDate';
 export async function createCollection() {
 const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
-const currentRoute = "/blog"
+const currentRoute = "/blog-nach-sprache"
 
 
 const allBlog = await Astro.fetchContent("../content/Blog/*.md");
+
+// ALL Posts formatted
 const formattedBlogposts = allBlog.map(project => ({
     ...project,
     slug: slugify(project.title),
 })).sort(sortByDateDesc)
 
+// Create array for all keys
 const allLangs = Array.from(new Set(allBlog
 .map(blog => blog.lang)
 .reduce((allLangs, lang) => allLangs.concat(lang), [])))
 
 return  {
     paginate: true,
-    route: `${currentRoute}/:page?`,
-    async props({ paginate }) {
-      return {
-        posts: paginate(formattedBlogposts, {pageSize: 10}),
-        title,
-        description,
-        currentRoute,
-        allLangs
-      }
-    },
-    rss: {
-      title: title,
-      description: description,
-      customData: `
-      <author>
-        <name>Joshua Stübner</name>
-        <email>jshsj@hey.com</email>
-      </author>
-      `,
-      item: (item) => {
-        return {
-        title: item.title,
-        description: item.astro.html,
-        pubDate: item.date,
-        link: `/post/${item.slug}`,
-        customData: `<id>${Astro.site}post/${item.slug}</id>`
+    route: `${currentRoute}/:lang/:page?`,
+    paths() {
+      return allLangs.map(lang => ({
+        params: {
+          lang
         }
+      }))
+    },
+    async props({ paginate, params }) {
+      const postsByLang = formattedBlogposts.filter(bp => bp.lang === params.lang)
+
+      return {
+        posts: paginate(postsByLang, {pageSize: 10}),
+        currentLang: params.lang,
+        allLangs,
+        currentRoute,
+        title,
+        description
       }
     }
   }
 }
 
-const {posts, title, description, currentRoute, allLangs} = Astro.props;
+const {posts, currentLang, allLangs, currentRoute, title, description} = Astro.props;
 
 ---
 <head>
@@ -67,17 +61,17 @@ const {posts, title, description, currentRoute, allLangs} = Astro.props;
   <link
     rel="alternate"
     type="application/rss+xml"
-    title={title + ' | RSS Feed'}
+    title={'title' + ' | RSS Feed'}
     href="/feed/blog.xml"
   />
 
 </head>
 
-<DefaultLayout title={title} description={description} canonical={Astro.request.canonicalURL}>
+<DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={Astro.request.canonicalURL}>
 <div class="section layout-container | mt-header">
   <div class="stack -layout-xl w-full">
     <h1 class="section-title -with-dot -dot-top">Blog</h1>
-    <TagFilter tags={allLangs.map(lang => lang.toUpperCase())} tagName="Sprache" tagRootUrl="/blog-nach-sprache/" selected=""/>
+    <TagFilter tags={allLangs.map(lang => lang.toUpperCase())} tagName="Sprache" tagRootUrl="/blog-nach-sprache/" selected={currentLang} />
 
     <BlogList blogPosts={posts.data}></BlogList>
     <Pagination current={posts.page.current} last={posts.page.last} next={posts.url.next} prev={posts.url.prev} basePath={currentRoute}></Pagination>

@@ -1,0 +1,48 @@
+---
+interface Props {
+  tags: string[];
+  tagName: string;
+  tagRootUrl: string;
+  selected: string;
+}
+const {tags, tagName, tagRootUrl, selected} = Astro.props;
+---
+
+<style lang="scss">
+.tagFilter {
+
+  .tag {
+    width: max-content;
+
+    a {
+      color: var(--text1);
+    --fontWeight: var(--fontWeightRegular);
+    border: 1px solid var(--text1);
+    padding: var(--s-3);
+    margin-block: -1px;
+    text-decoration: none;
+    line-height: 1;
+
+    }
+
+    a[aria-current] {
+      color: var(--surface1);
+      background: var(--text1);
+    }
+  }
+
+}
+
+
+</style>
+
+<div class="stack -layout-s | tagFilter">
+<p>Filter nach {tagName}: </p>
+<ul class="list-reset cluster">
+  {tags.map(tag => (
+    <li class="tag">
+      <a href={`${tagRootUrl}${tag.toLowerCase()}`} aria-current={tag.toLowerCase() === selected.toLowerCase()}>{tag}</a>
+    </li>
+  ))}
+</ul>
+</div>
