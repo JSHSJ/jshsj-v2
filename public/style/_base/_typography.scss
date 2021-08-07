@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Manrope';
-  src: url('/fonts/manrope-vf.ttf');
+  src: url('/fonts/manrope-vf-subset.woff2') format("woff2"), url('/fonts/manrope-vf-subset.zopfli.woff') format("woff");
   font-display: optional;
   font-weight: 200 800;
 }
