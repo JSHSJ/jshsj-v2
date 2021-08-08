@@ -46,6 +46,19 @@
     box-shadow: none;
   }
 
+  &.-small {
+    height: 2em;
+    padding-inline: var(--s0);
+  }
+
+  &.-active {
+    background-color: var(--brand);
+    color: var(--surface1);
+    border-color: var(--brand);
+    box-shadow: none;
+
+  }
+
   &.-secondary {
     background-color: var(--surface1);
     color: var(--text1);
@@ -56,6 +69,13 @@
     background-color: var(--surface1);
     color: var(--brand);
     border-color: var(--brand);
+  }
+
+  &.-secondary.-active {
+    background-color: var(--surface1);
+    color: var(--brand);
+    border-color: var(--brand);
+    box-shadow: none;
   }
 
   &.-stealth {
