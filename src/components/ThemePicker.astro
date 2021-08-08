@@ -10,6 +10,10 @@
   position: relative;
   background-color: var(--surface1);
   cursor: pointer;
+  border-radius: 50%;
+  border: var(--border-thin) solid var(--text1);
+  box-shadow: var(--shadow-default);
+
 }
 
 .theme-icon {
@@ -20,7 +24,7 @@
 }
 
 [data-light] {
-    color: var(--surface1);
+    color: var(--surface2);
   }
 
 [data-dark] {
@@ -39,7 +43,7 @@
 
 [color-scheme="light"] {
   [data-light] {
-    color: var(--surface1);
+    color: var(--surface2);
   }
   [data-dark] {
     opacity: 48%;
