@@ -13,7 +13,7 @@
   --text1-light: hsl(var(--brand-hue) 0% 8%);
   --text2-light: hsl(var(--brand-hue) 3% 24%);
   --surface1-light: hsl(var(--brand-hue) 0% 97%);
-  --surface2-light: hsl(var(--brand-hue) 98% 92%);
+  --surface2-light: hsl(var(--brand-hue) 16% 92%);
   --shadow-strength-light: .48;
   --shadow-color-light: var(--brand-hue), 4%, 8%;
 
@@ -26,9 +26,9 @@
   --brand-dark: hsl(var(--brand-hue) 100% 48%);
   --brand2-dark: hsl(var(--brand2-hue) 100% 64%);
   --text1-dark: hsl(var(--brand-hue) 96% 98%);
-  --text2-dark: hsl(var(--brand-hue) 4% 96%);
+  --text2-dark: hsl(var(--brand-hue) 4% 88%);
   --surface1-dark: hsl(var(--brand-hue) 6% 1%);
-  --surface2-dark: hsl(var(--brand-hue) 98% 24%);
+  --surface2-dark: hsl(var(--brand-hue) 21% 25%);
 
   --shadow-strength-dark: .88;
   --shadow-color-dark: var(--brand-hue), 4%, 8%;
