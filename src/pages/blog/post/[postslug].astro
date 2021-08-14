@@ -1,6 +1,6 @@
 ---
+import {Navigation} from "@config";
 import { Markdown } from 'astro/components';
-
 import { slugify} from "@scripts/slugify"
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
@@ -25,10 +25,8 @@ export async function getStaticPaths() {
 const {pathname} = Astro.request.url;
 const {blogpost} = Astro.props;
 
-const blogpostCrumbs = [{
-  name: "Blog",
-  url: "/blog/1"
-},
+const blogpostCrumbs = [
+  Navigation.blogStart,
   {name: blogpost.title,
   url: pathname}
 ]

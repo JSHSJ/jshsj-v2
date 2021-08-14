@@ -1,4 +1,5 @@
 ---
+import {Navigation} from "@config";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import BlogList from "@components/BlogList.astro"
 import Pagination from "@components/Pagination.astro"
@@ -10,7 +11,7 @@ import { sortByDateDesc } from '@scripts/sortByDate';
 export async function getStaticPaths({paginate}) {
 const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
-const currentRoute = "/blog"
+const currentRoute = Navigation.blogRoot.url
 
 const allBlogPosts = await Astro.fetchContent("@content/Blog/*.md");
 

@@ -1,4 +1,5 @@
 ---
+import {Navigation} from "@config"
 const {blogPosts} = Astro.props;
 ---
 
@@ -37,7 +38,7 @@ const {blogPosts} = Astro.props;
 {blogPosts.map((blogPost, postIndex) => (
     <li class="stack | blogPost">
       <article class="stack -layout-3xs">
-          <a href={`/blog/post/${blogPost.slug}`}><h2 class="typo-xl -medium">
+          <a href={`${Navigation.blogPost.url}/${blogPost.slug}`}><h2 class="typo-xl -medium">
           {blogPost.title}</h2>
           </a>
           <p>

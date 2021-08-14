@@ -20,14 +20,12 @@ module.exports = {
   },
   alias: {
     "@root": "./src",
+    "@config": "./src/config",
     "@components": "./src/components",
     "@layouts": "./src/layouts",
     "@pages": "./src/pages",
     "@content": "./src/content",
     "@scripts": "./src/scripts",
     "@public": "./src/public",
-  },
-  env: {
-
   }
 };

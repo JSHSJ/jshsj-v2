@@ -1,9 +1,9 @@
 ---
-const {projects} = Astro.props;
-
+import {Navigation} from "@config"
 import IconPageLink from "./icons/Icon-PageLink.astro"
-
 import ProjectList from "./ProjectList.astro"
+
+const {projects} = Astro.props;
 ---
 
 
@@ -12,7 +12,7 @@ import ProjectList from "./ProjectList.astro"
   <h2 class="section-title typo-hollow -with-dot" data-aside><span>Projekte</span></h2>
     <ProjectList projects={projects.slice(0, 3)}></ProjectList>
     <div class="cluster extra-links">
-      <a href="/projekte" class="link-with-icon">
+      <a href={Navigation.projects.url} class="link-with-icon">
       <IconPageLink></IconPageLink><span>Alle Projekte</span></a>
       <a href="https://github.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitHub</span></a>
     </div>

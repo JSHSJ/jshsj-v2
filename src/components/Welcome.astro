@@ -1,5 +1,6 @@
 ---
-  import Logo from "./Logo.astro"
+import Logo from "./Logo.astro"
+import {MY_EMAIL} from "@config"
 ---
 <style lang="scss">
 
@@ -75,7 +76,7 @@
                 <div>
                   <dt>Du kannst mir aber gerne eine Mail schreiben, an</dt>
                   <dd>
-                  <a href="mailto:jshsj@hey.com">jshsj@hey.com</a>
+                  <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a>
                   </dd>
                 </div>
 

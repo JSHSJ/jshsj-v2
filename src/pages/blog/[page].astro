@@ -1,4 +1,6 @@
 ---
+import {Navigation} from "@config";
+
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import BlogList from "@components/BlogList.astro"
 import Pagination from "@components/Pagination.astro"
@@ -10,7 +12,7 @@ import { sortByDateDesc } from '@scripts/sortByDate';
 export async function getStaticPaths({paginate, rss}) {
 const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
-const currentRoute = "/blog"
+const currentRoute = Navigation.blogRoot.url
 
 
 const allBlog = await Astro.fetchContent("@content/Blog/*.md");
@@ -38,8 +40,8 @@ rss({
     title: item.title,
     description: item.astro.html,
     pubDate: item.date,
-    link: `/blog/post/${item.slug}`,
-    customData: `<id>${Astro.site}blog/post/${item.slug}</id>`
+    link: `${Navigation.blogPost.url}/${item.slug}`,
+    customData: `<id>${Astro.site}${Navigation.blogPost.url.substring(1)}/${item.slug}</id>`
     }
   }
 )

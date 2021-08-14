@@ -1,4 +1,5 @@
 ---
+import {MY_EMAIL, Navigation} from "@config";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 
 ---
@@ -22,8 +23,8 @@ import DefaultLayout from "@layouts/DefaultLayout.astro";
             Telefon: +49(0)152-52481201
             <br />
             E-Mail:
-            <a href="mailto:jshsj@hey.com">
-              jshsj@hey.com
+            <a href={`mailto:${MY_EMAIL}`}>
+              {MY_EMAIL}
             </a>
             <br />
           </p>

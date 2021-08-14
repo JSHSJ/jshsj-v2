@@ -1,5 +1,20 @@
 ---
 import FurtherQuestions from "./FurtherQuestions.astro"
+import {Navigation} from "@config"
+
+const NavItemsLeft = [
+  Navigation.start,
+  Navigation.projects,
+  Navigation.blogStart,
+  Navigation.zeug,
+  Navigation.inZahlen
+]
+
+const NavItemsRight = [
+  Navigation.imprint,
+  Navigation.dataPolicy
+]
+
 ---
 <style lang="scss">
 footer {
@@ -46,15 +61,14 @@ footer {
 
   <nav class="footer-container">
     <ul class="list-reset -layout-m">
-      <li><a href="/">Start</a></li>
-      <li><a href="/projekte">Projekte</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/zeug">Zeug</a></li>
-      <li><a href="/in-zahlen">In Zahlen</a></li>
+      {NavItemsLeft.map(item => (
+        <li><a href={item.url}>{item.name}</a></li>
+      ))}
     </ul>
     <ul class="list-reset -layout-m">
-      <li><a href="/impressum">Impressum</a></li>
-      <li><a href="/datenschutz">Datenschutz</a></li>
+      {NavItemsRight.map(item => (
+        <li><a href={item.url}>{item.name}</a></li>
+      ))}
     </ul>
   </nav>
   </div>
