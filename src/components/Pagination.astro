@@ -1,16 +1,22 @@
 ---
 import DisableableLink from "./DisableableLink.astro";
 
+export interface Props {
+  current: number
+  last: number
+  prev: string | undefined
+  next: string | undefined
+  basePath: string
+}
 
 const {current, last, prev, next, basePath } = Astro.props;
-
 const hasOneMore = current+1 <= last;
 const hasTwoMore = current+2 <= last;
 ---
 <div class="pagination">
 <nav class="cluster -layout-2xs | paginationNav">
 
-  <DisableableLink classes="paginationEl paginationIcon" disabled={!prev} title="Zum Anfang" href={basePath}>
+  <DisableableLink classes="paginationEl paginationIcon" disabled={!prev} title="Zum Anfang" href={`${basePath}/1`}>
       <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M52 52.44V11L24 32.28l28 20.16z" fill="currentColor" stroke="currentColor"/><path fill="currentColor" d="M12 9h8v46h-8z"/></svg>
   </DisableableLink>
 
@@ -19,7 +25,7 @@ const hasTwoMore = current+2 <= last;
   </DisableableLink>
 
 
-  {current - 2 >= 1 && <a class="paginationEl" href={current-2 > 1 ? `${basePath}/${current-2}` : basePath} title={`Seite ${current - 2}`}>{current-2}</a>}
+  {current - 2 >= 1 && <a class="paginationEl" href={current-2 > 1 ? `${basePath}/${current-2}` : `${basePath}`} title={`Seite ${current - 2}`}>{current-2}</a>}
 
   {current-1 >= 1 && <a class="paginationEl" href={current-1 > 1 ? `${basePath}/${current-1}` : basePath} title={`Seite ${current-1}`}>{current-1}</a>}
 

@@ -1,0 +1,79 @@
+---
+import DefaultLayout from "../../../layouts/DefaultLayout.astro";
+import BlogList from "../../../components/BlogList.astro"
+import Pagination from "../../../components/Pagination.astro"
+import TagFilter from "../../../components/TagFilter.astro"
+import { slugify } from '../../../scripts/slugify';
+import { sortByDateDesc } from '../../../scripts/sortByDate';
+
+
+export async function getStaticPaths({paginate}) {
+const title = "Joshuas Gedanken"
+const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
+const currentRoute = "/blog"
+
+const allBlogPosts = await Astro.fetchContent("../../../content/Blog/*.md");
+
+// ALL Posts formatted
+const formattedBlogposts = allBlogPosts.map(project => ({
+    ...project,
+    slug: slugify(project.title),
+})).sort(sortByDateDesc)
+
+// Create array for all keys
+const allLangs = Array.from(new Set(allBlogPosts
+.map(blog => blog.lang)
+.reduce((allLangs, lang) => allLangs.concat(lang), [])))
+
+return allLangs.map(lang => {
+  const postsByLang = formattedBlogposts.filter(bp => bp.lang === lang);
+  return paginate(postsByLang, {
+    params: { lang },
+    pageSize: 10,
+    props: {
+      currentLang: lang,
+      allLangs,
+      currentRoute,
+      title,
+      description
+    }
+  })
+})
+}
+
+const {page, currentLang, allLangs, currentRoute, title, description} = Astro.props;
+
+---
+<head>
+  {page.url.prev && <link rel="prev" href={page.url.prev} />}
+  {page.url.next && <link rel="next" href={page.url.next} />}
+
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title={'title' + ' | RSS Feed'}
+    href="/feed/blog.xml"
+  />
+
+</head>
+
+<DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={Astro.request.canonicalURL}>
+<div class="section layout-container | mt-header">
+  <div class="stack -layout-xl w-full">
+    <h1 class="section-title -with-dot -dot-top">Blog</h1>
+    <TagFilter tags={allLangs.map(lang => lang.toUpperCase())} tagName="Sprache" tagRootUrl="/blog/" selected={currentLang} hasPagination={true} />
+
+    <BlogList blogPosts={page.data}></BlogList>
+    <Pagination current={page.currentPage} last={page.lastPage} next={page.url.next} prev={page.url.prev} basePath={currentRoute}></Pagination>
+
+    <div class="box -layout-m bg-surface2 flow">
+    <p>Möchtest du mitkriegen, wenn es was neues gibt?</p>
+    <p><a href="/feed/blog.xml">RSS Feed</a></p>
+    </div>
+
+
+    </div>
+</div>
+</DefaultLayout>
+
+

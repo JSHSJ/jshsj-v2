@@ -1,42 +1,36 @@
 ---
 import { Markdown } from 'astro/components';
 
-import { slugify} from "../scripts/slugify"
-import DefaultLayout from "../layouts/DefaultLayout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
-import SidebarNav from "../components/SidebarNav.astro";
+import { slugify} from "../../../scripts/slugify"
+import DefaultLayout from "../../../layouts/DefaultLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SidebarNav from "../../../components/SidebarNav.astro";
 
-import IconPageLink from "../components/icons/Icon-PageLink.astro"
+import IconPageLink from "../../../components/icons/Icon-PageLink.astro"
 
-export async function createCollection() {
-const allBlogPosts = await Astro.fetchContent("../content/Blog/*.md");
-const blogWithSlugs = allBlogPosts.map(bp => ({
-  ...bp,
-  slug: slugify(bp.title),
-}))
-  return  {
-    route: `/post/:slug`,
-    paths() {
-      return blogWithSlugs.map(bp => ({
-        params: {
-          slug: bp.slug,
-        }
-      }))
-    },
-    async props({ params }) {
-      return { blogpost: blogWithSlugs.find(bp => bp.slug === params.slug)}
+export async function getStaticPaths() {
+  const allBlogPosts = await Astro.fetchContent("../../../content/Blog/*.md");
+  const blogWithSlugs = allBlogPosts.map(bp => ({
+    ...bp,
+    slug: slugify(bp.title),
+  }))
+
+  return blogWithSlugs.map(blogpost => {
+    return {
+      params: {postslug: blogpost.slug},
+      props: { blogpost }
     }
-  }
+  })
 }
-
-const { blogpost, slug } = Astro.props;
+const {pathname} = Astro.request.url;
+const {blogpost} = Astro.props;
 
 const blogpostCrumbs = [{
   name: "Blog",
-  url: "/blog"
+  url: "/blog/1"
 },
   {name: blogpost.title,
-  url: `/post/${blogpost.slug}`}
+  url: pathname}
 ]
 ---
 <style>

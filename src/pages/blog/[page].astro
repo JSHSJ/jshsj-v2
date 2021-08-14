@@ -1,0 +1,95 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import BlogList from "../../components/BlogList.astro"
+import Pagination from "../../components/Pagination.astro"
+import TagFilter from "../../components/TagFilter.astro"
+import { slugify } from '../../scripts/slugify';
+import { sortByDateDesc } from '../../scripts/sortByDate';
+
+
+export async function getStaticPaths({paginate, rss}) {
+const title = "Joshuas Gedanken"
+const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
+const currentRoute = "/blog"
+
+
+const allBlog = await Astro.fetchContent("../../content/Blog/*.md");
+const formattedBlogposts = allBlog.map(project => ({
+    ...project,
+    slug: slugify(project.title),
+})).sort(sortByDateDesc)
+
+const allLangs = Array.from(new Set(allBlog
+.map(blog => blog.lang)
+.reduce((allLangs, lang) => allLangs.concat(lang), [])))
+
+rss({
+  title: title,
+  description: description,
+  customData: `
+  <author>
+    <name>Joshua Stübner</name>
+    <email>jshsj@hey.com</email>
+  </author>
+  `,
+  dest: '/feed/blog.xml',
+  item: (item) => {
+    return {
+    title: item.title,
+    description: item.astro.html,
+    pubDate: item.date,
+    link: `/blog/post/${item.slug}`,
+    customData: `<id>${Astro.site}blog/post/${item.slug}</id>`
+    }
+  }
+})
+
+return paginate(formattedBlogposts, {
+  pageSize: 10,
+  props: {
+    title,
+    description,
+    currentRoute,
+    allLangs
+  }
+})
+}
+
+
+const {page, title, description, currentRoute, allLangs} = Astro.props;
+
+---
+<head>
+  {page.url.prev && <link rel="prev" href={page.url.prev} />}
+  {page.url.next && <link rel="next" href={page.url.next} />}
+
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title={title + ' | RSS Feed'}
+    href="/feed/blog.xml"
+  />
+
+
+</head>
+
+<DefaultLayout title={title} description={description} canonical={Astro.request.canonicalURL}>
+<div class="section layout-container | mt-header">
+  <div class="stack -layout-xl w-full">
+    <h1 class="section-title -with-dot -dot-top">Blog</h1>
+    <TagFilter tags={allLangs.map(lang => lang.toUpperCase())} tagName="Sprache" tagRootUrl="/blog/" selected="" hasPagination={true}/>
+
+    <BlogList blogPosts={page.data}></BlogList>
+    <Pagination current={page.currentPage} last={page.lastPage} next={page.url.next} prev={page.url.prev} basePath={currentRoute}></Pagination>
+
+    <div class="box -layout-m bg-surface2 flow">
+    <p>Möchtest du mitkriegen, wenn es was neues gibt?</p>
+    <p><a href="/feed/blog.xml">RSS Feed</a></p>
+    </div>
+
+
+    </div>
+</div>
+</DefaultLayout>
+
+

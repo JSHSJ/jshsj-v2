@@ -1,42 +1,38 @@
 ---
 import { Markdown } from 'astro/components';
 
-import { slugify} from "../scripts/slugify"
-import DefaultLayout from "../layouts/DefaultLayout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
-import SidebarNav from "../components/SidebarNav.astro";
+import { slugify} from "../../../scripts/slugify"
+import DefaultLayout from "../../../layouts/DefaultLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SidebarNav from "../../../components/SidebarNav.astro";
 
-import IconPageLink from "../components/icons/Icon-PageLink.astro"
+import IconPageLink from "../../../components/icons/Icon-PageLink.astro"
 
-export async function createCollection() {
-const allProjects = await Astro.fetchContent("../content/Projekte/*.md");
-const projectsWithSlugs = allProjects.map(p => ({
-  ...p,
-  slug: slugify(p.title),
-}))
-  return  {
-    route: `/projekte/:slug`,
-    paths() {
-      return projectsWithSlugs.map(p => ({
-        params: {
-          slug: p.slug,
-        }
-      }))
-    },
-    async props({ params }) {
-      return { project: projectsWithSlugs.find(p => p.slug === params.slug)}
+export async function getStaticPaths() {
+  const allProjects = await Astro.fetchContent("../../../content/Projekte/*.md");
+  const projectsWithSlugs = allProjects.map(p => ({
+    ...p,
+    slug: slugify(p.title),
+  }))
+
+  return projectsWithSlugs.map(project => {
+    return {
+      params: {projectslug: project.slug},
+      props: { project }
     }
-  }
+  })
 }
 
-const { project, slug } = Astro.props;
+const { pathname } = Astro.request.url;
+const { project } = Astro.props
+
 
 const projectCrumbs = [{
   name: "Projekte",
   url: "/projekte"
 },
   {name: project.title,
-  url: `/projekte/${project.slug}`}
+  url: pathname}
 ]
 ---
 <style>
@@ -69,9 +65,9 @@ dl {
       <dd>
       {project.techstack}
       </dd>
-      <dt>URL: </dt>
+      <dt>Link: </dt>
       <dd>
-      <a href={project.url} target="_blank" rel="noopener norefferer">{project.url}</a>
+      <a href={project.link} target="_blank" rel="noopener norefferer">{project.link}</a>
       </dd>
       <dt>Jahr: </dt>
       <dd>{project.year}</dd>

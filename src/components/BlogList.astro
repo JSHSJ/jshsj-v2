@@ -37,7 +37,7 @@ const {blogPosts} = Astro.props;
 {blogPosts.map((blogPost, postIndex) => (
     <li class="stack | blogPost">
       <article class="stack -layout-3xs">
-          <a href={`/post/${blogPost.slug}`}><h2 class="typo-xl -medium">
+          <a href={`/blog/post/${blogPost.slug}`}><h2 class="typo-xl -medium">
           {blogPost.title}</h2>
           </a>
           <p>
