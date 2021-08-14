@@ -33,7 +33,7 @@ rss({
   </author>
   `,
   dest: '/feed/blog.xml',
-  item: (item) => {
+  items: formattedBlogposts.map(item => {
     return {
     title: item.title,
     description: item.astro.html,
@@ -42,6 +42,7 @@ rss({
     customData: `<id>${Astro.site}blog/post/${item.slug}</id>`
     }
   }
+)
 })
 
 return paginate(formattedBlogposts, {
