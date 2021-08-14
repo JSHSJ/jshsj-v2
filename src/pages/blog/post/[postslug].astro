@@ -1,15 +1,15 @@
 ---
 import { Markdown } from 'astro/components';
 
-import { slugify} from "../../../scripts/slugify"
-import DefaultLayout from "../../../layouts/DefaultLayout.astro";
-import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import SidebarNav from "../../../components/SidebarNav.astro";
+import { slugify} from "@scripts/slugify"
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import SidebarNav from "@components/SidebarNav.astro";
 
-import IconPageLink from "../../../components/icons/Icon-PageLink.astro"
+import IconPageLink from "@components/icons/Icon-PageLink.astro"
 
 export async function getStaticPaths() {
-  const allBlogPosts = await Astro.fetchContent("../../../content/Blog/*.md");
+  const allBlogPosts = await Astro.fetchContent("@content/Blog/*.md");
   const blogWithSlugs = allBlogPosts.map(bp => ({
     ...bp,
     slug: slugify(bp.title),

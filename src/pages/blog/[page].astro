@@ -1,10 +1,10 @@
 ---
-import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import BlogList from "../../components/BlogList.astro"
-import Pagination from "../../components/Pagination.astro"
-import TagFilter from "../../components/TagFilter.astro"
-import { slugify } from '../../scripts/slugify';
-import { sortByDateDesc } from '../../scripts/sortByDate';
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import BlogList from "@components/BlogList.astro"
+import Pagination from "@components/Pagination.astro"
+import TagFilter from "@components/TagFilter.astro"
+import { slugify } from '@scripts/slugify';
+import { sortByDateDesc } from '@scripts/sortByDate';
 
 
 export async function getStaticPaths({paginate, rss}) {
@@ -13,7 +13,7 @@ const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich
 const currentRoute = "/blog"
 
 
-const allBlog = await Astro.fetchContent("../../content/Blog/*.md");
+const allBlog = await Astro.fetchContent("@content/Blog/*.md");
 const formattedBlogposts = allBlog.map(project => ({
     ...project,
     slug: slugify(project.title),
