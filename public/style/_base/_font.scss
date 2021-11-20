@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/WorkSans[wght]-subset.woff2') format("woff2"), url('/fonts/WorkSans[wght]-subset.zopfli.woff') format("woff");
+  font-display: optional;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'MD IO';
+  src: url('/fonts/MDIO0.3-Regular-subset.woff2') format("woff2"), url('/fonts/MDIO0.3-Regular-subset.zopfli.woff') format("woff");
+  font-display: optional;
+  font-weight: 400;
+}
+
+:root {
+    /* TYPOGRAPHY */
+
+  --measure: 64ch;
+  --fontFamilySans: "Work Sans", system-ui, sans-serif;
+  --fontFamilySerif: serif;
+  --fontFamilyMono: "MD IO", monospace;
+  --fontWeightRegular: 400;
+  --fontWeightMedium: 592;
+  --fontWeightBold: 876;
+  --lineHeight: calc(1ex / .32);
+  --lineHeight-small: calc(1ex / .40);
+}

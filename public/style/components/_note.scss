@@ -1,0 +1,31 @@
+.note {
+    padding-inline: var(--s2);
+    width: 100%;
+    padding-block: var(--gap, var(--defaultPadding-vertical));
+    background-color: var(--surface2);
+    color: var(--text2);
+    position: relative;
+
+    &.-info:before, &.-warning:before {
+      display: block;
+      transform: translate(-40%, -40%);
+      background-color: var(--text1);
+      color: var(--surface1);
+      padding: var(--s-3) var(--s-1);
+      line-height: 1;
+      font-size: var(--s1);
+      width: 100%;
+      max-width: max-content;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &.-info:before {
+      content: "?";
+    }
+
+    &.-warning:before {
+      content: "!";
+    }
+}

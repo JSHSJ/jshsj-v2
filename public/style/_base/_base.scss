@@ -234,7 +234,7 @@ body {
   color: var(--text2);
   background-color: var(--surface1);
 
-  font-family: var(--fontFamily);
+  font-family: var(--fontFamilySans);
   line-height: var(--lineHeight);
   font-variation-settings: "wght" var(--fontWeight);
   font-style: normal;
@@ -254,6 +254,7 @@ mark {
 a,
 .link {
   color: var(--text1);
+  font-family: var(--fontFamilyMono);
   text-decoration: underline;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.1em;

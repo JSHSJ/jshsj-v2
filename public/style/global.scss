@@ -4,8 +4,11 @@
 @use "./utils/spacings.scss";
 @use "./utils/colors.scss";
 
-@use "./components/buttons";
 @use "./components/links";
+@use "./components/buttons";
 @use "./components/headlines";
+@use "./components/tags";
 @use "./components/pagination";
 @use "./components/exceptions";
+@use "./components/note";
+

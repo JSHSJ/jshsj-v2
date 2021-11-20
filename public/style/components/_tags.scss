@@ -1,0 +1,22 @@
+.tag {
+  --color: currentColor;
+
+  font-family: var(--fontFamilyMono);
+  color: var(--color);
+  border: 1px solid var(--color);
+  // padding: var(--s-5) var(--s-4);
+  padding: calc(1em / (var(--ratio) * var(--ratio))) calc(1em / var(--ratio));
+  text-transform: lowercase;
+  --fontWeight: var(--fontWeightMedium);
+  width: max-content;
+  max-width: max-content;
+  line-height: 1;
+
+  .-dark {
+    --color: var(--surface1);
+  }
+
+  .-light {
+    --color: var(--text1);
+  }
+}

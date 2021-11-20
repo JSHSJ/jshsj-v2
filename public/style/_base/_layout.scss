@@ -9,6 +9,7 @@
   display: grid;
   gap: var(--gap, var(--s2));
   grid-template-columns: minmax(0, 1fr);
+  align-items: flex-start;
 }
 
 
@@ -22,6 +23,11 @@
 
 .flow > p + p {
   --gap: var(--s0);
+}
+
+.flow > figure {
+  margin-inline: calc(var(--s1) / -1);
+  width: calc(100% + calc(var(--s1) * 2));
 }
 
 .flow .breakAfter {
@@ -78,6 +84,13 @@
     flex-basis: 0;
     flex-grow: 999;
     min-width: var(--min-size);
+}
+
+.blog-layout {
+  row-gap: var(--gap, var(--s3));
+
+  column-gap: var(--gap, var(--s3));
+  align-items: flex-start;
 }
 
 
