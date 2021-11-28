@@ -11,6 +11,14 @@
   --surface1: var(--surface1-light);
   --surface2: var(--surface2-light);
 
+    --code-background: var(--code-background-light);
+  --code-color-keyword: var(--code-color-keyword-light);
+    --code-color-string: var(--code-color-string-light);
+    --code-color-punctuation: var(--code-color-punctuation-light);
+    --code-color-operator: var(--code-color-operator-light);
+    --code-color-tag: var(--code-color-tag-light);
+    --code-color-plain-text: var(--code-color-plain-text-light);
+
   --shadow-color: var(--shadow-color-light);
   --shadow-color-background: var(--shadow-color-background-light);
   --shadow-strength: var(--shadow-strength-light);
@@ -38,9 +46,18 @@
     --shadow-strength: var(--shadow-strength-dark);
     --shadow-strength-background: var(--shadow-strength-background-dark);
 
+        --code-background: var(--code-background-dark);
+    --code-color-keyword: var(--code-color-keyword-dark);
+    --code-color-string: var(--code-color-string-dark);
+    --code-color-punctuation: var(--code-color-punctuation-dark);
+    --code-color-operator: var(--code-color-operator-dark);
+    --code-color-tag: var(--code-color-tag-dark);
+    --code-color-plain-text: var(--code-color-plain-text-dark);
+
     --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
     --shadow-background: hsl(var(--shadow-color-background-dark), var(--shadow-strength-background-dark));
     --shadow-default: var(--s-5) var(--s-4) var(--s-3) var(--shadow-foreground), var(--s-5) var(--s-4) var(--s1) var(--shadow-background);
+
   }
 }
 
@@ -59,6 +76,14 @@
   --shadow-strength: var(--shadow-strength-light);
   --shadow-strength-background: var(--shadow-strength-background-light);
 
+      --code-background: var(--code-background-light);
+  --code-color-keyword: var(--code-color-keyword-light);
+    --code-color-string: var(--code-color-string-light);
+    --code-color-punctuation: var(--code-color-punctuation-light);
+    --code-color-operator: var(--code-color-operator-light);
+    --code-color-tag: var(--code-color-tag-light);
+    --code-color-plain-text: var(--code-color-plain-text-light);
+
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background-light), var(--shadow-strength-background-light));
   --shadow-default: var(--s-5) var(--s-4) var(--s-3) var(--shadow-foreground), var(--s-5) var(--s-4) var(--s1) var(--shadow-background);
@@ -74,10 +99,18 @@
   --surface1: var(--surface1-dark);
   --surface2: var(--surface2-dark);
 
+        --code-background: var(--code-background-dark);
   --shadow-color: var(--shadow-color-dark);
   --shadow-color-background: var(--shadow-color-background-dark);
   --shadow-strength: var(--shadow-strength-dark);
   --shadow-strength-background: var(--shadow-strength-background-dark);
+
+  --code-color-keyword: var(--code-color-keyword-dark);
+    --code-color-string: var(--code-color-string-dark);
+    --code-color-punctuation: var(--code-color-punctuation-dark);
+    --code-color-operator: var(--code-color-operator-dark);
+    --code-color-tag: var(--code-color-tag-dark);
+    --code-color-plain-text: var(--code-color-plain-text-dark);
 
   // For some reason we can't set these on root without them beng fucked
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));

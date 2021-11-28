@@ -1,12 +1,12 @@
 ---
-import {Navigation} from "@config";
+import {Navigation} from "@/config/index.ts";
 
-import DefaultLayout from "@layouts/DefaultLayout.astro";
-import BlogList from "@components/BlogList.astro"
-import Pagination from "@components/Pagination.astro"
-import TagFilter from "@components/TagFilter.astro"
-import { slugify } from '@scripts/slugify';
-import { sortByDateDesc } from '@scripts/sortByDate';
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import BlogList from "@/components/BlogList.astro"
+import Pagination from "@/components/Pagination.astro"
+import TagFilter from "@/components/TagFilter.astro"
+import { slugify } from '@/utils/slugify';
+import { sortByDateDesc } from '@/utils/sortByDate';
 
 
 export async function getStaticPaths({paginate, rss}) {
@@ -15,7 +15,7 @@ const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich
 const currentRoute = Navigation.blogRoot.url
 
 
-const allBlog = await Astro.fetchContent("@content/Blog/*.md");
+const allBlog = await Astro.fetchContent("../../content/Blog/*.md");
 const formattedBlogposts = allBlog.map(project => ({
     ...project,
     slug: slugify(project.title),
@@ -77,20 +77,16 @@ const {page, title, description, currentRoute, allLangs} = Astro.props;
 </head>
 
 <DefaultLayout title={title} description={description} canonical={Astro.request.canonicalURL}>
-<div class="section layout-container | mt-header">
-  <div class="stack -layout-xl w-full">
+<div class="section layout-container blog-layout | mt-header">
     <h1 class="section-title -with-dot -dot-top">Blog</h1>
-    <TagFilter tags={allLangs.map(lang => lang.toUpperCase())} tagName="Sprache" tagRootUrl="/blog/" selected="" hasPagination={true}/>
+    <TagFilter hasReset={true} tags={allLangs.map(lang => lang.toLowerCase())} tagName="Sprache" tagRootUrl="/blog/" selected="" hasPagination={true}/>
 
     <BlogList blogPosts={page.data}></BlogList>
     <Pagination current={page.currentPage} last={page.lastPage} next={page.url.next} prev={page.url.prev} basePath={currentRoute}></Pagination>
 
-    <div class="box -layout-m bg-surface2 flow">
+    <div class="note -info flow w-full">
     <p>Möchtest du mitkriegen, wenn es was neues gibt?</p>
     <p><a href="/feed/blog.xml">RSS Feed</a></p>
-    </div>
-
-
     </div>
 </div>
 </DefaultLayout>

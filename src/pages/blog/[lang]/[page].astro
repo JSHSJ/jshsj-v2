@@ -1,11 +1,11 @@
 ---
-import {Navigation} from "@config";
-import DefaultLayout from "@layouts/DefaultLayout.astro";
-import BlogList from "@components/BlogList.astro"
-import Pagination from "@components/Pagination.astro"
-import TagFilter from "@components/TagFilter.astro"
-import { slugify } from '@scripts/slugify';
-import { sortByDateDesc } from '@scripts/sortByDate';
+import {Navigation} from "@/config/index.ts";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import BlogList from "@/components/BlogList.astro"
+import Pagination from "@/components/Pagination.astro"
+import TagFilter from "@/components/TagFilter.astro"
+import { slugify } from '@/utils/slugify.ts';
+import { sortByDateDesc } from '@/utils/sortByDate';
 
 
 export async function getStaticPaths({paginate}) {
@@ -13,7 +13,7 @@ const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
 const currentRoute = Navigation.blogRoot.url
 
-const allBlogPosts = await Astro.fetchContent("@content/Blog/*.md");
+const allBlogPosts = await Astro.fetchContent("../../../content/Blog/*.md");
 
 // ALL Posts formatted
 const formattedBlogposts = allBlogPosts.map(project => ({
@@ -59,21 +59,19 @@ const {page, currentLang, allLangs, currentRoute, title, description} = Astro.pr
 </head>
 
 <DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={Astro.request.canonicalURL}>
-<div class="section layout-container | mt-header">
-  <div class="stack -layout-xl w-full">
+<div class="section layout-container blog-layout | mt-header">
     <h1 class="section-title -with-dot -dot-top">Blog</h1>
-    <TagFilter tags={allLangs.map(lang => lang.toUpperCase())} tagName="Sprache" tagRootUrl="/blog/" selected={currentLang} hasPagination={true} />
+    <TagFilter hasReset={true} tags={allLangs.map(lang => lang.toLowerCase())} tagName="Sprache" tagRootUrl="/blog/" selected={currentLang} hasPagination={true} />
 
     <BlogList blogPosts={page.data}></BlogList>
     <Pagination current={page.currentPage} last={page.lastPage} next={page.url.next} prev={page.url.prev} basePath={currentRoute}></Pagination>
 
-    <div class="box -layout-m bg-surface2 flow">
+    <div class="note -info flow w-full">
     <p>Möchtest du mitkriegen, wenn es was neues gibt?</p>
     <p><a href="/feed/blog.xml">RSS Feed</a></p>
     </div>
 
 
-    </div>
 </div>
 </DefaultLayout>
 

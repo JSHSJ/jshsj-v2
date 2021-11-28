@@ -1,16 +1,15 @@
 ---
-interface AstroMarkdownHeader {
-  depth: number;
-  slug: string;
-  text: string;
+  export interface Props {
+    headers: AstroMarkdownHeader[]
 };
-export interface Props {
-  headers: AstroMarkdownHeader[]
-};
+  interface AstroMarkdownHeader {
+    depth: number;
+    slug: string;
+    text: string;
+  };
 
 const { headers } = Astro.props;
 ---
-
 <style lang="scss">
 .sidebarNav {
   display: none;
@@ -20,10 +19,11 @@ const { headers } = Astro.props;
   .sidebarNav {
     display: block;
     position: absolute;
-    // Height of main + margin of footer + offset of header
+
+
     height: calc(100% + var(--s5) + var(--headerHeight));
+    top: calc(var(--headerHeight) / -1);
     left: 0;
-    top: calc(var(--headerHeight) * -1);
     bottom: 0;
     padding-inline: var(--defaultPadding-horizontal);
     background: var(--surface1);
@@ -39,8 +39,8 @@ const { headers } = Astro.props;
     padding-block: var(--s2);
   }
 }
-
 </style>
+
 <div class="sidebarNav">
 <nav class="sidebarNav-list">
   <ul class="list-reset">

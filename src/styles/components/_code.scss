@@ -1,0 +1,33 @@
+pre {
+  background-color: var(--code-background);
+}
+
+.token {
+
+}
+
+.keyword {
+  color: var(--code-color-keyword);
+
+}
+
+.string {
+  color: var(--code-color-string);
+}
+
+.punctuation {
+  color: var(--code-color-punctuation);
+}
+
+.operator {
+  color: var(--code-color-operator);
+}
+
+.tag {
+    color: var(--code-color-tag);
+}
+
+.plain-text {
+  color: var(--code-color-plain-text);
+
+}

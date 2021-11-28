@@ -1,5 +1,5 @@
 ---
-import {Navigation} from "@config"
+import {Navigation} from "@/config/index.ts"
 const {blogPosts} = Astro.props;
 ---
 
@@ -9,28 +9,20 @@ const {blogPosts} = Astro.props;
   .meta {
     line-height: 1;
     align-items: center;
+    font-family: var(--fontFamilyMono);
   }
 
   .tags {
-    --gap: var(--s-3);
+    --gap: 0;
     align-items: baseline;
     font-size: var(--s-1);
     color: var(--text2);
-  }
+    border-collapse: collapse;
 
-  .tag {
-    display: block;
-    color: var(--text2);
-    --fontWeight: var(--fontWeightMedium);
+    & .jshsj-tag:not(:last-child) {
+      border-right: none;
+    }
   }
-
-  .lang {
-    color: var(--text1);
-    --fontWeight: var(--fontWeightRegular);
-    border: 1px solid var(--text1);
-    padding: var(--s-5);
-  }
-
 }
 </style>
 
@@ -44,9 +36,9 @@ const {blogPosts} = Astro.props;
           <p>
           {blogPost.description}</p>
           <div class="cluster typo-s -layout-3xs | meta">
-          <span class="lang">{blogPost.lang.toUpperCase()}</span>
-          <time class="date">vom {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags"><span>Es geht um: </span>{blogPost.tags.map((tag, i) => (
-            <span class="tag">{tag}{i !== blogPost.tags.length - 1 && ','}</span>
+          <span class="jshsj-tag lang">{blogPost.lang.toLowerCase()}</span>
+          <time class="date">vom {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags">{blogPost.tags.map((tag, i) => (
+            <span class="jshsj-tag">{tag}</span>
           ))}
           </div>
           </div>

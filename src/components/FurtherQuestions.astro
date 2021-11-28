@@ -1,14 +1,12 @@
 ---
-import {MY_EMAIL} from "@config"
+import {MY_EMAIL} from "@/config/index.ts"
 import IconPageLink from "./icons/Icon-PageLink.astro"
 ---
 
-<section class="box bg-surface2 -layout-m">
-  <div class="flow -layout-m">
+<section class="note -info flow -layout-m">
   <p>Hast du noch Fragen, Anmerkungen, Vorschläge oder möchtest einfach nur was loswerden?</p>
   <p>
     <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a>
   </p>
-  </div>
 </section>
 

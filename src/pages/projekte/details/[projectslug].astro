@@ -1,16 +1,15 @@
 ---
-import {Navigation} from "@config";
-import { Markdown } from 'astro/components';
+import {Navigation} from "@/config/index.ts";
 
-import { slugify} from "@scripts/slugify"
-import DefaultLayout from "@layouts/DefaultLayout.astro";
-import Breadcrumbs from "@components/Breadcrumbs.astro";
-import SidebarNav from "@components/SidebarNav.astro";
+import { slugify} from "@/utils/slugify.ts"
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import SidebarNav from "@/components/SidebarNav.astro";
 
-import IconPageLink from "@components/icons/Icon-PageLink.astro"
+import IconPageLink from "@/components/icons/Icon-PageLink.astro"
 
 export async function getStaticPaths() {
-  const allProjects = await Astro.fetchContent("@content/Projekte/*.md");
+  const allProjects = await Astro.fetchContent("../../../content/Projekte/*.md");
   const projectsWithSlugs = allProjects.map(p => ({
     ...p,
     slug: slugify(p.title),
@@ -26,6 +25,8 @@ export async function getStaticPaths() {
 
 const { pathname } = Astro.request.url;
 const { project } = Astro.props
+
+const { Content } = project;
 
 
 const projectCrumbs = [
@@ -72,8 +73,7 @@ dl {
       <dd>{project.year}</dd>
     </dl>
     <div class="flow">
-      <Markdown content={project.astro.html}>
-      </Markdown>
+      <Content />
 
 
 

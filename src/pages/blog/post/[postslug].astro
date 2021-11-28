@@ -1,15 +1,15 @@
 ---
-import {Navigation} from "@config";
-import { Markdown } from 'astro/components';
-import { slugify} from "@scripts/slugify"
-import DefaultLayout from "@layouts/DefaultLayout.astro";
-import Breadcrumbs from "@components/Breadcrumbs.astro";
-import SidebarNav from "@components/SidebarNav.astro";
+import {Navigation} from "@/config/index";
+import { slugify} from "@/utils/slugify"
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import SidebarNav from "@/components/SidebarNav.astro";
 
-import IconPageLink from "@components/icons/Icon-PageLink.astro"
+import IconPageLink from "@/components/icons/Icon-PageLink.astro"
 
 export async function getStaticPaths() {
-  const allBlogPosts = await Astro.fetchContent("@content/Blog/*.md");
+  const allBlogPosts = await Astro.fetchContent("../../../content/Blog/*.md");
+
   const blogWithSlugs = allBlogPosts.map(bp => ({
     ...bp,
     slug: slugify(bp.title),
@@ -22,8 +22,12 @@ export async function getStaticPaths() {
     }
   })
 }
+
 const {pathname} = Astro.request.url;
 const {blogpost} = Astro.props;
+
+const { Content } = blogpost;
+
 
 const blogpostCrumbs = [
   Navigation.blogStart,
@@ -53,8 +57,7 @@ dl {
     </h2>
     </div>
     <div class="flow -layout-reset">
-      <Markdown content={blogpost.astro.html}>
-      </Markdown>
+      <Content />
 </div>
     </div>
 </div>

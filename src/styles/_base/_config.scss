@@ -20,6 +20,14 @@
   --shadow-color-background-light: var(--brand-hue), 4%, 8%;
   --shadow-strength-background-light: 0;
 
+  --code-background-light: hsl(var(--brand-hue) 20% 99%);
+  --code-color-keyword-light: hsl(calc(var(--brand-hue) + 60) 100% 48%);
+  --code-color-string-light: hsl(calc(var(--brand-hue) + 280) 100% 48%);
+  --code-color-punctuation-light: var(--brand);
+  --code-color-operator-light: hsl(calc(var(--brand-hue) + 230) 100% 48%);
+  --code-color-tag-light: hsl(calc(var(--brand-hue)) 100% 16%);
+  --code-color-plain-text-light: var(--text1);
+
 
   /* DARK */
 
@@ -35,6 +43,14 @@
 
   --shadow-color-background-dark: var(--brand-hue), 92%, 88%;
   --shadow-strength-background-dark: .48;
+
+  --code-background-dark: hsl(var(--brand-hue) 16% 5%);
+  --code-color-keyword-dark: hsl(calc(var(--brand-hue) + 60) 100% 64%);
+  --code-color-string-dark: hsl(calc(var(--brand-hue) + 280) 100% 64%);
+  --code-color-punctuation-dark: var(--brand);
+  --code-color-operator-dark: hsl(calc(var(--brand-hue) + 230) 100% 64%);
+  --code-color-tag-dark: hsl(calc(var(--brand-hue)) 100% 64%);
+  --code-color-plain-text-dark: var(--text1-dark);
 
 
 

@@ -13,7 +13,7 @@ const {current, last, prev, next, basePath } = Astro.props;
 const hasOneMore = current+1 <= last;
 const hasTwoMore = current+2 <= last;
 ---
-<div class="pagination">
+<div class="w-full | pagination">
 <nav class="cluster -layout-2xs | paginationNav">
 
   <DisableableLink classes="paginationEl paginationIcon" disabled={!prev} title="Zum Anfang" href={`${basePath}/1`}>

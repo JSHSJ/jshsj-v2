@@ -5,16 +5,29 @@ interface Props {
   tagRootUrl: string;
   selected: string;
   hasPagination: boolean;
+  hasReset?: boolean;
 }
-const {tags, tagName, tagRootUrl, selected, hasPagination} = Astro.props;
+const {tags, tagName, tagRootUrl, selected, hasPagination, hasReset} = Astro.props;
 ---
 
-<div class="stack -layout-s | tagFilter">
-<p>Filter nach {tagName}: </p>
+<style lang="scss">
+  .tagFilter {
+    @media screen and (min-width: 1440px) {
+      grid-column-start: 1 !important;
+      grid-column-end: 2 !important;
+      grid-row-start: 2 !important;
+      grid-row-end: 5 !important;
+    }
+  }
+</style>
+
+<div class="stack -layout-s | tagFilter" data-filter>
+<p class="-medium">Filter nach {tagName}: </p>
 <ul class="list-reset cluster">
+  {hasReset && <li><a class={`CTA-button -secondary -small${selected ? '': ' -active'}`} href={`${tagRootUrl}${hasPagination ? "1" : ''}`} aria-current={!selected}>alle</a></li>}
   {tags.map(tag => (
-    <li >
-      <a class={`CTA-Button -secondary -small${tag.toLowerCase() === selected.toLowerCase() ? ' -active': ''}`} href={`${tagRootUrl}${tag.toLowerCase()}${hasPagination ? "/1" : ''}`} aria-current={tag.toLowerCase() === selected.toLowerCase()}>{tag}</a>
+    <li>
+      <a class={`CTA-button -secondary -small${tag.toLowerCase() === selected.toLowerCase() ? ' -active': ''}`} href={`${tagRootUrl}${tag.toLowerCase()}${hasPagination ? "/1" : ''}`} aria-current={tag.toLowerCase() === selected.toLowerCase()}>{tag}</a>
     </li>
   ))}
 </ul>
