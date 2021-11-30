@@ -89,8 +89,11 @@
 .blog-layout {
   row-gap: var(--gap, var(--s3));
   align-items: flex-start;
-}
 
+  @media screen and (min-width: 1440px) {
+    column-gap: var(--gap, var(--s3));
+  }
+}
 
 .-layout-xl {
   --gap: var(--s3)
