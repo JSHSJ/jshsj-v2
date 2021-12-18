@@ -26,7 +26,7 @@
 
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background), var(--shadow-strength-background));
-    --shadow-default: var(--s-5) var(--s-4) var(--s-3) var(--shadow-foreground), var(--s-5) var(--s-4) var(--s1) var(--shadow-background);
+    --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
 }
 
 
@@ -56,7 +56,7 @@
 
     --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
     --shadow-background: hsl(var(--shadow-color-background-dark), var(--shadow-strength-background-dark));
-    --shadow-default: var(--s-5) var(--s-4) var(--s-3) var(--shadow-foreground), var(--s-5) var(--s-4) var(--s1) var(--shadow-background);
+    --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
 
   }
 }
@@ -86,7 +86,7 @@
 
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background-light), var(--shadow-strength-background-light));
-  --shadow-default: var(--s-5) var(--s-4) var(--s-3) var(--shadow-foreground), var(--s-5) var(--s-4) var(--s1) var(--shadow-background);
+  --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
 }
 
 [color-scheme="dark"] {
@@ -115,26 +115,26 @@
   // For some reason we can't set these on root without them beng fucked
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background-dark), var(--shadow-strength-background-dark));
-  --shadow-default: var(--s-5) var(--s-4) var(--s-4) var(--shadow-foreground), var(--s-5) var(--s-4) var(--s3) var(--shadow-background);
+  --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
 }
 
 /* SOME OTHER APPLIED DEFAULTS */
 
 :root {
-  --border-thin: var(--s-5);
-  --border-thick: var(--s-3);
+  --border-thin: var(--size-3xs);
+  --border-thick: var(--size-2xs);
 
-  --shadow-raised: var(--s-4) var(--s-3) var(--s-2) var(--shadow-color-default);
+  --shadow-raised: var(--size-3xs) var(--size-3xs) 0.48em var(--shadow-color-default);
 
 
-  --defaultSpacing: var(--s1);
-  --defaultPadding-horizontal: var(--s0);
-  --defaultPadding-vertical: var(--s0);
+  --defaultSpacing: var(--size-md);
+  --defaultPadding-horizontal: var(--size-md);
+  --defaultPadding-vertical: var(--size-md);
 
-  --sectionPadding: var(--s3);
+  --sectionPadding: var(--size-2xl);
   --contentPadding: var(--defaultPadding-vertical) var(--defaultPadding-horizontal);
 
-  --containerMaxWidth: var(--s11);
+  --containerMaxWidth: calc(var(--fluid-max-width) * 1px);
   --sidebarMaxWidth: var(--s7);
 
   --headerHeight: calc(var(--s5));

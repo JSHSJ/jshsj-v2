@@ -1,5 +1,5 @@
 .mt-header {
-  margin-top: var(--headerHeight);
+  margin-top: var(--s4);
 }
 
 .ml-auto {
@@ -16,6 +16,14 @@
 
 .mt-s2 {
   margin-top: var(--s2);
+}
+
+.mb-s0 {
+  margin-bottom: var(--s0);
+}
+
+.mb-s1 {
+  margin-bottom: var(--s1);
 }
 
 .mb-s3 {

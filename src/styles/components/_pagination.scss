@@ -1,6 +1,6 @@
 .pagination {
   border-top: var(--border-thin) solid var(--text1);
-  padding-top: var(--s2);
+  padding-top: var(--size-2xl);
   display: flex;
   justify-content: center;
 }
@@ -20,9 +20,9 @@
 
 
 .paginationIcon {
-  width: var(--s3);
-  height: var(--s3);
-  padding: var(--s-3);
+  width: var(--size-xl);
+  height: var(--size-2xl);
+  padding: var(--size-xs);
   display: block;
 
   &:hover:not([aria-disabled]) {

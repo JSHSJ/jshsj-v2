@@ -5,14 +5,13 @@
 }
 
 .CTA-button {
-  padding: var(--s-1);
   background-color: var(--text1);
   color: var(--surface1);
   border-width: var(--border-thin);
   border-color: var(--text1);
   border-style: solid;
-  padding-inline: var(--s2);
-  height: 3em;
+  padding-inline: var(--size-lg);
+  height: var(--size-2xl);
 
   font-family: var(--fontFamilyMono);
   font-weight: 400;
@@ -47,8 +46,8 @@
   }
 
   &.-small {
-    height: 2em;
-    padding-inline: var(--s0);
+    height: var(--size-xl);
+    padding-inline: var(--size-s);
   }
 
   &.-active {

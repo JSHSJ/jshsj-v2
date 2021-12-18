@@ -1,0 +1,24 @@
+image: alpine/edge
+packages:
+  - nodejs
+  - npm
+  - rsync
+sources:
+  - https://git.sr.ht/~jshsj/jshsj-v2
+secrets:
+  - 1fb7cf75-d90f-4df5-9cad-233d4559a311
+  - 43473a2b-32b2-4c49-9f79-cebf8e61cf87
+tasks:
+  - setup: |
+      cd jshsj-v2
+      npm install
+  - build: |
+      cd jshsj-v2
+      npm run build
+  - deploy: |
+      cd jshsj-v2
+      sshopts="ssh -o StrictHostKeyChecking=no"
+      set +x
+      source ~/.ssh_deploy
+      rsync --rsh="$sshopts" -avtPz --delete dist/ $DEPLOY/joshuastuebner.com/
+      set -x

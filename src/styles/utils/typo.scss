@@ -4,7 +4,7 @@
       color: var(--surface1);
       background: var(--text1);
       box-decoration-break: clone;
-      padding: 0.048em 0.096em;
+      padding: var(--size-2xs) var(--size-3xs);
       max-width: max-content;
       display: inline;
   }

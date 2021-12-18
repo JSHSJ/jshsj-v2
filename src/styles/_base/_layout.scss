@@ -7,27 +7,27 @@
 
 .stack {
   display: grid;
-  gap: var(--gap, var(--s2));
+  gap: var(--gap, var(--size-md));
   grid-template-columns: minmax(0, 1fr);
   align-items: flex-start;
 }
 
 
 .flow > * + * {
-  margin-block-start: var(--gap, var(--s2));
+  margin-block-start: var(--gap, var(--size-md));
 }
 
 .flow > *:is(h1,h2,h3,h4,h5,h6) {
-  --gap: var(--s3);
+  --gap: var(--size-lg);
 }
 
 .flow > p + p {
-  --gap: var(--s0);
+  --gap: var(--size-md);
 }
 
 .flow > figure {
-  margin-inline: calc(var(--s1) / -1);
-  width: calc(100% + calc(var(--s1) * 2));
+  margin-inline: calc(var(--defaultPadding-horizontal) / -1);
+  width: calc(100% + calc(var(--defaultPadding-horizontal) * 2));
 }
 
 .flow .breakAfter {
@@ -96,30 +96,30 @@
 }
 
 .-layout-xl {
-  --gap: var(--s3)
+  --gap: var(--size-xl)
 }
 
 .-layout-l {
-  --gap: var(--s2)
+  --gap: var(--size-lg)
 }
 
 .-layout-m {
-  --gap: var(--s1)
+  --gap: var(--size-md)
 }
 
 .-layout-s {
-  --gap: var(--s0)
+  --gap: var(--size-s)
 }
 
 .-layout-xs {
-  --gap: var(--s-1)
+  --gap: var(--size-xs)
 }
 
 .-layout-2xs {
-  --gap: var(--s-2)
+  --gap: var(--size-2xs)
 }
 .-layout-3xs {
-  --gap: var(--s-3)
+  --gap: var(--size-3xs);
 }
 
 .-layout-reset {

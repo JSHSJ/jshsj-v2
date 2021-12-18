@@ -1,5 +1,5 @@
 .note {
-    padding-inline: var(--s2);
+    padding-inline: var(--size-xl);
     width: 100%;
     padding-block: var(--gap, var(--defaultPadding-vertical));
     background-color: var(--surface2);
@@ -7,15 +7,16 @@
     position: relative;
 
     &.-info:before, &.-warning:before {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transform: translate(-40%, -40%);
       background-color: var(--text1);
       color: var(--surface1);
-      padding: var(--s-3) var(--s-1);
+      inline-size: 1.48em;
+      block-size: 1.48em;
       line-height: 1;
       font-size: var(--s1);
-      width: 100%;
-      max-width: max-content;
       position: absolute;
       left: 0;
       top: 0;

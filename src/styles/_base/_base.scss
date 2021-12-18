@@ -225,7 +225,7 @@ h6 {
 // HTML AND BODY
 
 html {
-  font-size: calc(0.36vw + 1em);
+  // font-size: calc(0.36vw + 1em);
 }
 
 body {
@@ -239,6 +239,7 @@ body {
   font-variation-settings: "wght" var(--fontWeight);
   font-style: normal;
   font-feature-settings: "calt", "liga";
+  font-size: var(--s0);
 }
 
 ::marker {
@@ -332,7 +333,7 @@ strong {
     text-decoration: none;
     color: var(--text1);
     text-align: center;
-    padding-inline: var(--s1);
+    padding-inline: var(--size-md);
     --fontWeight: var(--fontWeightMedium);
   }
 }
@@ -347,7 +348,7 @@ code {
 
 pre {
   font-size: var(--s0);
-  padding: var(--s0);
+  padding: var(--size-md);
   width: 100%;
   max-width: var(--measure);
   overflow-x: auto;

@@ -3,9 +3,8 @@
 
   font-family: var(--fontFamilyMono);
   color: var(--color);
-  border: 1px solid var(--color);
-  // padding: var(--s-5) var(--s-4);
-  padding: calc(1em / (var(--ratio) * var(--ratio))) calc(1em / var(--ratio));
+  border: var(--border-thin) solid var(--color);
+  padding: var(--size-xs) var(--size-s);
   text-transform: lowercase;
   --fontWeight: var(--fontWeightMedium);
   width: max-content;
