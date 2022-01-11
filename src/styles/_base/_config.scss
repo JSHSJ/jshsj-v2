@@ -54,32 +54,23 @@
 
   --ratio: 1.48;
 
-  --fluid-min-width: 320;
-  --fluid-max-width: 1680;
+  --s-5: clamp(0.42625rem, -0.2529411764705882vw + 0.4275rem, 0.21125rem);
+  --s-4: clamp(0.52875rem, -0.25441176470588245vw + 0.53rem, 0.3125rem);
+  --s-3: clamp(0.655625rem, -0.22720588235294117vw + 0.656875rem, 0.4625rem);
+  --s-2: clamp(0.813125rem, -0.150735294117647vw + 0.814375rem, 0.685rem);
+  --s-1: clamp(1.008125rem, 0.00661764705882352vw + 1.008125rem, 1.01375rem);
+  --s0: clamp(1.25rem, 0.29411764705882354vw + 1.24625rem, 1.5rem);
+  --s1: clamp(1.55rem, 0.7882352941176473vw + 1.5375rem, 2.22rem);
+  --s2: clamp(1.921875rem, 1.6044117647058824vw + 1.89125rem, 3.285625rem);
+  --s3: clamp(2.383125rem, 2.916911764705882vw + 2.31375rem, 4.8625rem);
+  --s4: clamp(2.955rem, 4.990441176470588vw + 2.8075rem, 7.196875rem);
+  --s5: clamp(3.664375rem, 8.21985294117647vw + 3.363125rem, 10.65125rem);
+  --s7: clamp(5.634375rem, 20.81911764705882vw + 4.46125rem, 23.330625rem);
+  --s9: clamp(8.66375rem, 49.928676470588236vw + 4.338125rem, 51.103125rem);
+  --s11: clamp(13.32125rem, 116.01764705882354vw + -2.13375rem, 111.93625rem);
 
-  --fluid-screen: 100vw;
-  --fluid-bp: calc(
-    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
-      (var(--fluid-max-width) - var(--fluid-min-width))
-  );
-  --s-5: calc(0.42625rem + -3.4400000000000004 * var(--fluid-bp));
---s-4: calc(0.52875rem + -3.460000000000001 * var(--fluid-bp));
---s-3: calc(0.655625rem + -3.09 * var(--fluid-bp));
---s-2: calc(0.813125rem + -2.049999999999999 * var(--fluid-bp));
---s-1: calc(1.008125rem + 0.08999999999999986 * var(--fluid-bp));
---s0: calc(1.25rem + 4 * var(--fluid-bp));
---s1: calc(1.55rem + 10.720000000000002 * var(--fluid-bp));
---s2: calc(1.921875rem + 21.82 * var(--fluid-bp));
---s3: calc(2.383125rem + 39.669999999999995 * var(--fluid-bp));
---s4: calc(2.955rem + 67.87 * var(--fluid-bp));
---s5: calc(3.664375rem + 111.78999999999999 * var(--fluid-bp));
---s7: calc(5.634375rem + 283.14 * var(--fluid-bp));
---s9: calc(8.66375rem + 679.03 * var(--fluid-bp));
---s11: calc(13.32125rem + 1577.8400000000001 * var(--fluid-bp));
-
-
---size-3xs: 0.0875em;
---size-2xs: 0.125em;
+  --size-3xs: 0.0875em;
+  --size-2xs: 0.125em;
   --size-xs: 0.25em;
   --size-s: 0.5em;
   --size-md: 1em;
