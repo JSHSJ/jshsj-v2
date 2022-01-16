@@ -15,13 +15,14 @@ import {MY_EMAIL} from "@/config/index.ts"
   align-items: center;
   width: 100%;
   height: max-content;
+  --gap: var(--s3);
 }
 
 .logo {
    display: flex;
-   justify-content: center;
+   justify-content: start;
    width: 100%;
-   max-width: 16rem;
+   max-width: 24em;
 }
 
 .welcomeStack {
@@ -46,8 +47,8 @@ import {MY_EMAIL} from "@/config/index.ts"
 </style>
 
 <section class="layout-container | welcomeContainer">
-<div class="with-sidebar | welcomeSidebar">
-            <div class="logo" data-aside>
+<div class="with-sidebar | welcomeSidebar full-width">
+<div class="logo" data-aside>
             <Logo></Logo>
             </div>
             <dl class="stack -layout-s | welcomeStack" data-grow>
@@ -79,7 +80,6 @@ import {MY_EMAIL} from "@/config/index.ts"
                   <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a>
                   </dd>
                 </div>
-
             </dl>
         </div>
 </section>

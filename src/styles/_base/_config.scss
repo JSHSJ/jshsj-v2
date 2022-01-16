@@ -54,6 +54,7 @@
 
   --ratio: 1.48;
 
+
   --s-5: clamp(0.42625rem, -0.2529411764705882vw + 0.4275rem, 0.21125rem);
   --s-4: clamp(0.52875rem, -0.25441176470588245vw + 0.53rem, 0.3125rem);
   --s-3: clamp(0.655625rem, -0.22720588235294117vw + 0.656875rem, 0.4625rem);
@@ -79,11 +80,5 @@
   --size-2xl: 3em;
   --size-3xl: 4em;
   --size-4xl: 5em;
-}
-
-@media screen and (min-width: 1680px) {
-  :root {
-    --fluid-screen: calc(var(--fluid-max-width) * 1px);
-  }
 }
 

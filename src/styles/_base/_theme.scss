@@ -26,7 +26,10 @@
 
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background), var(--shadow-strength-background));
-    --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
+    // --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
+
+    --shadow-default: var(--size-xs) var(--size-xs) 0 var(--brand);
+   
 }
 
 
@@ -56,8 +59,9 @@
 
     --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
     --shadow-background: hsl(var(--shadow-color-background-dark), var(--shadow-strength-background-dark));
-    --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
+    // --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
 
+    --shadow-default: var(--size-xs) var(--size-xs) 0 var(--brand);
   }
 }
 
@@ -87,6 +91,9 @@
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background-light), var(--shadow-strength-background-light));
   --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
+
+  --shadow-default: var(--size-xs) var(--size-xs) 0 var(--brand);
+
 }
 
 [color-scheme="dark"] {
@@ -115,7 +122,8 @@
   // For some reason we can't set these on root without them beng fucked
   --shadow-foreground: hsl(var(--shadow-color), var(--shadow-strength));
   --shadow-background: hsl(var(--shadow-color-background-dark), var(--shadow-strength-background-dark));
-  --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
+  // --shadow-default: var(--size-3xs) var(--size-3xs) var(--size-2xs) var(--shadow-foreground), var(--size-3xs) var(--size-3xs) var(--size-md) var(--shadow-background);
+  --shadow-default: var(--size-xs) var(--size-xs) 0 var(--brand);
 }
 
 /* SOME OTHER APPLIED DEFAULTS */
@@ -134,8 +142,8 @@
   --sectionPadding: var(--size-2xl);
   --contentPadding: var(--defaultPadding-vertical) var(--defaultPadding-horizontal);
 
-  --containerMaxWidth: calc(var(--fluid-max-width) * 1px);
-  --sidebarMaxWidth: var(--s7);
+  --main-max-width: 48em;
+  --container-max-width: 70em;
 
   --headerHeight: calc(var(--s5));
 }

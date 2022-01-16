@@ -12,6 +12,11 @@
   align-items: flex-start;
 }
 
+.stack.-stretched {
+  width: 100%;
+}
+
+
 
 .flow > * + * {
   margin-block-start: var(--gap, var(--size-md));
@@ -41,21 +46,21 @@
 .layout-container {
   margin-inline: auto;
   width: 100%;
-  max-width: var(--containerMaxWidth);
+  max-width: var(--container-max-width);
   padding-inline: var(--defaultPadding-horizontal);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(10rem, var(--measure)) minmax(0, 1fr);
+  grid-template-columns: minmax(10rem, var(--main-max-width)) minmax(0, 1fr);
   justify-items: start;
 }
 
 .layout-container > *:not(figure, .full-width) {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 
 .layout-container > figure,  .layout-container > .full-width {
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 3;
 }
 
 .cluster {
@@ -72,7 +77,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--gap, var(--s2));
+  gap: var(--gap, var(--s3));
 }
 
 .with-sidebar [data-aside] {
@@ -93,6 +98,10 @@
   @media screen and (min-width: 1440px) {
     column-gap: var(--gap, var(--s3));
   }
+}
+
+.-layout-2xl {
+  --gap: var(--size-2xl)
 }
 
 .-layout-xl {

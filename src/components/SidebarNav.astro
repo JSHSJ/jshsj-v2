@@ -12,7 +12,7 @@ const { headers } = Astro.props;
 ---
 {headers.length > 0 ? (
 <div class="sidebarNav">
-  <nav class="sidebarNav-list stack">
+  <nav class="sidebarNav-list stack standout-box">
     <h4>Kapitel</h4>
     <ul class="list-reset">
       {headers.map((header) => (
@@ -28,17 +28,16 @@ const { headers } = Astro.props;
 <style lang="scss">
   .sidebarNav {
     display: none;
-
-    @media screen and (min-width: 1440px) {
-    }
   }
+
 
   @media screen and (min-width: 1440px) {
     .sidebarNav {
-      display: block;
-      grid-column-start: 1 !important;
-      grid-column-end: 2 !important;
+      grid-column-start: 2 !important;
+      grid-column-end: 3 !important;
+      grid-row-start: 1;
       padding-inline-end: var(--size-md);
+      margin-inline-end: 0;
     }
 
     .sidebarNav-list {
@@ -46,18 +45,6 @@ const { headers } = Astro.props;
       max-height: fit-content;
       height: fit-content;
       top: var(--headerHeight);
-      padding-block: var(--size-md);
-      padding-inline: var(--size-md);
-      background: var(--text1);
-      color: var(--surface1);
-
-      h4 {
-        color: inherit;
-      }
-
-      a {
-        color: inherit;
-      }
     }
   }
 </style>

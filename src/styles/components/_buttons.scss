@@ -28,6 +28,8 @@
 
   text-decoration: unset;
   box-shadow: var(--shadow-default);
+  // box-shadow: 4px 4px 0 var(--brand);
+
 
   // remove link (external) display
   &:after {
@@ -42,6 +44,10 @@
   }
 
   &:active {
+    box-shadow: none;
+    background-color: var(--brand);
+    color: var(--surface1);
+    border-color: var(--brand);
     box-shadow: none;
   }
 

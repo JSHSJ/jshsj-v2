@@ -1,6 +1,24 @@
 .extra-links {
-  border-top: var(--border-thick) solid var(--text1);
-  padding-block: var(--defaultPadding-vertical);
+  align-self: start;
+  max-width: max-content;
+  position: sticky;
+  top: 0;
+  max-height: max-content;
+}
+
+.standout-box {
+  padding-block: var(--size-md);
+  padding-inline: var(--size-md);
+  background: var(--text1);
+  color: var(--surface1);
+}
+
+.standout-box a {
+  color: inherit;
+}
+
+.standout-box h4 {
+  color: inherit;
 }
 
 .footnotes {
