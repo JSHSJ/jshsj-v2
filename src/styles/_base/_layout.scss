@@ -95,7 +95,7 @@
   row-gap: var(--gap, var(--s3));
   align-items: flex-start;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1560px) {
     column-gap: var(--gap, var(--s3));
   }
 }
