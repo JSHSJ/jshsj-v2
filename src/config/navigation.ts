@@ -23,6 +23,10 @@ export const Navigation = {
     url: "/blog/post",
     name: "Blogpost",
   },
+  devBlog: {
+    url: "https://dev.joshuastuebner.com/",
+    name: "Dev Blog"
+  },
   zeug: {
     url: "/zeug",
     name: "Zeug",
