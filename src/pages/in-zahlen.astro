@@ -1,9 +1,302 @@
 ---
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 ---
+<style lang="scss">
+
+.cv {
+    .result {
+        font-family: var(--fontFamilySans);
+        --fontWeight: var(--fontWeightMedium);
+        font-size: var(--s0);
+        display: block;
+        color: var(--text2);
+    }
+
+    p[data-label]:before {
+        content: attr(data-label);
+        font-family: var(--fontFamilyMono);
+        padding: var(--size-xs) 0;
+        line-height: 1;
+        font-weight: 400;
+        font-size: var(--s-1);
+        display: block;
+    }
+
+    h3[data-label]:after {
+            content: attr(data-label);
+            font-family: var(--fontFamilyMono);
+            padding: var(--size-xs) 0;
+            line-height: 1;
+            font-weight: 400;
+            font-size: var(--s-1);
+            display: block;
+    }
+
+    .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--size-lg);
+        }
+}
+</style>
+
 <DefaultLayout title={"Ich in Zahlen"} description={"Für den schnellen Blick. Einmal gucken und mehr wisse. Oder auch nicht."} canonical={Astro.request.canonicalURL}>
-<div class="layout-container flow | mt-header">
+<div class="layout-container stack -layout-xl | mt-header">
           <h1 class="section-title">In Zahlen</h1>
-          <p>Kommt noch</p>
+          <div class="main stack short cv">
+        <div class="page stack -layout-2xl">
+            <section class="container">
+                <div class="contact stack -layout-lg">
+                    <div class="stack -layout-xs">
+                        <h2>Wer</h2>
+                        <p>Joshua Stübner</p>
+                        <p>15.09.1992</p>
+                        <p>Dorfstr. 34</p>
+                        <p>19273 Zeetze</p>
+                    </div>
+                    <div class="stack -layout-xs">
+                        <h2>Kontakt</h2>
+                        <p data-label="Telefon">+49 152 52481201</p>
+                        <p data-label="Email">jshsj@hey.com</p>
+                        <p data-label="Website">joshuastuebner.com</p>
+                    </div>
+                </div>
+                <section class="entry summary">
+                    <h2 class="-with-dot">Zusammenfassung</h2>
+                    <p>
+                        Ich bin ein ambitionierter <strong>(Frontend) Web Entwickler</strong> mit Fokus auf <strong>Problemlösung,
+                        Performance</strong> und <strong>Bedienung</strong>.
+                    </p>
+                    <p>Autodidaktisch, selbstständig und
+                        mit stark ausgeprägtem analytischen Denken, aber arbeite mindestens genauso gerne im Team.</p>
+                    <p>Mit einem bunten Buch voller Erfahrungen, bin ich immer auf der Suche nach Verbesserung.
+                    </p>
+                    <p><strong>Meine Stärke ist das Frontend</strong>: Strukturiert mit Typescript, mit Freude an CSS
+                        und
+                        Interesse an UX versuche ich möglichst angenehme und effektive User Interfaces zu bauen.</p>
+                </section>
+            </section>
+
+            <section class="entry stack -layout-xl">
+                <h2 class="-with-dot">Bildung & Ausbildung</h2>
+                <div class="stack -layout-s">
+                <h3 data-label="08.2003 - 07.2011">
+                    Freiherr vom Stein Gymnasium, Leverkusen
+                </h3>
+                </div>
+                <div class="stack -layout-s">
+                <h3 data-label="10.2011 - 07.2015">
+                    Rheinische Friedrich-Wilhelm-Universität, Bonn
+                </h3>
+                <p class="result">B.Sc., Psychologie</p>
+                </div>
+                <div class="stack -layout-s">
+                <h3 data-label="03.2016 - Heute">
+                    Erarbeiten und Weiterbildung im Bereich (Web)-Development
+                </h3>
+                <p class="result">Autodidaktisch und durch Online-Kurse</p>
+                </div>
+            </section>
+            <section class="entry knowledge stack -layout-xl">
+                <h2 class="-with-dot">Damit arbeite ich</h2>
+                <p data-label="Programmiersprachen">
+                    Javascript (ES6, React, Gatsby, Angular, Astro, Svelte, RXJS, Web Components), Typescript, HTML, CSS
+                    (Sass/SCSS), minimal Golang
+                </p>
+                <p data-label="Verwaltung">
+                    Linux, PostgreSQL, NGINX, Git, Mac, Figma, Cloudflare
+                    Workers, CI/CD mit Github / Gitlab / Netlify / Sourcehut, Jira
+                </p>
+                <p data-label="Sprachen">
+                    Englisch (fließend), deutsch (muttersprachlich), Französisch (lernend)
+                </p>
+            </section>
+        </div>
+        <div class="page stack -layout-2xl">
+            <h2 class="-with-dot">Praxis-Erfahrung</h2>
+            <section class="entry stack -layout-xl">
+                <article class="stack -layout-s">
+                    <h3 data-label="10.2015 - 02.2016">
+                        Praktikum bei Heuschrecke Naturkost GmbH, Troisdorf
+
+                    </h3>
+                    <p class="result"
+                    >Einblick in alle Positionen eines kleinen Bio-Gewürz und
+                        -Teeherstellers</p>
+                    <ul class="optional">
+                        <li>Verwaltung von Warenein- und ausgängen</li>
+                        <li>
+                            Aufbereitung und Verarbeitung von Bestellungen
+                        </li>
+                        <li>Kundensupport</li>
+                        <li>Arbeit an der Misch- und Verpackungsstrecke</li>
+                    </ul>
+                </article>
+                <article class="stack -layout-s">
+                    <h3 data-label="07.2016 - 08.2016">
+                        Angestellter bei Heuschrecke Naturkost GmbH, Troisdorf
+                    </h3>
+                    <p
+                            class="result"
+                    >Allgemeine Büroarbeit und Kundenbetreuung</p
+                    >
+                </article>
+                <article class="stack -layout-s">
+                    <h3 data-label="02.2018 - 08.2018">
+                        Praktikum bei Tat&Kraft, Berlin
+                    </h3>
+                    <p class="result"
+                    >Einblick in Front- und Backend-Web-Development in
+                        2-Mann-Betrieb</p>
+                    <ul class="optional">
+                        <li>
+                            Umsetzung von vorbereiten Designs zu responsiven und
+                            funktionierende Webseiten mit HTML / Nunjucks, (S)CSS, Vanilla JS
+                            und Vue
+                        </li>
+                        <li>
+                            Ausarbeitung des innerbetrieblichen Toolings und Automatisierung
+                            von Prozessen mit Gulp und JS
+                        </li>
+                        <li>
+                            Einblicke in das intern genutzten PHP-Backend
+                        </li>
+                    </ul>
+                </article>
+                <article class="stack -layout-s">
+                    <h3 data-label="08.2017 - Heute">
+                        Selbstständigkeit
+                    </h3>
+                    <p class="result"
+                    >Webdevelopment, Social Media Management, Content Creation</p
+                    >
+                    <ul class="optional">
+
+                        <li>
+                            Design und Entwicklung von Webseiten und Webapps mit Hilfe von
+                            modernen Web-Technologien, sowie Einbindung verschiedener APIs
+                        </li>
+                        <li>Kundenbetreuung und Begleitung</li>
+                        <li>Verwaltung von Social Media Accounts</li>
+                        <li>
+                            Verfassen von Artikeln und Rezepten zu Themen rund um die
+                            Bio-Gewürzherstellung und Verwendung
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+        <div class="page stack -layout-2xl">
+            <section class="entry stack -layout-xl">
+                <article class="stack -layout-s">
+                    <h3 data-label="09.2019 - 12.2019">
+                        Praktikum bei Strichpunkt Design, Berlin
+                    </h3>
+                    <p class="result"
+                    >Webdevelopment mit Angular, React und Vue</p
+                    >
+                </article>
+                <article class="stack -layout-s">
+                    <h3 data-label="01.2020 - 09.2020">
+                        Frontend-Developer bei Strichpunkt Design, Berlin
+                    </h3>
+                    <p
+                            class="result"
+                    >Technische Betreuung und Entwicklung mit Angular, React und
+                        Vue</p
+                    >
+                    <ul class="optional">
+                        <li>
+                            Verantwortlich für die Frontend-Entwicklung einer medium-scale
+                            Fintech Webapp und Webseite, unter Benutzung von React/Gatsby und
+                            Angular 2
+                        </li>
+                        <li>
+                            Koordination mit Kunden und anderen in- und externen Design,
+                            Entwicklungs-Teams und SEO-Teams
+                        </li>
+                        <li>
+                            Enge Zusammenarbeit mit internen Teams zur Weiterentwicklung und
+                            Zukunftsplanung eines Kundenprojekts
+                        </li>
+                        <li>
+                            Mitarbeit an Verwaltungsplattform eines Post- und
+                            Transportgroßkunden
+                        </li>
+                        <li>
+                            Mitarbeit an grafisch aufwändigen Stiftungswebseiten mit Einblick
+                            in WebGL
+                        </li>
+                    </ul>
+                </article>
+                <article class="stack -layout-s">
+                    <h3 data-label="01.2020 - 07.2021">
+                        Frontend-Entwickler bei Bloxxter, Hamburg
+                    </h3>
+                    <p
+                            class="result"
+                    >Web Entwicklung mit Angular und React und Pflege des Frontends einer Immobilien Investment
+                        Plattform
+                        auf Blockchain Technologie Basis</p
+                    >
+                    <ul class="optional">
+                        <li>
+                            Entwicklung & Instandhaltung der Internet-Präsenz
+                        </li>
+                        <li>
+                            Frontend-Entwicklung des Kunden-Dashboards (Angular / RXJS / Redux) mit selbstgebauten
+                            Shopsystem in enger Zusammenarbeit mit dem Backend
+                        </li>
+                        <li>
+                            Entwicklung und Instandhaltung des Backoffice mit vielen Kunden und bestellungsverwaltenden
+                            Funktionen
+                        </li>
+                        <li>
+                            Entwicklung eines Smart Contract Wizard Prototyps und Implementierung
+                        </li>
+                        <li>
+                            Pflege des Contentful CMS und Usercentrics
+                        </li>
+                        <li>
+                            Einblicke in viele Abläufe von Immobilien Investments
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+        <div class="page stack -layout-2xl">
+            <section class="entry stack -layout-xl">
+                <article class="stack -layout-s">
+                    <h3 data-label="07.2021 - Heute">
+                        Frontend-Entwickler bei quirion, Berlin (Übernahme)
+                    </h3>
+                    <p
+                            class="result"
+                    >Fortsetzung der Tätigkeiten bei Bloxxter & Entwicklung von verschiedenen React-basierten
+                        Anwendungen</p
+                    >
+                    <ul
+                            class="optional">
+                        <li>
+                            Refactoring & Weiterentwicklung des bestehenden Component Systems in Typescript und
+                            CSS-Modules
+                        </li>
+                        <li>
+                            Entwicklung eines Prototyps einer Handelsplattform
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="optional stack -layout-2xl">
+                <h2 class="-with-dot">Interessen</h2>
+                <div class="entry">
+                    <p data-label="Hobbies">
+                        Kochen & Essen, Sport & Gesundheit, Technologie, Musik, Fotografie, Garten, Handwerken und Tiere
+                    </p>
+                </div>
+            </section>
+
+        </div>
+        </div>
         </div>
 </DefaultLayout>
