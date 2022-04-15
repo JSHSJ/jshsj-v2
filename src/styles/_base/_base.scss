@@ -283,7 +283,8 @@ a,
       margin-right: var(--s-5);
       transform: translateY(-0.125em);
       text-decoration: none;
-      color: var(--text2);
+      color: inherit;
+      opacity: 0.8;
     }
   }
 }
