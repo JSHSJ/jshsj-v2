@@ -356,3 +356,7 @@ pre {
   color: var(--text2);
   border: var(--border-thick) solid var(--text2);
 }
+
+[data-footnote-ref] {
+  color: var(--brand);
+}
