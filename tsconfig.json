@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "moduleResolution": "node",
     "paths": {
       "@/src/*": ["src/*"],
       "@/public/*": ["public/*"],
@@ -14,6 +15,8 @@
       "@/pages/*": ["src/pages/*"],
       "@/styles/*": ["src/styles/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/intl/*": ["src/intl/*"],
+      "@/types/*": ["src/types/*"],
     }
   }
 }
