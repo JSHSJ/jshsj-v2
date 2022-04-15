@@ -32,21 +32,19 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
             display: block;
     }
 
-    .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--size-lg);
-        }
+    // .container {
+    //         display: grid;
+    //         grid-template-columns: 1fr 1fr;
+    //         gap: var(--size-lg);
+    //     }
 }
 </style>
 
 <DefaultLayout title={"Ich in Zahlen"} description={"Für den schnellen Blick. Einmal gucken und mehr wisse. Oder auch nicht."} canonical={Astro.canonicalURL}>
-<div class="layout-container stack -layout-xl | mt-header">
+<div class="layout-container stack -layout-2xl | mt-header">
           <h1 class="section-title">In Zahlen</h1>
-          <div class="main stack short cv">
-        <div class="page stack -layout-2xl">
-            <section class="container">
-                <div class="contact stack -layout-lg">
+          <section class="full-width with-sidebar">
+                <div class="contact stack -layout-lg" data-grow style="--min-size: 30%">
                     <div class="stack -layout-xs">
                         <h2>Wer</h2>
                         <p>Joshua Stübner</p>
@@ -61,7 +59,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                         <p data-label="Website">joshuastuebner.com</p>
                     </div>
                 </div>
-                <section class="entry summary">
+                <section class="entry summary" data-aside>
                     <h2 class="-with-dot">Zusammenfassung</h2>
                     <p>
                         Ich bin ein ambitionierter <strong>(Frontend) Web Entwickler</strong> mit Fokus auf <strong>Problemlösung,
@@ -76,8 +74,9 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                         Interesse an UX versuche ich möglichst angenehme und effektive User Interfaces zu bauen.</p>
                 </section>
             </section>
-
-            <section class="entry stack -layout-xl">
+          <div class="main stack short cv">
+        <div class="page stack -layout-2xl">
+                        <section class="entry stack -layout-xl">
                 <h2 class="-with-dot">Bildung & Ausbildung</h2>
                 <div class="stack -layout-s">
                 <h3 data-label="08.2003 - 07.2011">
