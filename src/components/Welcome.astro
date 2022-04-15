@@ -1,6 +1,28 @@
 ---
 import Logo from "./Logo.astro"
 import {MY_EMAIL} from "@/config/index.ts"
+import { getLocalisedContent } from "@/intl/getLocalisedContent"
+
+const content = {
+  de: {
+    "greeting": "Hi, ich bin",
+    "workAs": "und arbeite als",
+    "jobTitle": "Web Entwickler",
+    "atTheMoment": "zur Zeit bei",
+    "workLocation": "quirion",
+    "getInContact": "Du kannst mir aber gerne eine Mail schreiben",
+  },
+  en: {
+    "greeting": "Hi, I'm",
+    "workAs": "and work as",
+    "jobTitle": "Web Developer",
+    "atTheMoment": "at the moment at",
+    "workLocation": "quirion",
+    "getInContact": "You're still welcome to contact me at",
+  }
+}
+
+const localisedContent = getLocalisedContent(content, "de")
 ---
 <style lang="scss">
 

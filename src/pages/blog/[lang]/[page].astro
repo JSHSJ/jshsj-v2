@@ -1,4 +1,5 @@
 ---
+import type { BlogPost } from '@/types/Blog.type'
 import {Navigation} from "@/config/index.ts";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import BlogList from "@/components/BlogList.astro"
@@ -13,17 +14,17 @@ const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
 const currentRoute = Navigation.blogRoot.url
 
-const allBlogPosts = await Astro.fetchContent("../../../content/Blog/*.md");
+const allBlogPosts = await Astro.glob<BlogPost>("../../../content/Blog/*.md");
 
 // ALL Posts formatted
 const formattedBlogposts = allBlogPosts.map(project => ({
-    ...project,
-    slug: slugify(project.title),
+    ...project.frontmatter,
+    slug: slugify(project.frontmatter.title),
 })).sort(sortByDateDesc)
 
 // Create array for all keys
 const allLangs = Array.from(new Set(allBlogPosts
-.map(blog => blog.lang)
+.map(blog => blog.frontmatter.lang)
 .reduce((allLangs, lang) => allLangs.concat(lang), [])))
 
 return allLangs.map(lang => {
@@ -58,7 +59,7 @@ const {page, currentLang, allLangs, currentRoute, title, description} = Astro.pr
 
 </head>
 
-<DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={Astro.request.canonicalURL}>
+<DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={Astro.canonicalURL}>
 <div class="section layout-container blog-layout | mt-header">
     <h1 class="section-title -with-dot -dot-top">Blog</h1>
     <TagFilter hasReset={true} tags={allLangs.map(lang => lang.toLowerCase())} tagName="Sprache" tagRootUrl="/blog/" selected={currentLang} hasPagination={true} />

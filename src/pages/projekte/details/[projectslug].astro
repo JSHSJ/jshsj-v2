@@ -1,4 +1,5 @@
 ---
+import type { Project } from '@/types/Project.type';
 import {Navigation} from "@/config/index.ts";
 
 import { slugify} from "@/utils/slugify.ts"
@@ -6,14 +7,14 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import SidebarNav from "@/components/SidebarNav.astro";
 
-import IconPageLink from "@/components/icons/Icon-PageLink.astro"
-
 export async function getStaticPaths() {
-  const allProjects = await Astro.fetchContent("../../../content/Projekte/*.md");
-  const projectsWithSlugs = allProjects.map(p => ({
+  const allProjects = await Astro.glob<Project>("../../../content/Projekte/*.md");
+  const projectsWithSlugs = await Promise.all(allProjects.map(async (p) => ({
     ...p,
-    slug: slugify(p.title),
-  }))
+    ...p.frontmatter,
+    headers: await p.getHeaders(),
+    slug: slugify(p.frontmatter.title),
+  })))
 
   return projectsWithSlugs.map(project => {
     return {
@@ -23,10 +24,10 @@ export async function getStaticPaths() {
   })
 }
 
-const { pathname } = Astro.request.url;
+const { pathname } = Astro.site;
 const { project } = Astro.props
 
-const { Content } = project;
+const { Content, headers } = project;
 
 
 const projectCrumbs = [
@@ -44,9 +45,9 @@ dl {
 </style>
 
 
-<DefaultLayout title={project.title} description={project.description} canonical={Astro.request.canonicalURL}>
+<DefaultLayout title={project.title} description={project.description} canonical={Astro.canonicalURL}>
 <div class="layout-container mt-header">
-  <SidebarNav headers={project.astro.headers}></SidebarNav>
+  <SidebarNav headers={headers}></SidebarNav>
   <div class="stack -layout-xl">
   <div>
     <Breadcrumbs crumbs={projectCrumbs}></Breadcrumbs>
