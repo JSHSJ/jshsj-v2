@@ -1,4 +1,5 @@
 ---
+import IconPageLink from "./icons/Icon-PageLink.astro"
 import {Navigation} from "@/config/index.ts";
 const {projects} = Astro.props;
 ---
@@ -16,5 +17,11 @@ const {projects} = Astro.props;
       {projectIndex !== projects.length - 1 && (<hr />)}
     </li>
       ))}
-
 </ul>
+<div class="cluster extra-links standout-box" data-aside>
+      <a href={Navigation.projects.url} class="link-with-icon">
+      <IconPageLink></IconPageLink><span>Alle Projekte</span></a>
+      <a href="https://github.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitHub</span></a>
+      <a href="https://sr.ht/~jshsj/" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>sourcehut</span></a>
+      <a href="https://gitlab.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitLab</span></a>
+    </div>
