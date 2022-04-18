@@ -5,6 +5,8 @@ import { slugify} from "@/utils/slugify"
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import SidebarNav from "@/components/SidebarNav.astro";
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 
 export async function getStaticPaths() {
   const allBlogPosts = await Astro.glob<BlogPost>("/src/content/Blog/*.md");
@@ -30,7 +32,7 @@ const {blogpost} = Astro.props;
 const { Content, headers } = blogpost;
 
 const blogpostCrumbs = [
-  Navigation.blogStart,
+  {url: Navigation.blogStart.url, name: getTranslation(Navigation.blogStart.name, DE)},
   {name: blogpost.title,
   url: pathname}
 ]

@@ -17,6 +17,7 @@
       "@/utils/*": ["src/utils/*"],
       "@/intl/*": ["src/intl/*"],
       "@/types/*": ["src/types/*"],
+
     }
   }
 }

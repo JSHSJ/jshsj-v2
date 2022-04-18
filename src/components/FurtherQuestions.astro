@@ -1,9 +1,11 @@
 ---
 import {MY_EMAIL} from "@/config/index.ts"
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 ---
 
 <section class="note -info flow -layout-m">
-  <p>Hast du noch Fragen, Anmerkungen, Vorschläge oder möchtest einfach nur was loswerden?</p>
+  <p data-translate="furtherQuestions.text">{getTranslation('furtherQuestions.text', DE)}</p>
   <p>
     <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a>
   </p>

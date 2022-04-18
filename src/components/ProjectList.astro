@@ -1,6 +1,8 @@
 ---
 import IconPageLink from "./icons/Icon-PageLink.astro"
 import {Navigation} from "@/config/index.ts";
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 const {projects} = Astro.props;
 ---
 <ul class="list-reset stack -layout-xl">
@@ -20,7 +22,9 @@ const {projects} = Astro.props;
 </ul>
 <div class="cluster extra-links standout-box" data-aside>
       <a href={Navigation.projects.url} class="link-with-icon">
-      <IconPageLink></IconPageLink><span>Alle Projekte</span></a>
+      <IconPageLink></IconPageLink><span
+      data-translate="projects.allProjects"
+      >{getTranslation('projects.allProjects', DE)}</span></a>
       <a href="https://github.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitHub</span></a>
       <a href="https://sr.ht/~jshsj/" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>sourcehut</span></a>
       <a href="https://gitlab.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitLab</span></a>

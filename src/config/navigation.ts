@@ -1,46 +1,46 @@
 export const Navigation = {
   start: {
     url: "/",
-    name: "Start",
+    name: "navigation.start",
   },
   projects: {
     url: "/projekte",
-    name: "Projekte",
+    name: "navigation.projects",
   },
   projectDetails: {
     url: "/projekte/details",
-    name: "Projektdetails",
+    name: "navigation.projectDetails",
   },
   blogRoot: {
     url: "/blog",
-    name: "Blog",
+    name: "navigation.blog",
   },
   blogStart: {
     url: "/blog/1",
-    name: "Blog",
+    name: "navigation.blog",
   },
   blogPost: {
     url: "/blog/post",
-    name: "Blogpost",
+    name: "navigation.blogPost",
   },
   devBlog: {
     url: "https://dev.joshuastuebner.com/",
-    name: "Dev Blog"
+    name: "navigation.devBlog",
   },
   zeug: {
     url: "/zeug",
-    name: "Zeug",
+    name: "navigation.thingsILike",
   },
   inZahlen: {
     url: "/in-zahlen",
-    name: "In Zahlen",
+    name: "navigation.inData",
   },
   imprint: {
     url: "/impressum",
-    name: "Impressum",
+    name: "navigation.imprint",
   },
   dataPolicy: {
     url: "/datenschutz",
-    name: "Datenschutz",
+    name: "navigation.dataPolicy",
   },
 };

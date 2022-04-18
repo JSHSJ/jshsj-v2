@@ -6,6 +6,8 @@ import { slugify} from "@/utils/slugify.ts"
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import SidebarNav from "@/components/SidebarNav.astro";
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 
 export async function getStaticPaths() {
   const allProjects = await Astro.glob<Project>("/src/content/Projekte/*.md");
@@ -31,7 +33,7 @@ const { Content, headers } = project;
 
 
 const projectCrumbs = [
-  Navigation.projects,
+  {url: Navigation.projects.url, name: getTranslation(Navigation.projects.name, DE)},,
   {name: project.title,
   url: pathname}
 ]
@@ -58,19 +60,25 @@ dl {
     </h2>
     </div>
     <dl>
-      <dt>Beschreibung: </dt>
+      <dt data-translate="projects.description">
+      {getTranslation('projects.description', DE)}
+      </dt>
       <dd>
       {project.description}
       </dd>
-      <dt>Tech Stack: </dt>
+      <dt data-translate="projects.techStack">
+      {getTranslation('projects.techStack', DE)}
+      </dt>
       <dd>
       {project.techstack}
       </dd>
-      <dt>Link: </dt>
+      <dt>Link</dt>
       <dd>
       <a href={project.link} target="_blank" rel="noopener norefferer">{project.link}</a>
       </dd>
-      <dt>Jahr: </dt>
+      <dt data-translate="projects.year">
+      {getTranslation('projects.year', DE)}
+      </dt>
       <dd>{project.year}</dd>
     </dl>
     <div class="flow">

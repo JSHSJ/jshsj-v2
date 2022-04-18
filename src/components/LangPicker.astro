@@ -1,0 +1,63 @@
+---
+
+---
+<style lang="scss">
+
+html:lang(de) {
+ & button[data-lang-toggle="en"] {
+    display: block;
+ }
+
+ & button[data-lang-toggle="de"] {
+   display: none;
+ }
+}
+
+html:lang(en) {
+ & button[data-lang-toggle="en"] {
+    display: none;
+ }
+
+ & button[data-lang-toggle="de"] {
+   display: block;
+ }
+}
+</style>
+
+<div>
+  <button class="CTA-button -secondary -small" data-lang-toggle="en">Translate</button>
+  <button class="CTA-button -secondary -small" data-lang-toggle="de">Übersetzen</button>
+</div>
+
+<script lang="ts" type="module">
+
+ const DE = await fetch("/translations/de.json").then(r => r.json())
+ const EN = await fetch("/translations/en.json").then(r => r.json())
+
+const translations = {
+  de: DE,
+  en: EN
+}
+
+const langButtons = document.querySelectorAll("[data-lang-toggle]");
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+  const lang = btn.dataset.langToggle;
+  translate(lang)
+  }
+)
+})
+
+const translate = (lang) => {
+  const html = translations[lang]
+  const translationNodes = document.querySelectorAll('[data-translate]');
+  translationNodes.forEach(node => {
+    const key = node.dataset.translate;
+    const translation = html[key];
+    node.innerHTML = translation;
+    document.documentElement.lang = lang;
+  })
+}
+
+</script>

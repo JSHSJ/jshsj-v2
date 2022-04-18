@@ -1,0 +1,51 @@
+{
+    "welcome.greeting": "Hi, I'm",
+    "welcome.workAs": "and work as",
+    "welcome.jobTitle": "Web Developer",
+    "welcome.atTheMoment": "at the moment at",
+    "welcome.workLocation": "quirion",
+    "welcome.getInContact": "You're still welcome to contact me at",
+
+    "share.text": "<strong>Still hungry?</strong>&nbsp;&nbsp;&nbsp;Do something.",
+    "share.cta": "Share a meal",
+
+    "projects.headline": "Projects",
+    "projects.allProjects": "All projects",
+    "projects.description": "Description",
+    "projects.techStack": "Tech stack",
+    "projects.year": "Year",
+
+    "aboutMe.headline": "Mehr von mir",
+    "aboutMe.intro": "Besides the usual &quot;I like tech and am very ambitioned&quot;, I enjoy a few more things outside of the buble. Instead of writing long paragraphs of text, please check out the following:",
+
+    "blog.headline": "Blog",
+    "blog.intro": "A blog about things I want to write about. Probably food, garden, thoughts and the internet.",
+    "blog.getNotified": "Want to stay updated?",
+
+    "thingsILike.headline": "Things I like",
+    "thingsILike.intro": "A list of things I like: people, products and various other things.",
+
+    "inData.headline": "In Data: Joshua",
+    "inData.intro": "CV, &quot;skills&quot;, hobbies, facts. Important to some, uninteresting to others.",
+
+
+    "general.filterBy": "Filter by",
+    "general.all": "all",
+    "general.chapter": "Chapter",
+    "general.from": "from",
+    "general.language": "Language",
+    "general.skipLink": "Go to content",
+
+    "furtherQuestions.text": "Do you have any questions, feedback or just want to talk?",
+
+    "navigation.start": "Start",
+    "navigation.projects": "Projects",
+    "navigation.projectDetails": "Project details",
+    "navigation.blog": "Blog",
+    "navigation.blogPost": "Blog post",
+    "navigation.devBlog": "Dev Blog",
+    "navigation.thingsILike": "Things",
+    "navigation.inData": "In Data",
+    "navigation.imprint": "Imprint",
+    "navigation.dataPolicy": "Data policy"
+}

@@ -2,6 +2,8 @@
 import FurtherQuestions from "./FurtherQuestions.astro"
 import FooterCat from "./FooterCat.astro"
 import {Navigation} from "@/config/index.ts"
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 
 const NavItemsLeft = [
   Navigation.start,
@@ -58,12 +60,12 @@ footer {
   <nav class="footer-container">
     <ul class="list-reset -layout-m">
       {NavItemsLeft.map(item => (
-        <li><a href={item.url}>{item.name}</a></li>
+        <li><a href={item.url} data-translate={item.name}>{getTranslation(item.name, DE)}</a></li>
       ))}
     </ul>
     <ul class="list-reset -layout-m">
       {NavItemsRight.map(item => (
-        <li><a href={item.url}>{item.name}</a></li>
+        <li><a href={item.url} data-translate={item.name}>{getTranslation(item.name, DE)}</a></li>
       ))}
     </ul>
   </nav>

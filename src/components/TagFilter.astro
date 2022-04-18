@@ -1,4 +1,6 @@
 ---
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 interface Props {
   tags: string[];
   tagName: string;
@@ -22,9 +24,15 @@ const {tags, tagName, tagRootUrl, selected, hasPagination, hasReset} = Astro.pro
 </style>
 
 <div class="stack -layout-s | tagFilter" data-filter>
-<p class="-medium">Filter nach {tagName}: </p>
+<p class="-medium">
+<span data-translate="general.filterBy">
+ {getTranslation('general.filterBy', DE)}
+</span>
+<span data-translate={tagName}>{getTranslation(tagName, DE)}</span></p>
 <ul class="list-reset cluster">
-  {hasReset && <li><a class={`CTA-button -secondary -small${selected ? '': ' -active'}`} href={`${tagRootUrl}${hasPagination ? "1" : ''}`} aria-current={!selected}>alle</a></li>}
+  {hasReset && <li><a class={`CTA-button -secondary -small${selected ? '': ' -active'}`} href={`${tagRootUrl}${hasPagination ? "1" : ''}`} aria-current={!selected} data-translate="general.all">
+  {getTranslation('general.all', DE)}
+  </a></li>}
   {tags.map(tag => (
     <li>
       <a class={`CTA-button -secondary -small${tag.toLowerCase() === selected.toLowerCase() ? ' -active': ''}`} href={`${tagRootUrl}${tag.toLowerCase()}${hasPagination ? "/1" : ''}`} aria-current={tag.toLowerCase() === selected.toLowerCase()}>{tag}</a>

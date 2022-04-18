@@ -1,0 +1,50 @@
+{
+    "welcome.greeting": "Hi, ich bin",
+    "welcome.workAs": "und arbeite als",
+    "welcome.jobTitle": "Web Entwickler",
+    "welcome.atTheMoment": "zur Zeit bei",
+    "welcome.workLocation": "quirion",
+    "welcome.getInContact": "Du kannst mir aber gerne eine Mail schreiben",
+
+    "share.text": "<strong>Immer noch Hunger?</strong>&nbsp;&nbsp;&nbsp;Mach was dagegen.",
+    "share.cta": "Essen teilen",
+
+    "projects.headline": "Projekte",
+    "projects.allProjects": "Alle Projekte",
+    "projects.description": "Beschreibung",
+    "projects.techStack": "Tech stack",
+    "projects.year": "Jahr",
+
+    "aboutMe.headline": "Mehr von mir",
+    "aboutMe.intro": "Neben dem üblichen &quot;Ich beschäftige mich gerne mit Tech-Zeug und bin sehr ambitioniert&quot;, gibt es auch noch andere Dinge, mit den ich meine Zeit verbringe. Statt hier viel Text über mich zu schreiben, möchte ich lieber einfach auf folgende Sachen verweisen:",
+
+    "blog.headline": "Blog",
+    "blog.intro": "Ein Blog über alles, worüber ich schreiben möchte. Vermutlich ein Mix aus Leben, Tech, Essen und mir.",
+    "blog.getNotified": "Möchtest du mitkriegen, wenn es was neues gibt?",
+    
+    "thingsILike.headline": "Dinge, die ich mag",
+    "thingsILike.intro": "Eine Liste von Menschen, Ideen, Produkten und anderen Dingen, die mir gut gefallen und die ich daher teilen möchte.",
+
+    "inData.headline": "Ich in Daten",
+    "inData.intro": "Lebenslauf, &quot;Skills&quot;, Hobbies, Zahlen. Wichtig für manche, unwichtig für andere.",
+
+    "general.filterBy": "Filter nach",
+    "general.all": "alle",
+    "general.chapter": "Kapitel",
+    "general.from": "vom",
+    "general.language": "Sprache",
+    "general.skipLink": "Zum Inhalt",
+
+    "furtherQuestions.text": "Hast du noch Fragen, Anmerkungen, Vorschläge oder möchtest einfach nur was loswerden?",
+
+    "navigation.start": "Start",
+    "navigation.projects": "Projekte",
+    "navigation.projectDetails": "Projekt Details",
+    "navigation.blog": "Blog",
+    "navigation.blogPost": "Blog Post",
+    "navigation.devBlog": "Dev Blog",
+    "navigation.thingsILike": "Zeug",
+    "navigation.inData": "In Zahlen",
+    "navigation.imprint": "Impressum",
+    "navigation.dataPolicy": "Datenschutz"
+}

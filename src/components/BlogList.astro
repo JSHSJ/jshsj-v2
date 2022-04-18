@@ -1,5 +1,7 @@
 ---
 import {Navigation} from "@/config/index.ts"
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 const {blogPosts} = Astro.props;
 ---
 
@@ -35,9 +37,11 @@ const {blogPosts} = Astro.props;
           </a>
           <p>
           {blogPost.description}</p>
-          <div class="cluster typo-s -layout-3xs | meta">
+          <div class="cluster typo-s -layout-s | meta">
           <span class="jshsj-tag lang">{blogPost.lang.toLowerCase()}</span>
-          <time class="date">vom {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags">{blogPost.tags.map((tag, i) => (
+          <time class="date"><span data-translate="general.from">
+          {getTranslation('general.from', DE)}
+          </span> {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags">{blogPost.tags.map((tag, i) => (
             <span class="jshsj-tag">{tag}</span>
           ))}
           </div>

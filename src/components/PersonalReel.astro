@@ -1,29 +1,40 @@
 ---
 import {Navigation} from "@/config/index.ts"
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
 ---
 
 
 <section class="section layout-container | personalReel">
   <div class="stack -layout-xl">
-  <h2 class="section-title typo-hollow -with-dot -dot-top-right"><span>Mehr von mir</span></h2>
+  <h2 class="section-title typo-hollow -with-dot -dot-top-right"><span data-translate="aboutMe.headline">
+  {getTranslation('aboutMe.headline', DE)}</span></h2>
   <div class="flow -layout-l">
-  <p>Neben dem üblichen "Ich beschäftige mich gerne mit Tech-Zeug und bin sehr ambitioniert", gibt es auch noch andere Dinge, mit den ich meine Zeit verbringe.</p>
-  <p>Statt hier viel Text über mich zu schreiben, möchte ich lieber einfach auf folgende Sachen verweisen:</p>
+  <p data-translate="aboutMe.intro" set:html={getTranslation('aboutMe.intro', DE)}></p>
   <h3 class="typo-l -bold -font-headline">
-    <a href={Navigation.blogStart.url}>Mein Blog</a>
+    <a href={Navigation.blogStart.url}
+      data-translate="blog.headline"
+    >{getTranslation('blog.headline', DE)}</a>
   </h3>
-  <p>Ein Blog über alles, worüber ich schreiben möchte. Vermutlich ein Mix aus Leben, Tech, Essen und mir.</p>
+  <p data-translate="blog.intro">
+  {getTranslation('blog.intro', DE)}</p>
 
   <h3 class="typo-l -bold -font-headline">
-    <a href={Navigation.zeug.url}>Zeug, das ich mag</a>
+    <a
+    href={Navigation.zeug.url}
+    data-translate="thingsILike.headline"
+    >{getTranslation('thingsILike.headline', DE)}</a>
   </h3>
-  <p>Eine Liste von Menschen, Ideen, Produkten und anderen Dingen, die mir gut gefallen und die ich daher teilen möchte.</p>
+  <p data-translate="thingsILike.intro">
+  {getTranslation('thingsILike.intro', DE)}</p>
 
 
   <h3 class="typo-l -bold -font-headline">
-    <a href={Navigation.inZahlen.url}>Ich in Daten</a>
+    <a href={Navigation.inZahlen.url}
+    data-translate="inData.headline"
+    >{getTranslation('inData.headline', DE)}</a>
   </h3>
-  <p>Lebenslauf, "Skills", Hobbies, Zahlen. Wichtig für manche, unwichtig für andere.</p>
+  <p data-translate="inData.intro" set:html={getTranslation('inData.intro', DE)}></p>
 
   </div>
   </div>
