@@ -15,7 +15,7 @@ const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
 const currentRoute = Navigation.blogRoot.url
 
-const allBlog = await Astro.glob<BlogPost>("../../content/Blog/*.md");
+const allBlog = await Astro.glob<BlogPost>("/src/content/Blog/*.md");
 const formattedBlogposts = allBlog.map(post => ({
     ...post.frontmatter,
     slug: slugify(post.frontmatter.title),

@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import SidebarNav from "@/components/SidebarNav.astro";
 
 export async function getStaticPaths() {
-  const allBlogPosts = await Astro.glob<BlogPost>("../../../content/Blog/*.md");
+  const allBlogPosts = await Astro.glob<BlogPost>("/src/content/Blog/*.md");
 
   const blogWithSlugs = await Promise.all(allBlogPosts.map(async (bp) => ({
     ...bp.frontmatter,

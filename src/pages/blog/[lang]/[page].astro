@@ -14,7 +14,7 @@ const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
 const currentRoute = Navigation.blogRoot.url
 
-const allBlogPosts = await Astro.glob<BlogPost>("../../../content/Blog/*.md");
+const allBlogPosts = await Astro.glob<BlogPost>("/src/content/Blog/*.md");
 
 // ALL Posts formatted
 const formattedBlogposts = allBlogPosts.map(project => ({

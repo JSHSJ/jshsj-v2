@@ -11,7 +11,7 @@ import ShareTheMeal from "@/components/ShareTheMeal.astro";
 
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 
-const allProjects = await Astro.glob<Project>("../content/Projekte/*.md");
+const allProjects = await Astro.glob<Project>("/src/content/Projekte/*.md");
 const formattedProjects = allProjects.map(project => ({
     ...project.frontmatter,
     slug: slugify(project.frontmatter.title),

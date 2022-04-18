@@ -4,11 +4,9 @@ import { slugify } from '@/utils/slugify';
 import { sortByDateDesc } from '@/utils/sortByDate';
 
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
-
-import Circle from '@/components/Circle.astro';
 import ProjectList from "@/components/ProjectList.astro"
 
-const allProjects = await Astro.glob<Project>("../../content/Projekte/*.md");
+const allProjects = await Astro.glob<Project>("/src/content/Projekte/*.md");
 const formattedProjects = allProjects.map(project => ({
     ...project.frontmatter,
     slug: slugify(project.frontmatter.title),

@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import SidebarNav from "@/components/SidebarNav.astro";
 
 export async function getStaticPaths() {
-  const allProjects = await Astro.glob<Project>("../../../content/Projekte/*.md");
+  const allProjects = await Astro.glob<Project>("/src/content/Projekte/*.md");
   const projectsWithSlugs = await Promise.all(allProjects.map(async (p) => ({
     ...p,
     ...p.frontmatter,
