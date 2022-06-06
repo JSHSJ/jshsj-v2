@@ -26,7 +26,24 @@
     "thingsILike.intro": "A list of things I like: people, products and various other things.",
 
     "inData.headline": "In Data: Joshua",
-    "inData.intro": "CV, &quot;skills&quot;, hobbies, facts. Important to some, uninteresting to others.",
+    "inData.intro": "CV, &quot;skills&quot;, facts. Important to some, uninteresting to others.",
+
+    "now.headline": "What now?",
+    "now.intro": "For everyone asking 'What are you up to now?'",
+    "now.dogHeadline": "New dog",
+    "now.dogText": "I have a dog now. She's a mixed breed from a dog shelter in Greece. Her name's 'Alaia' and she wasa born in Octobre 2021. I got her this May and it's been a hell of a time. Exciting, joyful and LOTS to learn. We're getting closer every day, it's a lot of work and a lot of happiness. You should meet her.",
+
+    "now.houseHeadline": "House and garden",
+    "now.houseText": "Still lots of fun. Inside is great, everything is sort of setup. Outside is even better in the summer. I'm spending most of my time outside of work outside and look at plants. I've planted lots of vegetables and a ton of nice flowers, hoping for the best. It's fun and I'm very curious how things will develop",
+
+    "now.workHeadline": "Work",
+    "now.workText": "Also new changes here: I've taken a new position, though I'm not gonna say where yet. I'm really looking forward to it, the culture and the people sound amazing and I hope to learn quite a bit there. Oh yeah, money is also great. However, leaving the old position wasn't easy. I met a lot of great people there, which I'll miss quite a bit.",
+
+    "now.restHeadline": "What else?",
+    "now.restText": "Those were the major things. There's still a ton of things beside that, here's a list: I still like my coffee. I started drinking more tea and cocoa, too. I found a paradise cafe near me, which inspired me quite a bit. I walk now more than ever before, feels good. Still work out, still cook, although mostly simple foods. I listen to a lot of audio books, enjoy the quiet, read philosophical books with a friend and pet my cats. I'm also still learning French.",
+
+    "now.nowInfo": "This is a 'now'-Seite, where you'll find what keeps me busy at the moment. Inspired by:",
+    "now.end": "C'est tout. If you want to know more, call me or send me a message!",
 
 
     "general.filterBy": "Filter by",
@@ -35,6 +52,7 @@
     "general.from": "from",
     "general.language": "Language",
     "general.skipLink": "Go to content",
+    "general.updatedOn": "Updated on",
 
     "furtherQuestions.text": "Do you have any questions, feedback or just want to talk?",
 
@@ -47,5 +65,6 @@
     "navigation.thingsILike": "Things",
     "navigation.inData": "In Data",
     "navigation.imprint": "Imprint",
-    "navigation.dataPolicy": "Data policy"
+    "navigation.dataPolicy": "Data policy",
+    "navigation.now": "Now"
 }

@@ -25,8 +25,27 @@
     "thingsILike.headline": "Dinge, die ich mag",
     "thingsILike.intro": "Eine Liste von Menschen, Ideen, Produkten und anderen Dingen, die mir gut gefallen und die ich daher teilen möchte.",
 
-    "inData.headline": "Ich in Daten",
-    "inData.intro": "Lebenslauf, &quot;Skills&quot;, Hobbies, Zahlen. Wichtig für manche, unwichtig für andere.",
+    "inData.headline": "Berufliche Zahlen",
+    "inData.intro": "Lebenslauf, &quot;Skills&quot;, Zahlen. Wichtig für manche, unwichtig für andere.",
+
+    "now.headline": "Und jetzt?",
+    "now.intro": "Für alle, die sich fragen: Was machst du gerade?",
+    "now.dogHeadline": "Neuer Hund",
+    "now.dogText": "Ich habe jetzt einen Hund, der mein Leben stark prägt. Sie ist ein Mischlung aus dem griechischen Tierschutz, schön und weiß. Sie heißt Alaia, was auf griechisch so viel wie 'die Fröhliche' bedeutet und wurde im Oktober 2021 geboren. Nun ist sie seit Mitte Mai bei mir und wir lernen miteinander umzugehen. Es ist spannend, aufregend, freudig und schön.",
+
+    "now.houseHeadline": "Haus und Garten",
+    "now.houseText": "Immernoch viel Freude. Im Haus ist es schön, im Sommer aber vor allem draußen. Ich versuche Pflanzen zu pflanzen: schöne, leckere, große, kleine und manchmal auch noch andere. Das läuft ziemlich frei Schnauze und ich habe noch viel zu lernen, genieße aber auch diesen Prozess. Bisher die wichtigsten Erkenntnisse: Unkraut muss im Zaum gehalten werden, da es sonst alles überwuchert und beim nächsten Mal beschrifte ich doch lieber, was ich wo angebaut habe. Die vielen Farben sind eine Pracht und ich bin riesig gespannt, wie es in ein paar Jahren aussieht.",
+    "now.workHeadline": "Arbeit",
+    "now.workText": "Auch hier gibt's Veränderungen: Ich habe eine neue Stelle angenommen, wo schreibe ich später. Ich bin ein bisschen traurig, auf der alten Stelle gabs ein paar wirklich nette Leute, aber ich freue mich aufs Neue. Die Leute scheinen super cool und die Unternehmenskultur scheint mehr zu dem zu passen, was ich mag, das Thema sowieso. Achja, Geld ist natürlich auch gut.",
+
+    "now.restHeadline": "Und sonst so?",
+    "now.restText": "Das waren die großen Dinge. Darüber hinaus gibt's noch viele kleine. Ich trinke immernoch gerne Kaffee, jetzt auch vermehrt Kakao und Tee. Ich hab ein feines neues Kaffee in einem prächtigen Garten entdeckt. Ich gehe nun noch mehr spazieren, als vorher. Sport mach ich sowieso. Ich esse meistens einfache Küche und genieße wirklich manchmal die Ruhe. Ich höre eine Menge Hörbücher, ich lese mit einem Freund philosophische Bücher und ich streichle meine Katzen. Ohja, ich lerne auch noch Französisch, c'est genial.",
+
+    "now.nowInfo": "Das ist eine 'now'-Seite. Hier gibt's also ein paar aktuelle Infos. Inspiration von:",
+    "now.end": "Und das ist alles. Wenn du mehr wissen willst, ruf doch mal an oder schreib mir!",
+
+    
+
 
     "general.filterBy": "Filter nach",
     "general.all": "alle",
@@ -34,6 +53,7 @@
     "general.from": "vom",
     "general.language": "Sprache",
     "general.skipLink": "Zum Inhalt",
+    "general.updatedOn": "Aktualisiert am",
 
     "furtherQuestions.text": "Hast du noch Fragen, Anmerkungen, Vorschläge oder möchtest einfach nur was loswerden?",
 
@@ -44,7 +64,8 @@
     "navigation.blogPost": "Blog Post",
     "navigation.devBlog": "Dev Blog",
     "navigation.thingsILike": "Zeug",
-    "navigation.inData": "In Zahlen",
+    "navigation.inData": "Berufliche Zahlen",
     "navigation.imprint": "Impressum",
-    "navigation.dataPolicy": "Datenschutz"
+    "navigation.dataPolicy": "Datenschutz",
+    "navigation.now": "Jetzt"
 }

@@ -31,8 +31,7 @@
 }
 
 .flow > figure {
-  margin-inline: calc(var(--defaultPadding-horizontal) / -1);
-  width: calc(100% + calc(var(--defaultPadding-horizontal) * 2));
+  margin-inline: 0;
 }
 
 .flow .breakAfter {

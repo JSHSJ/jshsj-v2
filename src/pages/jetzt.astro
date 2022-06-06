@@ -1,0 +1,43 @@
+---
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { getTranslation } from "@/intl/getTranslation"
+import DE from "@/public/translations/de.json"
+---
+
+<DefaultLayout title={"Jetzt"} description={"Für die, die sich fragen: Was machst du gerade?"} canonical={Astro.canonicalURL}>
+  <div class="layout-container flow | mt-header">
+    <h1 class="section-title" data-translate="now.headline">{getTranslation('now.headline', DE)}</h1>
+    <p data-translate="now.intro">{getTranslation('now.intro', DE)}</p>
+    <small class="jshsj-tag"><span data-translate="general.updatedOn">{getTranslation('general.updatedOn', DE)}:</span><span>
+      {new Date("2022-06-06").toLocaleDateString('de')}</span></small>
+      <div class="flow -layout-reset"></div>
+        <h2 data-translate="now.dogHeadline">{getTranslation('now.dogHeadline', DE)}</h2> 
+        <p data-translate="now.dogText">{getTranslation('now.dogText', DE)}</p>
+
+        <figure>
+          <a href="/bilder/alaia.jpeg">
+          <img src="/bilder/alaia.jpeg" alt="Alaia" loading="lazy" />
+          <figcaption>Eins der ersten Bilder von Alaia</figcaption>
+          </a>
+        </figure>
+
+        <h2 data-translate="now.houseHeadline">{getTranslation('now.houseHeadline', DE)}</h2> 
+        <p data-translate="now.houseText">{getTranslation('now.houseText', DE)}</p>
+
+        <h2 data-translate="now.workHeadline">{getTranslation('now.workHeadline', DE)}</h2> 
+        <p data-translate="now.workText">{getTranslation('now.workText', DE)}</p>
+
+        <h2 data-translate="now.restHeadline">{getTranslation('now.restHeadline', DE)}</h2> 
+        <p data-translate="now.restText">{getTranslation('now.restText', DE)}</p>
+
+        <p class="-bold" data-translate="now.end">{getTranslation('now.end', DE)}
+        </div>
+
+        <small class="mt-s2">
+          <span data-translate="now.nowInfo">{getTranslation('now.nowInfo', DE)}</span>
+          <a href="https://nownownow.com/about" target="_blank"
+          rel="noreferrer noopener">https://nownownow.com/about</a>
+        </small>
+
+  </div>
+</DefaultLayout>

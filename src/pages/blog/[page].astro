@@ -1,5 +1,5 @@
 ---
-  import {BlogPost} from "@/types/Blog.type"
+import {BlogPost} from "@/types/Blog.type"
 import {Navigation} from "@/config/index.ts";
 
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
@@ -12,7 +12,7 @@ import { getTranslation } from "@/intl/getTranslation"
 import DE from "@/public/translations/de.json"
 
 
-export async function getStaticPaths({paginate, rss}) {
+export async function getStaticPaths({paginate}) {
 const title = "Joshuas Gedanken"
 const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
 const currentRoute = Navigation.blogRoot.url
@@ -26,28 +26,6 @@ const formattedBlogposts = allBlog.map(post => ({
 const allLangs = Array.from(new Set(allBlog
 .map(blog => blog.frontmatter.lang)
 .reduce((allLangs, lang) => allLangs.concat(lang), [])))
-
-rss({
-  title: title,
-  description: description,
-  customData: `
-  <author>
-    <name>Joshua Stübner</name>
-    <email>jshsj@hey.com</email>
-  </author>
-  `,
-  dest: '/feed/blog.xml',
-  items: formattedBlogposts.map(item => {
-    return {
-    title: item.title,
-    description: item.description,
-    pubDate: item.date,
-    link: `${Navigation.blogPost.url}/${item.slug}`,
-    customData: `<id>${Astro.site}${Navigation.blogPost.url.substring(1)}/${item.slug}</id>`
-    }
-  }
-)
-})
 
 return paginate(formattedBlogposts, {
   pageSize: 10,
@@ -72,7 +50,7 @@ const {page, title, description, currentRoute, allLangs} = Astro.props;
     rel="alternate"
     type="application/rss+xml"
     title={title + ' | RSS Feed'}
-    href="/feed/blog.xml"
+    href="/blog.xml"
   />
 
 
@@ -90,7 +68,7 @@ const {page, title, description, currentRoute, allLangs} = Astro.props;
 
     <div class="note -info flow w-full" data-translate="blog.getNotified">
     <p>{getTranslation('blog.getNotified', DE)}</p>
-    <p><a href="/feed/blog.xml">RSS Feed</a></p>
+    <p><a href="/blog.xml">RSS Feed</a></p>
     </div>
 </div>
 </DefaultLayout>

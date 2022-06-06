@@ -122,6 +122,11 @@ dl {
   }
 }
 
+li > ul,
+li > ol {
+  margin-top: var(--s1);
+}
+
 img {
   max-inline-size: 100%;
   block-size: auto;
@@ -135,6 +140,16 @@ sup,
 small,
 figcaption {
   color: var(--text2);
+}
+
+figcaption {
+  display: block;
+  color: var(--surface1);
+  font-family: var(--fontFamilySans);
+  --fontWeight: var(--fontWeightMedium);
+  color: var(--surface2);
+  background-color: var(--text1);
+  padding: var(--size-s) var(--size-md);
 }
 
 details {
@@ -303,8 +318,12 @@ a,
   }
 }
 
-strong {
+strong, b {
   --fontWeight: var(--fontWeightMedium);
+}
+
+dfn, var {
+  font-family: var(--fontFamilyMono);
 }
 
 [aria-disabled="true"],

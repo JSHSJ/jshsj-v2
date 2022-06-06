@@ -32,7 +32,7 @@ export const Navigation = {
     name: "navigation.thingsILike",
   },
   inZahlen: {
-    url: "/in-zahlen",
+    url: "/berufliche-zahlen",
     name: "navigation.inData",
   },
   imprint: {
@@ -42,5 +42,9 @@ export const Navigation = {
   dataPolicy: {
     url: "/datenschutz",
     name: "navigation.dataPolicy",
+  },
+  now: {
+    url: "/jetzt",
+    name: "navigation.now",
   },
 };
