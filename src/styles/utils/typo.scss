@@ -1,8 +1,8 @@
 
 .typo-hollow {
     > span {
-      color: var(--surface1);
-      background: var(--text1);
+      color: var(--color-surface1);
+      background: var(--color-text1);
       box-decoration-break: clone;
       padding: var(--size-2xs) var(--size-3xs);
       max-width: max-content;

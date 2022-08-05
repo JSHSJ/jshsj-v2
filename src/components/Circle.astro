@@ -4,10 +4,11 @@ const paths = Array.from(Array(180));
 <style lang="scss">
 .rotatingCircle {
   --circleSize: 8rem;
+  
   position: relative;
   width: var(--circleSize);
   height: var(--circleSize);
-  background: var(--brand);
+  background: var(--color-brand);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -26,7 +27,7 @@ const paths = Array.from(Array(180));
   width: 1px;
   height: calc(var(--circleSize) * 1.48);
   transform: rotate(var(--pathDeg)) scaleY(var(--pathScale));
-  background-color: var(--text1);
+  background-color: var(--color-text1);
   position: absolute;
   transform-origin: 0% 0%;
   transition: transform 2s;

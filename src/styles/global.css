@@ -1,16 +1,19 @@
-@use "jshsj-design/src/base/index.css";
+@import "jshsj-design/variables";
 
-@use "jshsj-design/src/components/links";
-@use "jshsj-design/src/components/buttons";
-@use "jshsj-design/src/components/headlines";
-@use "jshsj-design/src/components/tags";
-@use "jshsj-design/src/components/pagination";
-@use "jshsj-design/src/components/exceptions";
-@use "jshsj-design/src/components/note";
-@use "jshsj-design/src/components/code";
+@import "jshsj-design/base";
+@import "jshsj-design/layouts";
 
-@use "./utils/typo.scss";
-@use "./utils/spacings.scss";
-@use "./utils/colors.scss";
+@import "jshsj-design/links";
+@import "jshsj-design/buttons";
+@import "jshsj-design/headlines";
+@import "jshsj-design/badges";
+@import "jshsj-design/pagination";
+@import "jshsj-design/exceptions";
+@import "jshsj-design/note";
+@import "jshsj-design/code";
+
+@import "./utils/typo.scss";
+@import "./utils/spacings.scss";
+@import "./utils/colors.scss";
 
 

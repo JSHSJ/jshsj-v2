@@ -5,7 +5,7 @@ import DE from "@/public/translations/de.json"
 const {blogPosts} = Astro.props;
 ---
 
-<style lang="scss">
+<style>
 .blogPost {
 
   .meta {
@@ -14,17 +14,17 @@ const {blogPosts} = Astro.props;
     font-family: var(--fontFamilyMono);
   }
 
-  .tags {
+  .badges {
     --gap: 0;
     align-items: baseline;
     font-size: var(--s-1);
-    color: var(--text2);
+    color: var(--color-text2);
     border-collapse: collapse;
-
-    & .jshsj-tag:not(:last-child) {
-      border-right: none;
-    }
   }
+
+  .badges .badge:not(:last-child) {
+      border-right: none;
+   }
 }
 </style>
 
@@ -38,11 +38,11 @@ const {blogPosts} = Astro.props;
           <p>
           {blogPost.description}</p>
           <div class="cluster typo-s -layout-s | meta">
-          <span class="jshsj-tag lang">{blogPost.lang.toLowerCase()}</span>
+          <span class="badge lang">{blogPost.lang.toLowerCase()}</span>
           <time class="date"><span data-translate="general.from">
           {getTranslation('general.from', DE)}
-          </span> {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | tags">{blogPost.tags.map((tag, i) => (
-            <span class="jshsj-tag">{tag}</span>
+          </span> {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | badges">{blogPost.tags.map((tag, i) => (
+            <span class="badge">{tag}</span>
           ))}
           </div>
           </div>

@@ -10,10 +10,9 @@ const {crumbs} = Astro.props;
 ---
 
 <style lang="scss">
-
 .breadcrumbs {
-  background-color: var(--text1);
-  color: var(--surface1);
+  background-color: var(--color-text1);
+  color: var(--color-surface1);
   width: max-content;
   max-width: 100%;
 }
@@ -21,16 +20,12 @@ const {crumbs} = Astro.props;
 .breadcrumbs a {
   color: inherit;
 }
-
 .breadcrumbs a:not(:last-child) {
   --fontWeight: var(--fontWeightRegular);
   &:after {
     content: ' → '
   }
 }
-
-
-
 </style>
 
 
