@@ -11,6 +11,7 @@
 @import "jshsj-design/exceptions";
 @import "jshsj-design/note";
 @import "jshsj-design/code";
+@import "jshsj-design/inputs";
 
 @import "./utils/typo.scss";
 @import "./utils/spacings.scss";
