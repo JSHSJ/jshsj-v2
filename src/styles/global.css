@@ -1,0 +1,16 @@
+@use "jshsj-design/src/base/index.css";
+
+@use "jshsj-design/src/components/links";
+@use "jshsj-design/src/components/buttons";
+@use "jshsj-design/src/components/headlines";
+@use "jshsj-design/src/components/tags";
+@use "jshsj-design/src/components/pagination";
+@use "jshsj-design/src/components/exceptions";
+@use "jshsj-design/src/components/note";
+@use "jshsj-design/src/components/code";
+
+@use "./utils/typo.scss";
+@use "./utils/spacings.scss";
+@use "./utils/colors.scss";
+
+
