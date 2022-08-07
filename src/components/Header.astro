@@ -1,7 +1,7 @@
 ---
 import Themepicker from "./ThemePicker.astro"
 import LangPicker from "./LangPicker.astro"
-import {Navigation} from "@/config/index.ts"
+import { Navigation } from "@/config/index.ts"
 import { getTranslation } from "@/intl/getTranslation"
 import DE from "@/public/translations/de.json"
 
@@ -13,43 +13,48 @@ const NavItems = [
   Navigation.inZahlen
 ]
 ---
+
 <style>
-header {
-  width: 100%;
-  padding-block: var(--size-sm);
-  background: var(--color-surface1);
-  z-index: 999;
-  border-bottom: var(--border-thin) solid var(--color-text1);
-}
+  header {
+    width: 100%;
+    padding-block: var(--size-sm);
+    background: var(--color-surface1);
+    z-index: 999;
+    border-bottom: var(--border-thin) solid var(--color-text1);
+  }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: var(--size-md);
-}
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: var(--size-md);
+  }
 
-.navCluster {
-  align-items: center;
-}
+  .navCluster {
+    align-items: center;
+  }
+
+  .themepicker {
+    margin-left: auto;
+  }
 </style>
 
 <header>
   <div class="layout-container | pblock-0">
-  <a href="#content-start" class="text-assistive" data-translate="general.skipLink">
-    {getTranslation('general.skipLink', DE)}
-  </a>
+    <a href="#content-start" class="text-assistive" data-translate="general.skipLink">
+      {getTranslation('general.skipLink', DE)}
+    </a>
 
-  <div class="header-container full-width">
-    <nav class="cluster | navCluster">
-      {NavItems.map(item => (
+    <div class="header-container full-width">
+      <nav class="cluster | navCluster">
+        {NavItems.map(item => (
         <a href={item.url} data-translate={item.name}>{getTranslation(item.name, DE)}</a>
-      ))}
-    <LangPicker></LangPicker>
-    </nav>
-    <div class="ml-auto">
-    <Themepicker></Themepicker></div>
+        ))}
+        <LangPicker></LangPicker>
+      </nav>
+      <div class="themepicker">
+        <Themepicker></Themepicker>
+      </div>
+    </div>
   </div>
-  </div>
-
 </header>

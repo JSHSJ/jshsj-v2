@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   const blogWithSlugs = await Promise.all(allBlogPosts.map(async (bp) => ({
     ...bp.frontmatter,
     Content: bp.Content,
-    headers: await bp.getHeaders(),
+    headers: await bp.getHeadings(),
     slug: slugify(bp.frontmatter.title),
   })))
 
@@ -46,7 +46,7 @@ dl {
 </style>
 
 
-<DefaultLayout title={blogpost.title} description={`${blogpost.title} - ${blogpost.tags.join(', ')}`} canonical={Astro.canonicalURL}>
+<DefaultLayout title={blogpost.title} description={`${blogpost.title} - ${blogpost.tags.join(', ')}`} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="layout-container mt-header">
   <SidebarNav headers={headers}></SidebarNav>
   <div class="stack -layout-xl">

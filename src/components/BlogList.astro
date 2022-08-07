@@ -6,12 +6,18 @@ const {blogPosts} = Astro.props;
 ---
 
 <style>
-.blogPost {
+
+  .title {
+    font-size: var(--s2);
+    font-family: var(--fontFamilySans);
+    --fontWeight: var(--fontWeightBold);
+  }
 
   .meta {
     line-height: 1;
     align-items: center;
     font-family: var(--fontFamilyMono);
+    font-size: var(--s-1)
   }
 
   .badges {
@@ -25,14 +31,13 @@ const {blogPosts} = Astro.props;
   .badges .badge:not(:last-child) {
       border-right: none;
    }
-}
 </style>
 
 <ul class="list-reset stack -layout-xl w-full">
 {blogPosts.map((blogPost, postIndex) => (
     <li class="stack | blogPost">
       <article class="stack -layout-3xs">
-          <a href={`${Navigation.blogPost.url}/${blogPost.slug}`}><h2 class="typo-xl -bold font-headline">
+          <a href={`${Navigation.blogPost.url}/${blogPost.slug}`}><h2 class="title">
           {blogPost.title}</h2>
           </a>
           <p>

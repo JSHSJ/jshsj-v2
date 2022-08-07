@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Work Sans';
-  src: url('/src/assetssets/fonts/WorkSans[wght].ttf') format('truetype');
+  src: url('/assets/fonts/WorkSans[wght].ttf') format('truetype');
   font-display: optional;
   font-weight: 100 900;
 }
 @font-face {
   font-family: 'MD IO';
-  src: url('/src/assetssets/fonts/MDIO0.4-Regular.woff2') format("woff2"), url('/src/assetssets/fonts/MDIO0.4-Regular.woff') format("woff");
+  src: url('/assets/fonts/MDIO0.4-Regular.woff2') format("woff2"), url('/assets/fonts/MDIO0.4-Regular.woff') format("woff");
   font-display: optional;
   font-weight: 400;
 }

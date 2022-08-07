@@ -4,7 +4,7 @@ import {MY_EMAIL} from "@/config/index.ts"
 import { getTranslation } from "@/intl/getTranslation"
 import DE from "@/public/translations/de.json"
 ---
-<style lang="scss">
+<style>
 
 .welcomeContainer {
   width: 100%;
@@ -31,21 +31,20 @@ import DE from "@/public/translations/de.json"
   --min-size: 48%;
   align-items: flex-start;
   align-self: flex-start;
+}
 
-  dd {
+dd {
     margin-inline: 0;
     margin-top: 0;
     font-size: var(--s1);
   }
 
-  h1 {
+ h1 {
     margin-inline: 0;
     margin-top: 0;
     font-size: var(--s1);
     --fontWeight: initial;
   }
-
-}
 </style>
 
 <section class="layout-container | welcomeContainer">

@@ -11,16 +11,16 @@ import DE from "@/public/translations/de.json"
   {getTranslation('aboutMe.headline', DE)}</span></h2>
   <div class="flow -layout-l">
   <p data-translate="aboutMe.intro" set:html={getTranslation('aboutMe.intro', DE)}></p>
-  <h3 class="typo-l -bold -font-headline">
-    <a href={Navigation.blogStart.url}
+  <h3>
+    <a class="typo-xl -bold font-headline" href={Navigation.blogStart.url}
       data-translate="blog.headline"
     >{getTranslation('blog.headline', DE)}</a>
   </h3>
   <p data-translate="blog.intro">
   {getTranslation('blog.intro', DE)}</p>
 
-  <h3 class="typo-l -bold -font-headline">
-    <a
+  <h3>
+    <a class="typo-xl -bold font-headline"
     href={Navigation.zeug.url}
     data-translate="thingsILike.headline"
     >{getTranslation('thingsILike.headline', DE)}</a>
@@ -29,8 +29,8 @@ import DE from "@/public/translations/de.json"
   {getTranslation('thingsILike.intro', DE)}</p>
 
 
-  <h3 class="typo-l -bold -font-headline">
-    <a href={Navigation.inZahlen.url}
+  <h3>
+    <a class="typo-xl -bold font-headline" href={Navigation.inZahlen.url}
     data-translate="inData.headline"
     >{getTranslation('inData.headline', DE)}</a>
   </h3>

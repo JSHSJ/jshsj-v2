@@ -1,0 +1,140 @@
+---
+import MainHead from '@/components/MainHead.astro';
+---
+<style>
+  main {
+    padding-block: var(--s5);
+  }
+</style>
+
+<html lang="de" dir="ltr">
+<head>
+    <MainHead title={"Einladung zur Feier"} description={"Lust zu kommen?"} canonical={new URL(Astro.url.pathname, Astro.site)} />
+</head>
+  <body>
+    <a href="#content-start" class="text-assistive" id="content-start">Hier fängt der Inhalt an</a>
+    <main class="relative layout-container flow">
+      <figure>
+          <a href="/bilder/bild1.jpeg">
+          <img src="/bilder/bild1.jpeg" alt="Wir beide, irgendwann mal" loading="lazy" />
+          <figcaption>Du und ich... oder so</figcaption>
+          </a>
+        </figure>
+      <h1>Einladung</h1>
+      <p>Hallo! Ich möchte gerne mit dir feiern, hast du Lust?</p>
+      <button class="confetti-button">JAAAA</button>
+      <h2>Was gibt's denn zu Feiern?</h2>
+      <p>Gut, dass du fragst. Das hängt davon ab, wer du bist und was du willst. Hier sind ein paar mögliche Gründe:</p>
+      <fieldset class="stack" style="width: 100%;">
+        <legend>Warum feiern wir?</legend>
+        <div class="input-field | cluster | checkbox-input">
+          <label for="reason-1" class="stack">
+            <span class="input-label">Meinen 30. Geburtstag</span>
+          </label>
+        <input id="reason-1" name="reason-1" type="checkbox">
+        </div>
+        <div class="input-field | cluster | checkbox-input">
+          <label for="reason-2" class="stack">
+            <span class="input-label">Abschied von den alten Kollegen</span>
+          </label>
+        <input id="reason-2" name="reason-2" type="checkbox">
+        </div>
+        <div class="input-field | cluster | checkbox-input">
+          <label for="reason-3" class="stack">
+            <span class="input-label">Hauseinweihung</span>
+          </label>
+        <input id="reason-3" name="reason-3" type="checkbox">
+        </div>
+        <div class="input-field | cluster | checkbox-input">
+          <label for="reason-4" class="stack">
+            <span class="input-label">Ist mir egal.</span>
+          </label>
+        <input id="reason-4" name="reason-4" type="checkbox">
+        </div>
+        <small>*: Auswahl hat absolut keine Auswirkungen</small>
+      </fieldset>
+      <h2>Okay, gut. Sag mir genaures.</h2>
+      <p>Klaro, gerne.</p>
+      <dl class="mb-s3">
+      <dt>
+        Wann?
+        </dt>
+        <dd>
+        Am Samstag, den <time datetime="2022-09-17">17. September 2020</time>, ab <time datetime="17:00">17:00 Uhr.</time>
+        </dd>
+        <dt>
+        Wo?
+        </dt>
+        <dd>
+        Bei mir. Dorfstr. 34, 19273 Zeetze
+        </dd>
+        <dt>
+          Was muss ich mitbringen?
+        </dt>
+        <dd>
+          Nichts, außer du möchtest mir etwas schenken.
+        </dd>
+        <dt>
+          Gibt's was zu essen? Zu trinken?
+        </dt>
+        <dd>Na sicher!</dd>
+    </dl>
+    <figure>
+          <a href="/bilder/bild2.jpeg">
+          <img src="/bilder/bild2.jpeg" alt="Wir beide, irgendwann mal" loading="lazy" />
+          <figcaption>"Wow, was für ne coole Party" - Du</figcaption>
+          </a>
+     </figure>
+     <h2>Sonst noch was?</h2>
+     <p>Sag mir bitte noch kurz deinen Namen, wenn du kommen magst!</p>
+     <fieldset class="stack" style="width: 100%;">
+      <legend>Möchtest du kommen?</legend>
+      <form id="form" class="stack">
+      <div class="input-field">
+          <label for="name" class="stack">
+            <span class="input-label">Dein Name</span>
+          </label>
+        <input id="name" name="name" type="text" autocomplete="name">
+        </div>
+        <button class="confetti-button" style="width: max-content;" type="submit">Aber auf jeden Fall!</button>
+        <p id="name-message">
+          Da bin ich aber gespannt...
+        </p>
+        </form>
+     </fieldset>
+    </main>
+  </body>
+</html>
+
+<script>
+import confetti from "canvas-confetti";
+
+const confettiButtons = document.querySelectorAll(".confetti-button");
+confettiButtons.forEach(button => button.addEventListener("click", () => {
+  confetti({
+    angle: 90,
+    spread: 280,
+    particleCount: 200,
+    disableForReducesMotion: true,
+  });
+}));
+
+const form = document.getElementById("form");
+const nameMessage = document.getElementById("name-message");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = (document.getElementById("name") as HTMLInputElement).value;
+  const message = `Juchuuu! Ich freu mich auf dich, ${name}!`;
+  nameMessage.innerText = message;
+  fetch("https://geburtstags-namen.jshsh.workers.dev/", {
+    method: "POST",
+    body: JSON.stringify({
+      name,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "*/*",
+    },
+  })
+} );
+</script>

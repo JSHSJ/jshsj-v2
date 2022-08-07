@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   const projectsWithSlugs = await Promise.all(allProjects.map(async (p) => ({
     ...p,
     ...p.frontmatter,
-    headers: await p.getHeaders(),
+    headers: await p.getHeadings(),
     slug: slugify(p.frontmatter.title),
   })))
 
@@ -47,7 +47,7 @@ dl {
 </style>
 
 
-<DefaultLayout title={project.title} description={project.description} canonical={Astro.canonicalURL}>
+<DefaultLayout title={project.title} description={project.description} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="layout-container mt-header">
   <SidebarNav headers={headers}></SidebarNav>
   <div class="stack -layout-xl">

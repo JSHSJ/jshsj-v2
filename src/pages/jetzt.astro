@@ -4,8 +4,8 @@ import { getTranslation } from "@/intl/getTranslation"
 import DE from "@/public/translations/de.json"
 ---
 
-<DefaultLayout title={"Jetzt"} description={"Für die, die sich fragen: Was machst du gerade?"} canonical={Astro.canonicalURL}>
-  <div class="layout-container flow | mt-header">
+<DefaultLayout title={"Jetzt"} description={"Für die, die sich fragen: Was machst du gerade?"} canonical={new URL(Astro.url.pathname, Astro.site)}>
+  <div class="section layout-container flow | mt-header">
     <h1 class="section-title" data-translate="now.headline">{getTranslation('now.headline', DE)}</h1>
     <p data-translate="now.intro">{getTranslation('now.intro', DE)}</p>
     <small class="jshsj-tag"><span data-translate="general.updatedOn">{getTranslation('general.updatedOn', DE)}:</span><span>

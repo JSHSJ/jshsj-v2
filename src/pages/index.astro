@@ -17,7 +17,7 @@ const formattedProjects = allProjects.map(project => ({
     slug: slugify(project.frontmatter.title),
 })).sort(sortByDateDesc)
 ---
-<DefaultLayout canonical={Astro.canonicalURL}>
+<DefaultLayout canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="stack -layout-xl">
     <Welcome></Welcome>
     <ShareTheMeal></ShareTheMeal>

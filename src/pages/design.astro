@@ -3,7 +3,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 
 ---
 
-<DefaultLayout title={"Design Test"} description={"A html test page to test the design used in jshsj-design."} canonical={Astro.canonicalURL}>
+<DefaultLayout title={"Design Test"} description={"A html test page to test the design used in jshsj-design."} canonical={new URL(Astro.url.pathname, Astro.site)}>
     <div class="layout-container">
     <header>
         <h1>HTML5 Test Page</h1>

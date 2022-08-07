@@ -1,7 +1,7 @@
 ---
 ---
 
-<style lang='scss'>
+<style>
 .container {
   width: 100%;
   position: relative;
@@ -34,15 +34,15 @@ svg {
   --animation-duration: 0.2s;
   cursor: initial;
 
-  .cat-1 {
+  & .cat-1 {
     animation: fade-out var(--animation-duration) forwards;
   }
 
-  .cat-2 {
+  & .cat-2 {
     animation: fade-in-out calc(2 * var(--animation-duration)) calc(0.8 * var(--animation-duration)) forwards;
   }
 
-  .cat-3 {
+  & .cat-3 {
     animation:
       fade-in var(--animation-duration) calc(2.4 * var(--animation-duration)) forwards,
       fly-away calc(var(--animation-duration) * 4) calc(3 * var(--animation-duration)) forwards;

@@ -4,7 +4,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 
 ---
 
-<DefaultLayout title={"Datenschutzerklärung"} description={"Eine Datenschutzerklärung - so wie es sich gehört."} canonical={Astro.canonicalURL}>
+<DefaultLayout title={"Datenschutzerklärung"} description={"Eine Datenschutzerklärung - so wie es sich gehört."} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="layout-container flow | mt-header">
           <h1>Datenschutzerklärung</h1>
 <h2>Einleitung</h2>

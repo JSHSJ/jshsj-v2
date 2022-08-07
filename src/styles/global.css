@@ -13,8 +13,8 @@
 @import "jshsj-design/code";
 @import "jshsj-design/inputs";
 
-@import "./utils/typo.scss";
-@import "./utils/spacings.scss";
-@import "./utils/colors.scss";
+@import "jshsj-design/utils/typo";
+@import "jshsj-design/utils/spacings";
+@import "jshsj-design/utils/colors";
 
 

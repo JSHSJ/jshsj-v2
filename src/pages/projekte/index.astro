@@ -15,7 +15,7 @@ const formattedProjects = allProjects.map(project => ({
 })).sort(sortByDateDesc)
 
 ---
-<DefaultLayout title={"Meine Projekte"} description={"Alle möglichen und verschiedene Projekte, die ich gemacht habe. Meistens Webseiten."} canonical={Astro.canonicalURL}>
+<DefaultLayout title={"Meine Projekte"} description={"Alle möglichen und verschiedene Projekte, die ich gemacht habe. Meistens Webseiten."} canonical={new URL(Astro.url.pathname, Astro.site)}>
 
 <div class="section layout-container mt-header">
     <div class="stack -layout-xl">

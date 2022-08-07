@@ -61,7 +61,7 @@ const {page, currentLang, allLangs, currentRoute, title, description} = Astro.pr
 
 </head>
 
-<DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={Astro.canonicalURL}>
+<DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="section layout-container blog-layout | mt-header">
      <h1 class="section-title -with-dot -dot-top" data-translate="blog.headline">
       {getTranslation('blog.headline', DE)}
