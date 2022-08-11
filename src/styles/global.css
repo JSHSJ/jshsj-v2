@@ -1,20 +1,5 @@
-@import "jshsj-design/variables";
+@import "jshsj-design/bundle";
 
-@import "jshsj-design/base";
-@import "jshsj-design/layouts";
-
-@import "jshsj-design/links";
-@import "jshsj-design/buttons";
-@import "jshsj-design/headlines";
-@import "jshsj-design/badges";
-@import "jshsj-design/pagination";
-@import "jshsj-design/exceptions";
-@import "jshsj-design/note";
-@import "jshsj-design/code";
-@import "jshsj-design/inputs";
-
-@import "jshsj-design/utils/typo";
-@import "jshsj-design/utils/spacings";
-@import "jshsj-design/utils/colors";
-
-
+.mt-header {
+  margin-top: var(--size-relative-3xl);
+}

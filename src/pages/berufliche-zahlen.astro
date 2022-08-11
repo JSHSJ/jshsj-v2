@@ -7,38 +7,32 @@ import DE from "@/public/translations/de.json"
 
 .cv {
     .result {
-        font-family: var(--fontFamilySans);
-        --fontWeight: var(--fontWeightMedium);
-        font-size: var(--s0);
+        font-family: var(--font-family-sans);
+        --font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-base);
         display: block;
-        color: var(--color-text2);
+        color: var(--color-text-2);
     }
 
     p[data-label]:before {
         content: attr(data-label);
-        font-family: var(--fontFamilyMono);
-        padding: var(--size-xs) 0;
+        font-family: var(--font-family-mono);
+        padding: var(--size-relative-xs) 0;
         line-height: 1;
         font-weight: 400;
-        font-size: var(--s-1);
+        font-size: var(--font-size-sm);
         display: block;
     }
 
     h3[data-label]:after {
             content: attr(data-label);
-            font-family: var(--fontFamilyMono);
-            padding: var(--size-xs) 0;
+            font-family: var(--font-family-mono);
+            padding: var(--size-relative-xs) 0;
             line-height: 1;
             font-weight: 400;
-            font-size: var(--s-1);
+            font-size: var(--font-size-sm);
             display: block;
     }
-
-    // .container {
-    //         display: grid;
-    //         grid-template-columns: 1fr 1fr;
-    //         gap: var(--size-lg);
-    //     }
 }
 </style>
 

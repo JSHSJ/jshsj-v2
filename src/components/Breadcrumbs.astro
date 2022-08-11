@@ -9,10 +9,10 @@ export interface Props{
 const {crumbs} = Astro.props;
 ---
 
-<style>
+<style style="scss">
 .breadcrumbs {
-  background-color: var(--color-text1);
-  color: var(--color-surface1);
+  background-color: var(--color-text-1);
+  color: var(--color-surface-1);
   width: max-content;
   max-width: 100%;
 }
@@ -21,10 +21,12 @@ const {crumbs} = Astro.props;
   color: inherit;
 }
 .breadcrumbs a:not(:last-child) {
-  --fontWeight: var(--fontWeightRegular);
-  &:after {
+  --font-weight: var(--font-weight-regular);
+}
+ 
+.breadcrumbs a:not(:last-child):after {
     content: ' → '
-  }
+  } {
 }
 </style>
 

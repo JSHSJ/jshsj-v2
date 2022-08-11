@@ -8,7 +8,7 @@
   perspective: calc(var(--width) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
   width: var(--width);
   height: var(--height);
-  border: var(--s-5) solid var(--color-brand);
+  border: var(--scale--5) solid var(--color-brand-1);
   margin: 0 2rem;
 }
 
@@ -28,13 +28,13 @@
   position: absolute;
   width: var(--width);
   height: var(--height);
-  background: var(--color-surface1);
-  border: var(--s-2) solid var(--color-text1);
+  background: var(--color-surface-1);
+  border: var(--scale--2) solid var(--color-text-1);
   display: flex;
 }
 
 .logo {
-  color: var(--color-text1);
+  color: var(--color-text-1);
   width: calc(var(--width) / 2);
   height: calc(var(--width) / 2);
   align-self: center;
@@ -51,12 +51,12 @@
 
 .-back {
   transform: rotateY(180deg) translateZ(calc(var(--width) / 2));
-  background: var(--color-text1);
+  background: var(--color-text-1);
 }
 
 .-right {
   transform: rotateY(90deg) translateZ(calc(var(--width) / 2));
-  background: var(--color-brand);
+  background: var(--color-brand-1);
 }
 
 @keyframes rotate-sideways {

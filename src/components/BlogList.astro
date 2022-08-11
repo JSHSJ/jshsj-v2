@@ -8,23 +8,23 @@ const {blogPosts} = Astro.props;
 <style>
 
   .title {
-    font-size: var(--s2);
-    font-family: var(--fontFamilySans);
-    --fontWeight: var(--fontWeightBold);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-family-sans);
+    --font-weight: var(--font-weight-bold);
   }
 
   .meta {
     line-height: 1;
     align-items: center;
-    font-family: var(--fontFamilyMono);
-    font-size: var(--s-1)
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm)
   }
 
   .badges {
     --gap: 0;
     align-items: baseline;
-    font-size: var(--s-1);
-    color: var(--color-text2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-2);
     border-collapse: collapse;
   }
 
@@ -44,7 +44,7 @@ const {blogPosts} = Astro.props;
           {blogPost.description}</p>
           <div class="cluster typo-s -layout-s | meta">
           <span class="badge lang">{blogPost.lang.toLowerCase()}</span>
-          <time class="date"><span data-translate="general.from">
+          <time datetime={blogPost.date} class="-bold font-headline"><span data-translate="general.from">
           {getTranslation('general.from', DE)}
           </span> {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | badges">{blogPost.tags.map((tag, i) => (
             <span class="badge">{tag}</span>
