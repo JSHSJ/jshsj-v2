@@ -1,5 +1,8 @@
 ---
 import MainHead from '@/components/MainHead.astro';
+import { Image } from "@astrojs/image/components"
+import Bild1 from "@/images/bild1.jpeg"
+import Bild2 from "@/images/bild2.jpeg"
 ---
 <style>
   main {
@@ -15,10 +18,8 @@ import MainHead from '@/components/MainHead.astro';
     <a href="#content-start" class="text-assistive" id="content-start">Hier fängt der Inhalt an</a>
     <main class="relative layout-container flow">
       <figure>
-          <a href="/bilder/bild1.jpeg">
-          <img src="/bilder/bild1.jpeg" alt="Wir beide, irgendwann mal" loading="lazy" />
+          <Image src={Bild1} alt="Wir beide, irgendwann mal" loading="lazy" width={1280} aspectRatio={"16:9"} />
           <figcaption>Du und ich... oder so</figcaption>
-          </a>
         </figure>
       <h1>Einladung</h1>
       <p>Hallo! Ich möchte gerne mit dir feiern, hast du Lust?</p>
@@ -79,11 +80,9 @@ import MainHead from '@/components/MainHead.astro';
         </dt>
         <dd>Na sicher!</dd>
     </dl>
-    <figure>
-          <a href="/bilder/bild2.jpeg">
-          <img src="/bilder/bild2.jpeg" alt="Wir beide, irgendwann mal" loading="lazy" />
+    <figure style="width: 100%;">
+          <Image src={Bild2} alt="" loading="lazy" width={880} aspectRatio={"3:4"} />
           <figcaption>"Wow, was für ne coole Party" - Du</figcaption>
-          </a>
      </figure>
      <h2>Sonst noch was?</h2>
      <p>Sag mir bitte noch kurz deinen Namen, wenn du kommen magst!</p>
