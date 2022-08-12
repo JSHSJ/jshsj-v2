@@ -22,6 +22,7 @@ jobs:
         run: sudo apt install lftp
       - run: mkdir -p src/content/Projekte
       - run: mkdir -p src/content/Blog
+      - run: mkdir -p src/content/DigitalGarden
       - run: mkdir -p public/assets/attachments
       - run: mv content/flow/Projekte/attachments/* public/assets/attachments/
       - run: mv content/flow/Blog/attachments/* public/assets/attachments/
