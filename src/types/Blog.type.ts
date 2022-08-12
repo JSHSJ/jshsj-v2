@@ -3,5 +3,4 @@ export type BlogPost = {
   description: string;
   tags: string[];
   date: string;
-  lang: string;
 }

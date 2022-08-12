@@ -1,0 +1,76 @@
+---
+import { slugify } from '@/utils/slugify';
+import Breadcrumbs from '@/src/components/Breadcrumbs.astro';
+
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { GardenIdea } from "@/src/types/GardenIdea.type";
+import { Navigation } from "@/src/config";
+import IdeaList from '@/src/components/IdeaList.astro';
+
+
+export async function getStaticPaths() {
+  const sortByTitle = (a: GardenIdea, b: GardenIdea) => {
+    if (a.isPinned) {
+      return -1;
+    }
+
+    if (a.title < b.title) {
+      return -1;
+    }
+    if (a.title > b.title) {
+      return 1;
+    }
+    return 0;
+  }
+
+  const allIdeas = await Astro.glob<GardenIdea>("/src/content/DigitalGarden/**/*.md");
+  const allTags = Array.from(new Set(allIdeas
+    .map(idea => idea.frontmatter.tags)
+    .reduce((allTags, tags) => [...allTags, ...tags], [])
+    .map(tag => slugify(tag))));
+
+  const formattedIdeas = allIdeas.map(project => ({
+    ...project.frontmatter,
+    slug: slugify(project.frontmatter.title),
+  })).sort(sortByTitle);
+
+  return allTags.map(tag => {
+    const ideasByTag = formattedIdeas.filter(idea => new Set(idea.tags.map(t => slugify(t))).has(tag))
+
+    return {
+      params: {
+        tag,
+      },
+      props: {
+        tag,
+        ideasByTag,
+      }
+    }
+  });
+
+}
+
+const { ideasByTag, tag } = Astro.props;
+
+const breadcrumbs = [
+  { url: Navigation.digitalGardenRoot.url, name: Navigation.digitalGardenRoot.name },
+  { name: tag, url: `${Navigation.digitalGardenTagPage.url}/${tag}` },
+]
+
+---
+
+<DefaultLayout title={"Digital Garden"} description={"A collection of many things. Cultivated like a garden."}
+  canonical={new URL(Astro.url.pathname, Astro.site)}>
+
+  <div class="layout-container mt-header">
+    <div class="stack -layout-xl -stretched">
+      <div>
+        <Breadcrumbs crumbs={breadcrumbs}></Breadcrumbs>
+        <h1 class="typo-2xl -with-dot typo-hollow">
+          <span>{tag}</span>
+        </h1>
+      </div>
+      <IdeaList ideas={ideasByTag}></IdeaList>
+    </div>
+  </div>
+</DefaultLayout>

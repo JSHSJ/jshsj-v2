@@ -1,6 +1,4 @@
 ---
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 export interface Props {
   headers: AstroMarkdownHeader[];
 }
@@ -15,8 +13,8 @@ const { headers } = Astro.props;
 {headers.length > 0 ? (
 <div class="sidebarNav">
   <nav class="sidebarNav-list stack standout-box">
-    <h4 data-translate="general.chapter">
-    {getTranslation('general.chapter', DE)}
+    <h4>
+    Chapter
     </h4>
     <ul class="list-reset">
       {headers.map((header) => (

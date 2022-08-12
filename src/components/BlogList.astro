@@ -1,7 +1,5 @@
 ---
 import {Navigation} from "@/config/index.ts"
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 const {blogPosts} = Astro.props;
 ---
 
@@ -43,10 +41,7 @@ const {blogPosts} = Astro.props;
           <p>
           {blogPost.description}</p>
           <div class="cluster typo-s -layout-s | meta">
-          <span class="badge lang">{blogPost.lang.toLowerCase()}</span>
-          <time datetime={blogPost.date} class="-bold font-headline"><span data-translate="general.from">
-          {getTranslation('general.from', DE)}
-          </span> {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | badges">{blogPost.tags.map((tag, i) => (
+          <time datetime={blogPost.date} class="-bold font-headline">from {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | badges">{blogPost.tags.map((tag, i) => (
             <span class="badge">{tag}</span>
           ))}
           </div>

@@ -17,7 +17,8 @@
       "@/utils/*": ["src/utils/*"],
       "@/intl/*": ["src/intl/*"],
       "@/types/*": ["src/types/*"],
-
-    }
+      "@/images/*": ["src/images/*"],
+    },
+    "types": ["@astrojs/image/client"]
   }
 }

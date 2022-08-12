@@ -1,7 +1,5 @@
 ---
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
-import ProjectList from "./ProjectList.astro"
+import ProjectList from "./ProjectList.astro";
 
 const {projects} = Astro.props;
 ---
@@ -11,8 +9,7 @@ const {projects} = Astro.props;
 <div class="with-sidebar full-width">
   <div class="stack -layout-2xl" data-grow style="--min-size: 60%">
   <h2 class="section-title typo-hollow -with-dot" data-aside><span
-  data-translate="projects.headline"
-  >{getTranslation('projects.headline', DE)}
+  >Projects
   </span></h2>
     <ProjectList projects={projects.slice(0, 3)}></ProjectList>
     </div>

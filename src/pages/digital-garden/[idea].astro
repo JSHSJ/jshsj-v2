@@ -1,0 +1,87 @@
+---
+import type { GardenIdea } from '@/types/GardenIdea.type'
+import {Navigation} from "@/config/index";
+import { slugify} from "@/utils/slugify"
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import SidebarNav from "@/components/SidebarNav.astro";
+
+export async function getStaticPaths() {
+  const allIdeas = await Astro.glob<GardenIdea>("/src/content/DigitalGarden/**/*.md");
+
+  const ideasWithSlugs = await Promise.all(allIdeas.map(async (bp) => ({
+    ...bp.frontmatter,
+    Content: bp.Content,
+    headers: await bp.getHeadings(),
+    slug: slugify(bp.frontmatter.title),
+  })))
+
+  return ideasWithSlugs.map(idea => {
+    return {
+      params: {idea: idea.slug},
+      props: { idea }
+    }
+  })
+}
+
+const {pathname} = Astro.site;
+const {idea} = Astro.props;
+
+const { Content, headers } = idea;
+
+const blogpostCrumbs = [
+  {url: Navigation.digitalGardenRoot.url, name: Navigation.digitalGardenRoot.name},
+  {name: idea.title,
+  url: pathname}
+]
+---
+<style>
+dl {
+  padding-block: var(--size-relative-md);
+  border-top: var(--border-thin) solid var(--color-text-1);
+  border-bottom: var(--border-thin) solid var(--color-text-1);
+}
+.badge:not(:last-child) {
+      border-right: none;
+}
+</style>
+
+
+<DefaultLayout title={idea.title} description={`${idea.title} - ${idea.tags.join(', ')}`} canonical={new URL(Astro.url.pathname, Astro.site)}>
+<div class="layout-container mt-header">
+  <SidebarNav headers={headers}></SidebarNav>
+  <div class="stack -layout-xl">
+  <div>
+    <Breadcrumbs crumbs={blogpostCrumbs}></Breadcrumbs>
+    <h2 class="typo-hollow typo-2xl -with-dot -dot-top-right" data-aside>
+    <span>
+    {idea.title}
+    </span>
+    </h2>
+    </div>
+       <dl>
+      <dt>
+        Description
+      </dt>
+      <dd>
+        {idea.description}
+      </dd>
+      <dt>
+        Tags
+      </dt>
+      <dd>
+        {idea.tags.map(tag => <span class="badge">{tag}</span>)}
+      </dd>
+      <dt>
+        Last updated:
+      </dt>
+      <dd>
+        <time datetime={idea.date}>{new Date(idea.date).toLocaleDateString()}</time>
+      </dd>
+      </dl>
+    <div class="flow -layout-reset">
+      <Content />
+</div>
+    </div>
+</div>
+</DefaultLayout>

@@ -7,13 +7,11 @@ import Pagination from "@/components/Pagination.astro"
 import TagFilter from "@/components/TagFilter.astro"
 import { slugify } from '@/utils/slugify.ts';
 import { sortByDateDesc } from '@/utils/sortByDate';
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 
 
 export async function getStaticPaths({paginate}) {
-const title = "Joshuas Gedanken"
-const description = "Gedanken, Workflows und Ideen. Einfach Dinge, über die ich schreiben möchte."
+const title = "Joshuas Blog"
+const description = "A blogging format. If I feel like sharing a text that way."
 const currentRoute = Navigation.blogRoot.url
 
 const allBlogPosts = await Astro.glob<BlogPost>("/src/content/Blog/*.md");
@@ -63,16 +61,16 @@ const {page, currentLang, allLangs, currentRoute, title, description} = Astro.pr
 
 <DefaultLayout title={`${title} nach Sprache: ${currentLang}`} description={description} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="section layout-container blog-layout | mt-header">
-     <h1 class="section-title -with-dot -dot-top" data-translate="blog.headline">
-      {getTranslation('blog.headline', DE)}
+     <h1 class="section-title -with-dot -dot-top">
+      Blog
     </h1>
     <TagFilter hasReset={true} tags={allLangs.map(lang => lang.toLowerCase())} tagName="Sprache" tagRootUrl="/blog/" selected={currentLang} hasPagination={true} />
 
     <BlogList blogPosts={page.data}></BlogList>
     <Pagination current={page.currentPage} last={page.lastPage} next={page.url.next} prev={page.url.prev} basePath={currentRoute}></Pagination>
 
-    <div class="note -info flow w-full" data-translate="blog.getNotified">
-    <p>{getTranslation('blog.getNotified', DE)}</p>
+    <div class="note -info flow w-full">
+    <p>Want to stay updated?</p>
     <p><a href="/feed/blog.xml">RSS Feed</a></p>
     </div>
 

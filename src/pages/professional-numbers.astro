@@ -1,7 +1,6 @@
 ---
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 ---
 <style lang="scss">
 
@@ -36,45 +35,40 @@ import DE from "@/public/translations/de.json"
 }
 </style>
 
-<DefaultLayout title={"Ich in Zahlen"} description={"Für den schnellen Blick. Einmal gucken und mehr wisse. Oder auch nicht."} canonical={new URL(Astro.url.pathname, Astro.site)}>
+<DefaultLayout title={"Ich in Zahlen"} description={"CV, skills, facts. Important to some, uninteresting to others."} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="section layout-container stack -layout-2xl | mt-header">
-          <h1 class="section-title" data-translate="inData.headline">
-          {getTranslation('inData.headline', DE)}</h1>
+          <h1 class="section-title">In Data: Joshua</h1>
           <section class="with-sidebar">
                 <div class="contact stack -layout-lg" data-grow style="--min-size: 30%">
                     <div class="stack -layout-xs">
-                        <h2>Wer</h2>
+                        <h2>Who</h2>
                         <p>Joshua Stübner</p>
                         <p>15.09.1992</p>
                         <p>Dorfstr. 34</p>
                         <p>19273 Zeetze</p>
                     </div>
                     <div class="stack -layout-xs">
-                        <h2>Kontakt</h2>
+                        <h2>Contact</h2>
                         <p data-label="Telefon">+49 152 52481201</p>
                         <p data-label="Email">jshsj@hey.com</p>
                         <p data-label="Website">joshuastuebner.com</p>
                     </div>
                 </div>
                 <section class="entry summary" data-aside>
-                    <h2 class="-with-dot">Zusammenfassung</h2>
+                    <h2 class="-with-dot">Summary</h2>
                     <p>
-                        Ich bin ein ambitionierter <strong>(Frontend) Web Entwickler</strong> mit Fokus auf <strong>Problemlösung,
-                        Performance</strong> und <strong>Bedienung</strong>.
+                        I'm an ambitious <strong>(Frontend) Web Entwickler</strong> with focus on<strong> solving problems, performance</strong> and <strong>usability</strong>.
                     </p>
-                    <p>Autodidaktisch, selbstständig und
-                        mit stark ausgeprägtem analytischen Denken, aber arbeite mindestens genauso gerne im Team.</p>
-                    <p>Mit einem bunten Buch voller Erfahrungen, bin ich immer auf der Suche nach Verbesserung.
+                    <p>Self-taught, self-responsible with strong analytical skills, yet I like to work in a team.</p>
+                    <p>I've got a very mixed bag of experiences and I'm always striving to improve myself and my work.
                     </p>
-                    <p><strong>Meine Stärke ist das Frontend</strong>: Strukturiert mit Typescript, mit Freude an CSS
-                        und
-                        Interesse an UX versuche ich möglichst angenehme und effektive User Interfaces zu bauen.</p>
+                    <p><strong>Frontend is my strong suite</strong>: Structured with Typescript, lots of love for CSS and a thorough interest in UX. I try to create interfaces, that are pleasant, yet effective to use</p>
                 </section>
             </section>
           <div class="main stack short cv">
         <div class="page stack -layout-2xl">
                         <section class="entry stack -layout-xl">
-                <h2 class="-with-dot">Bildung & Ausbildung</h2>
+                <h2 class="-with-dot">Education and training</h2>
                 <div class="stack -layout-s">
                 <h3 data-label="08.2003 - 07.2011">
                     Freiherr vom Stein Gymnasium, Leverkusen
@@ -88,80 +82,75 @@ import DE from "@/public/translations/de.json"
                 </div>
                 <div class="stack -layout-s">
                 <h3 data-label="03.2016 - Heute">
-                    Erarbeiten und Weiterbildung im Bereich (Web)-Development
+                    Learning and improving my skills in (web)-development
                 </h3>
-                <p class="result">Autodidaktisch und durch Online-Kurse</p>
+                <p class="result">Self taught and with online courses</p>
                 </div>
             </section>
             <section class="entry knowledge stack -layout-xl">
-                <h2 class="-with-dot">Damit arbeite ich</h2>
-                <p data-label="Programmiersprachen">
+                <h2 class="-with-dot">What I use</h2>
+                <p data-label="Programming">
                     Javascript (ES6, React, Gatsby, Angular, Astro, Svelte, RXJS, Web Components), Typescript, HTML, CSS
                     (Sass/SCSS), minimal Golang
                 </p>
-                <p data-label="Verwaltung">
+                <p data-label="Tools">
                     Linux, PostgreSQL, NGINX, Git, Mac, Figma, Cloudflare
-                    Workers, CI/CD mit Github / Gitlab / Netlify / Sourcehut, Jira
+                    Workers, CI/CD with Github / Gitlab / Netlify / Sourcehut, Jira
                 </p>
-                <p data-label="Sprachen">
-                    Englisch (fließend), deutsch (muttersprachlich), Französisch (lernend)
+                <p data-label="Languages">
+                    English (fluent), German (native), French (learning)
                 </p>
             </section>
         </div>
         <div class="page stack -layout-2xl">
-            <h2 class="-with-dot">Praxis-Erfahrung</h2>
+            <h2 class="-with-dot">Experience</h2>
             <section class="entry stack -layout-xl">
                 <article class="stack -layout-s">
                     <h3 data-label="10.2015 - 02.2016">
-                        Praktikum bei Heuschrecke Naturkost GmbH, Troisdorf
-
+                        Internship at Heuschrecke Naturkost GmbH, Troisdorf
                     </h3>
                     <p class="result"
-                    >Einblick in alle Positionen eines kleinen Bio-Gewürz und
-                        -Teeherstellers</p>
+                    >Insights in all positions of a small organic herb and tee wholesaler</p>
                     <ul class="optional">
-                        <li>Verwaltung von Warenein- und ausgängen</li>
+                        <li>Administatrion of incoming and outgoing goods</li>
                         <li>
-                            Aufbereitung und Verarbeitung von Bestellungen
+                            Managing orders
                         </li>
-                        <li>Kundensupport</li>
-                        <li>Arbeit an der Misch- und Verpackungsstrecke</li>
+                        <li>Customer support</li>
+                        <li>Work at mixing and packaging stations</li>
                     </ul>
                 </article>
                 <article class="stack -layout-s">
                     <h3 data-label="07.2016 - 08.2016">
-                        Angestellter bei Heuschrecke Naturkost GmbH, Troisdorf
+                        Employee at Heuschrecke Naturkost GmbH, Troisdorf
                     </h3>
                     <p
                             class="result"
-                    >Allgemeine Büroarbeit und Kundenbetreuung</p
+                    >General office work and customer support</p
                     >
                 </article>
                 <article class="stack -layout-s">
                     <h3 data-label="02.2018 - 08.2018">
-                        Praktikum bei Tat&Kraft, Berlin
+                        Internship at Tat&Kraft, Berlin
                     </h3>
                     <p class="result"
-                    >Einblick in Front- und Backend-Web-Development in
-                        2-Mann-Betrieb</p>
+                    >Insights into a 2-person Front- and Backend-Web-Development company</p>
                     <ul class="optional">
                         <li>
-                            Umsetzung von vorbereiten Designs zu responsiven und
-                            funktionierende Webseiten mit HTML / Nunjucks, (S)CSS, Vanilla JS
-                            und Vue
+                            Coding prepared templates into responsive and functioning websites using HTML / Nunjucks,
+                            (S)CSS, Vanilla JS and Vue
                         </li>
                         <li>
-                            Ausarbeitung des innerbetrieblichen Toolings und Automatisierung
-                            von Prozessen mit Gulp und JS
+                            Work on company tooling and automation of processes using Gulp and JS
                         </li>
                         <li>
-                            Einblicke in das intern genutzten PHP-Backend
+                            Insights into the company's PHP Backend
                         </li>
                     </ul>
                 </article>
                 <article class="stack -layout-s">
-                    <h3 data-label="08.2017 - Heute">
-                        Selbstständigkeit
+                    <h3 data-label="08.2017 - Today">
+                        Self-Employement
                     </h3>
                     <p class="result"
                     >Webdevelopment, Social Media Management, Content Creation</p
@@ -169,14 +158,13 @@ import DE from "@/public/translations/de.json"
                     <ul class="optional">
 
                         <li>
-                            Design und Entwicklung von Webseiten und Webapps mit Hilfe von
-                            modernen Web-Technologien, sowie Einbindung verschiedener APIs
+                            Design and development of websites and webapps using modern web-technologies and 
+                            APIs
                         </li>
-                        <li>Kundenbetreuung und Begleitung</li>
-                        <li>Verwaltung von Social Media Accounts</li>
+                        <li>Customer support and relations</li>
+                        <li>Maintaining Social Media Accounts</li>
                         <li>
-                            Verfassen von Artikeln und Rezepten zu Themen rund um die
-                            Bio-Gewürzherstellung und Verwendung
+                            Writing articles and recipes on topics related to organic herbs and spices and their uses
                         </li>
                     </ul>
                 </article>
@@ -186,75 +174,66 @@ import DE from "@/public/translations/de.json"
             <section class="entry stack -layout-xl">
                 <article class="stack -layout-s">
                     <h3 data-label="09.2019 - 12.2019">
-                        Praktikum bei Strichpunkt Design, Berlin
+                        Internship at Strichpunkt Design, Berlin
                     </h3>
                     <p class="result"
-                    >Webdevelopment mit Angular, React und Vue</p
+                    >Webdevelopment in Angular, React and Vue</p
                     >
                 </article>
                 <article class="stack -layout-s">
                     <h3 data-label="01.2020 - 09.2020">
-                        Frontend-Developer bei Strichpunkt Design, Berlin
+                        Frontend-Developer at Strichpunkt Design, Berlin
                     </h3>
                     <p
                             class="result"
-                    >Technische Betreuung und Entwicklung mit Angular, React und
+                    >Technical consulting and development in Angular, React and
                         Vue</p
                     >
                     <ul class="optional">
                         <li>
-                            Verantwortlich für die Frontend-Entwicklung einer medium-scale
-                            Fintech Webapp und Webseite, unter Benutzung von React/Gatsby und
-                            Angular 2
+                            Responsible for the frontend of a medium-scale Fintech webapp and website using React/Gatsby and Angular 
                         </li>
                         <li>
-                            Koordination mit Kunden und anderen in- und externen Design,
-                            Entwicklungs-Teams und SEO-Teams
+                            Coordination with customer and other internal and external design, development and SEO-teams
                         </li>
                         <li>
-                            Enge Zusammenarbeit mit internen Teams zur Weiterentwicklung und
-                            Zukunftsplanung eines Kundenprojekts
+                            Close cooperation with internal teams for future development and perspectives of a client
                         </li>
                         <li>
-                            Mitarbeit an Verwaltungsplattform eines Post- und
-                            Transportgroßkunden
+                            Collaboration on a administration plattfom of a large post- and transport company
                         </li>
                         <li>
-                            Mitarbeit an grafisch aufwändigen Stiftungswebseiten mit Einblick
-                            in WebGL
+                            Collaboration on a graphically elaborate website for a foundation with insights into WebGL
                         </li>
                     </ul>
                 </article>
                 <article class="stack -layout-s">
                     <h3 data-label="01.2020 - 07.2021">
-                        Frontend-Entwickler bei Bloxxter, Hamburg
+                        Frontend-Developer at Bloxxter, Hamburg
                     </h3>
                     <p
                             class="result"
-                    >Web Entwicklung mit Angular und React und Pflege des Frontends einer Immobilien Investment
-                        Plattform
-                        auf Blockchain Technologie Basis</p
+                    >Web development in Angular and React. Responsible for the frontend of a real assets invesment plattform using blockchain technology</p
                     >
                     <ul class="optional">
                         <li>
-                            Entwicklung & Instandhaltung der Internet-Präsenz
+                            Development and maintainance of the frontend
                         </li>
                         <li>
-                            Frontend-Entwicklung des Kunden-Dashboards (Angular / RXJS / Redux) mit selbstgebauten
-                            Shopsystem in enger Zusammenarbeit mit dem Backend
+                            Frontend develpment of a customer dashboard (Angular / RXJS / Redux) with a custom built
+                            shop system in close collaboration with the backend team
                         </li>
                         <li>
-                            Entwicklung und Instandhaltung des Backoffice mit vielen Kunden und bestellungsverwaltenden
-                            Funktionen
+                            Development and maintainance of the backoffice with many customer and order related functions
                         </li>
                         <li>
-                            Entwicklung eines Smart Contract Wizard Prototyps und Implementierung
+                            Development of a smart contract wizard prototype and its implementation
                         </li>
                         <li>
-                            Pflege des Contentful CMS und Usercentrics
+                            Taking care of the Contentful CMS and Usercentrics
                         </li>
                         <li>
-                            Einblicke in viele Abläufe von Immobilien Investments
+                            Insights into many processes of real asset investments
                         </li>
                     </ul>
                 </article>
@@ -264,30 +243,32 @@ import DE from "@/public/translations/de.json"
             <section class="entry stack -layout-xl">
                 <article class="stack -layout-s">
                     <h3 data-label="07.2021 - Heute">
-                        Frontend-Entwickler bei quirion, Berlin (Übernahme)
+                        Frontend-Developer at quirion, Berlin (Merger)
                     </h3>
                     <p
                             class="result"
-                    >Fortsetzung der Tätigkeiten bei Bloxxter & Entwicklung von verschiedenen React-basierten
-                        Anwendungen</p
+                    >Continuation of the acitives and Bloxxter and development of multiple react-based web-apps</p
                     >
                     <ul
                             class="optional">
                         <li>
-                            Refactoring & Weiterentwicklung des bestehenden Component Systems in Typescript und
-                            CSS-Modules
+                            Taking over an existing component library by refactoring and developing further components
+                            using Typescript, React and CSS-Modules
                         </li>
                         <li>
-                            Entwicklung eines Prototyps einer Handelsplattform
+                            Developing a prototype of a trading app
+                        </li>
+                        <li>
+                            Rebuilding the smart contract wizard in React
                         </li>
                     </ul>
                 </article>
             </section>
             <section class="optional stack -layout-2xl">
-                <h2 class="-with-dot">Interessen</h2>
+                <h2 class="-with-dot">Interests</h2>
                 <div class="entry">
                     <p data-label="Hobbies">
-                        Kochen & Essen, Sport & Gesundheit, Technologie, Musik, Fotografie, Garten, Handwerken und Tiere
+                        All things cooking and food, health & fitness, technology, music, photography, garding, crafts and animals
                     </p>
                 </div>
             </section>

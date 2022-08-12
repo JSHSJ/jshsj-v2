@@ -1,6 +1,5 @@
 ---
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
+
 ---
 <style>
 .shareTheMeal {
@@ -25,11 +24,12 @@ import DE from "@/public/translations/de.json"
   <div class="layout-container | shareTheMeal-content">
     <div class="with-sidebar -layout-m justify-between | shareTheMeal-sidebar full-width">
     <div data-grow style="--min-size: 60%">
-    <p data-translate="share.text" set:html={getTranslation('share.text', DE)}>
+    <p>
+      <strong>Still hungry?</strong> Do something!
     </p>
     </div>
     <a  data-translate="share.cta" target="_blank" class="CTA-button" href="https://sharethemeal.org/donate" rel="noopener noreferrer">
-    {getTranslation('share.cta', DE)}
+    Share a meal
     </a>
     </div>
     </div>

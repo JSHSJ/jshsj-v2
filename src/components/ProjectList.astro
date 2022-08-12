@@ -1,8 +1,6 @@
 ---
 import IconPageLink from "./icons/Icon-PageLink.astro"
 import {Navigation} from "@/config/index.ts";
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 const {projects} = Astro.props;
 ---
 <ul class="list-reset stack -layout-xl">
@@ -12,7 +10,7 @@ const {projects} = Astro.props;
           <a href={`${Navigation.projectDetails.url}/${project.slug}`}><h3 class="typo-xl -bold font-headline">
           {project.title}
           </h3></a>
-          <div class="cluster typo-s -layout-s"><time datetime={project.year} class="-bold">{project.year}</span> - <a href={project.link} target="_blank" rel="noopener noreferrer" data-external>{project.link}</a>
+          <div class="cluster typo-s -layout-s"><time datetime={project.year} class="-bold">{project.year}</time> - <a href={project.link} target="_blank" rel="noopener noreferrer" data-external>{project.link}</a>
           </div>
           <p>{project.description}</p>
         </article>
@@ -22,9 +20,7 @@ const {projects} = Astro.props;
 </ul>
 <div class="cluster extra-links standout-box" data-aside>
       <a href={Navigation.projects.url} class="link-with-icon">
-      <IconPageLink></IconPageLink><span
-      data-translate="projects.allProjects"
-      >{getTranslation('projects.allProjects', DE)}</span></a>
+      <IconPageLink></IconPageLink>All Projects</a>
       <a href="https://github.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitHub</span></a>
       <a href="https://sr.ht/~jshsj/" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>sourcehut</span></a>
       <a href="https://gitlab.com/JSHSJ" target="_blank" rel="noopener noreferrer" class="link-with-icon"><IconPageLink></IconPageLink><span>GitLab</span></a>

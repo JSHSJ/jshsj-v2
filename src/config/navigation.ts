@@ -1,50 +1,54 @@
 export const Navigation = {
   start: {
     url: "/",
-    name: "navigation.start",
+    name: "Start",
   },
   projects: {
-    url: "/projekte",
-    name: "navigation.projects",
+    url: "/projects",
+    name: "Projects",
   },
   projectDetails: {
     url: "/projekte/details",
-    name: "navigation.projectDetails",
+    name: "Project Details",
   },
   blogRoot: {
     url: "/blog",
-    name: "navigation.blog",
+    name: "Blog",
   },
   blogStart: {
     url: "/blog/1",
-    name: "navigation.blog",
+    name: "Blog",
   },
   blogPost: {
     url: "/blog/post",
-    name: "navigation.blogPost",
-  },
-  devBlog: {
-    url: "https://dev.joshuastuebner.com/",
-    name: "navigation.devBlog",
-  },
-  zeug: {
-    url: "/zeug",
-    name: "navigation.thingsILike",
+    name: "Blogpost",
   },
   inZahlen: {
-    url: "/berufliche-zahlen",
-    name: "navigation.inData",
+    url: "/professional-numbers",
+    name: "In numbers",
+  },
+  digitalGardenRoot: {
+    url: "/digital-garden",
+    name: "Digital Garden",
+  },
+  digitalGardenTagPage: {
+    url: "/digital-garden/tag",
+    name: "Digital Garden",
+  },
+  digitalGardenDetailPage: {
+    url: "/digital-garden",
+    name: "Digital Garden",
   },
   imprint: {
     url: "/impressum",
-    name: "navigation.imprint",
+    name: "Imprint",
   },
   dataPolicy: {
     url: "/datenschutz",
-    name: "navigation.dataPolicy",
+    name: "Datapolicy",
   },
   now: {
-    url: "/jetzt",
-    name: "navigation.now",
+    url: "/now",
+    name: "Now",
   },
 };

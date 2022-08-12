@@ -1,42 +1,89 @@
 ---
-import {Navigation} from "@/config/index.ts"
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
+import { Navigation } from "@/config/index.ts"
 ---
 
+<style>
+  .subTitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-2);
+    font-family: var(--font-family-mono);
+  }
+  .split {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+       minmax(min(14em, 100%), 1fr)
+       );
+    gap: var(--size-relative-3xl);
+    align-items: flex-start;
+  }
+</style>
 
 <section class="section layout-container | personalReel">
-  <div class="stack -layout-xl">
-  <h2 class="section-title typo-hollow -with-dot -dot-top-right"><span data-translate="aboutMe.headline">
-  {getTranslation('aboutMe.headline', DE)}</span></h2>
-  <div class="flow -layout-l">
-  <p data-translate="aboutMe.intro" set:html={getTranslation('aboutMe.intro', DE)}></p>
-  <h3>
-    <a class="typo-xl -bold font-headline" href={Navigation.blogStart.url}
-      data-translate="blog.headline"
-    >{getTranslation('blog.headline', DE)}</a>
-  </h3>
-  <p data-translate="blog.intro">
-  {getTranslation('blog.intro', DE)}</p>
-
-  <h3>
-    <a class="typo-xl -bold font-headline"
-    href={Navigation.zeug.url}
-    data-translate="thingsILike.headline"
-    >{getTranslation('thingsILike.headline', DE)}</a>
-  </h3>
-  <p data-translate="thingsILike.intro">
-  {getTranslation('thingsILike.intro', DE)}</p>
-
-
-  <h3>
-    <a class="typo-xl -bold font-headline" href={Navigation.inZahlen.url}
-    data-translate="inData.headline"
-    >{getTranslation('inData.headline', DE)}</a>
-  </h3>
-  <p data-translate="inData.intro" set:html={getTranslation('inData.intro', DE)}></p>
-
-  </div>
+  <div class="stack -layout-2xl full-width -stretched">
+    <h2 class="typo-2xl typo-hollow"><span>What are you looking for?</span></h2>
+    <div class="split">
+    <div class="stack -layout-xl">
+    <h3 class="subTitle badge">Personal</h3>
+    <ul class="list-reset stack -layout-l">
+      <li>
+        <article>
+          <a href={Navigation.blogStart.url}>
+            <h3 class="typo-xl -bold font-headline">
+              {Navigation.blogStart.name}
+            </h3>
+          </a>
+          <p>It's a blog and it's mine. I rarely write in it though.</p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <a href={Navigation.digitalGardenRoot.url}>
+            <h3 class="typo-xl -bold font-headline">
+              {Navigation.digitalGardenRoot.name}
+            </h3>
+          </a>
+          <p>Lot's of personal notes, ideas. Meant for me, but you can also read them.</p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <a href={Navigation.now.url}>
+            <h3 class="typo-xl -bold font-headline">
+              {Navigation.now.name}
+            </h3>
+          </a>
+          <p>In case you're wondering, what concerns me at the moment.</p>
+        </article>
+      </li>
+    </ul>
+    </div>
+    <!-- <hr /> -->
+    <div class="stack -layout-xl">
+    <h3 class="subTitle badge">Professional</h3>
+    <ul class="list-reset stack -layout-l">
+    <li>
+      <article>
+        <a href={Navigation.projects.url}>
+          <h3 class="typo-xl -bold font-headline">
+            {Navigation.projects.name}
+          </h3>
+        </a>
+        <p>All of my projects. Like a good portfolio should have.</p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <a href={Navigation.inZahlen.url}>
+          <h3 class="typo-xl -bold font-headline">
+            {Navigation.inZahlen.name}
+          </h3>
+        </a>
+        <p>My CV, if you're into that.</p>
+      </article>
+    </li>
+    </ul>
+    </div>
+    </div>
   </div>
 </section>
-

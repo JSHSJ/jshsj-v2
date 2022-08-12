@@ -1,0 +1,40 @@
+---
+import { Navigation } from "@/config/index.ts"
+const { ideas } = Astro.props;
+---
+
+<style>
+  .list {
+    grid-template-columns: repeat(
+      auto-fit,
+       minmax(min(16em, 100%), 1fr)
+       );
+  }
+
+  .title {
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-sans);
+    --font-weight: var(--font-weight-medium);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family-sans);
+    --font-weight: var(--font-weight-regular);
+  }
+</style>
+
+<ul class="list-reset stack -layout-m w-full list">
+  {ideas.map((idea, postIndex) => (
+  <li class="stack | idea">
+    <article class="stack -layout-3xs">
+      <a href={`${Navigation.digitalGardenDetailPage.url}/${idea.slug}`}>
+        <h2 class="title">
+          {idea.title}</h2>
+      </a>
+      <p class="description">
+        {idea.description}</p>
+    </article>
+  </li>
+  ))}
+</ul>

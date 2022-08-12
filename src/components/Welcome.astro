@@ -1,8 +1,6 @@
 ---
 import Logo from "./Logo.astro"
 import {MY_EMAIL} from "@/config/index.ts"
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 ---
 <style>
 
@@ -54,32 +52,32 @@ dd {
             </div>
             <dl class="stack -layout-s | welcomeStack" data-grow>
                 <div>
-                  <dt data-translate="welcome.greeting">
-                  {getTranslation('welcome.greeting', DE)}
+                  <dt>
+                  Hi! I'm
                   </dt>
                   <dd>
                   <h1>Joshua Stübner</h1>
                   </dd>
                 </div>
                 <div>
-                  <dt data-translate="welcome.workAs">
-                  {getTranslation('welcome.workAs', DE)}
+                  <dt>
+                  and work as
                   </dt>
-                  <dd data-translate="welcome.jobTitle">
-                    {getTranslation('welcome.jobTitle', DE)}
+                  <dd>
+                    Web Developer
                   </dd>
                 </div>
                 <div>
-                  <dt data-translate="welcome.atTheMoment">
-                    {getTranslation('welcome.atTheMoment', DE)}
+                  <dt>
+                    at the moment at
                   </dt>
-                  <dd data-translate="welcome.workLocation">
-                    {getTranslation('welcome.workLocation', DE)}
+                  <dd>
+                    quirion
                   </dd>
                 </div>
                 <div>
-                  <dt data-translate="welcome.getInContact">
-                   {getTranslation('welcome.getInContact', DE)}
+                  <dt>
+                   You're always welcome to contact me at
                   </dt>
                   <dd>
                   <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a>

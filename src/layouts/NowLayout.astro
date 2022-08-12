@@ -1,0 +1,21 @@
+---
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<DefaultLayout title={"Now"} description={"Answering the question of: What do you do at the moment?"} canonical={new
+  URL(Astro.url.pathname, Astro.site)}>
+  <div class="section layout-container flow | mt-header">
+    <h1 class="section-title">What now?</h1>
+    <p data-translate="now.intro">For everyone asking 'What are you up to now?'</p>
+    <small class="jshsj-tag"><span data-translate="general.updatedOn">Updated on:</span>
+      <time datetime={frontmatter.updatedOn}>{new Date(frontmatter.updatedOn).toLocaleDateString()}</time></small>
+    <div class="flow -layout-reset">
+    </div>
+    <slot />
+    <small class="mt-s2">
+      This is a 'now'-Seite, where you'll find what keeps me busy at the moment. Inspired by:
+      <a href="https://nownownow.com/about" target="_blank" rel="noreferrer noopener">https://nownownow.com/about</a>
+    </small>
+  </div>
+</DefaultLayout>

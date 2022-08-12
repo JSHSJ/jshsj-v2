@@ -1,14 +1,12 @@
 ---
 import Themepicker from "./ThemePicker.astro"
-import LangPicker from "./LangPicker.astro"
 import { Navigation } from "@/config/index.ts"
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 
 const NavItems = [
   Navigation.start,
   Navigation.projects,
   Navigation.blogStart,
+  Navigation.digitalGardenRoot,
   Navigation.now,
   Navigation.inZahlen
 ]
@@ -41,16 +39,15 @@ const NavItems = [
 
 <header>
   <div class="layout-container | pblock-0">
-    <a href="#content-start" class="text-assistive" data-translate="general.skipLink">
-      {getTranslation('general.skipLink', DE)}
+    <a href="#content-start" class="text-assistive">
+      Skip to content
     </a>
 
     <div class="header-container full-width">
       <nav class="cluster | navCluster">
         {NavItems.map(item => (
-        <a href={item.url} data-translate={item.name}>{getTranslation(item.name, DE)}</a>
+        <a href={item.url}>{item.name}</a>
         ))}
-        <LangPicker></LangPicker>
       </nav>
       <div class="themepicker">
         <Themepicker></Themepicker>

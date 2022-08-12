@@ -2,8 +2,6 @@
 import type {Project} from "@/types/Project.type"
 import { slugify } from '@/utils/slugify';
 import { sortByDateDesc } from '@/utils/sortByDate';
-import { getTranslation } from "@/intl/getTranslation"
-import DE from "@/public/translations/de.json"
 
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import ProjectList from "@/components/ProjectList.astro"
@@ -15,12 +13,12 @@ const formattedProjects = allProjects.map(project => ({
 })).sort(sortByDateDesc)
 
 ---
-<DefaultLayout title={"Meine Projekte"} description={"Alle möglichen und verschiedene Projekte, die ich gemacht habe. Meistens Webseiten."} canonical={new URL(Astro.url.pathname, Astro.site)}>
+<DefaultLayout title={"My projects"} description={"Most of the projects I've made. Mostly websites."} canonical={new URL(Astro.url.pathname, Astro.site)}>
 
 <div class="section layout-container mt-header">
     <div class="stack -layout-xl">
-    <h1 class="section-title -with-dot -dot-top" data-translate="projects.headline">
-        {getTranslation('projects.headline', DE)}
+    <h1 class="section-title -with-dot -dot-top">
+        Projects
     </h1>
     <ProjectList projects={formattedProjects}></ProjectList>
     </div>

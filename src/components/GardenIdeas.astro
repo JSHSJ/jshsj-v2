@@ -29,7 +29,7 @@ const {tags, tagName, tagRootUrl, selected, hasPagination, hasReset} = Astro.pro
 <span>{tagName}</span></p>
 <ul class="list-reset cluster">
   {hasReset && <li><a class={`CTA-button -secondary -small${selected ? '': ' -active'}`} href={`${tagRootUrl}${hasPagination ? "1" : ''}`} aria-current={!selected} data-translate="general.all">
-  all
+  All
   </a></li>}
   {tags.map(tag => (
     <li>
