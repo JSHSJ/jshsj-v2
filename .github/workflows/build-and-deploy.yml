@@ -29,7 +29,7 @@ jobs:
       - run: mv content/flow/DigitalGarden/attachments/* public/assets/attachments/
       - run: mv content/flow/Projekte/*.md src/content/Projekte/
       - run: mv content/flow/Blog/*.md src/content/Blog/
-      - run: mv content/flow/DigitalGarden/*.md src/content/DigitalGarden/
+      - run: mv content/flow/DigitalGarden/**/*.md src/content/DigitalGarden/
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
