@@ -5,10 +5,13 @@ const { ideas } = Astro.props;
 
 <style>
   .list {
+    display: grid;
+    gap: var(--gap);
     grid-template-columns: repeat(
       auto-fit,
        minmax(min(16em, 100%), 1fr)
        );
+       align-items: flex-start;
   }
 
   .title {
@@ -24,7 +27,7 @@ const { ideas } = Astro.props;
   }
 </style>
 
-<ul class="list-reset stack -layout-m w-full list">
+<ul class="list-reset -layout-m w-full list">
   {ideas.map((idea, postIndex) => (
   <li class="stack | idea">
     <article class="stack -layout-3xs">
