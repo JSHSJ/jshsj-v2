@@ -19,28 +19,43 @@ const sortByTitle = (a: GardenIdea, b: GardenIdea) => {
 
 const allIdeas = await Astro.glob<GardenIdea>("/src/content/DigitalGarden/**/*.md");
 const allTags = Array.from(new Set(allIdeas
-.map(idea => idea.frontmatter.tags)
-.reduce((allTags, tags) => [...allTags, ...tags], [])
-.map(tag => slugify(tag))));
+  .map(idea => idea.frontmatter.tags)
+  .reduce((allTags, tags) => [...allTags, ...tags], [])
+  .map(tag => slugify(tag))));
 
 const formattedIdeas = allIdeas.map(project => ({
-    ...project.frontmatter,
-    slug: slugify(project.frontmatter.title),
+  ...project.frontmatter,
+  slug: slugify(project.frontmatter.title),
 })).sort(sortByTitle)
 
 ---
-<DefaultLayout title={"Digital Garden"} description={"A collection of many things. Cultivated like a garden."} canonical={new URL(Astro.url.pathname, Astro.site)}>
 
-<div class="section layout-container mt-header">
-    <div class="stack -layout-xl">
-    <h1 class="section-title -with-dot -dot-top">
+<DefaultLayout title={"Digital Garden"} description={"A collection of many things. Cultivated like a garden."}
+  canonical={new URL(Astro.url.pathname, Astro.site)}>
+
+  <div class="section layout-container mt-header">
+    <div class="stack -layout-2xl">
+      <h1 class="typo-3xl -with-dot -dot-top">
         Digital Garden
-    </h1>
-    <p>My personal digital garden with lots of personal notes, ideas, small snippets and love. <i>Like a garden, always WIP.</i></p>
-    <section>
-      <TagFilter hasReset={true} tags={allTags.map(tag => tag.toLowerCase())} tagName="Categories" tagRootUrl={`${Navigation.digitalGardenTagPage.url}/`} selected="" hasPagination={false} />
-    </section>
-    <IdeaList ideas={formattedIdeas} />
+      </h1>
+      <p>My personal digital garden with lots of personal notes, ideas, small snippets and love. <i>Like a garden,
+          always WIP.</i></p>
+      <section class="stack -layout-lg">
+        <form class="input-field" method="get" action={`${Navigation.digitalGardenRoot.url}/search`}>
+          <label for="search" class="stack">
+            <span class="input-label">Search</span>
+            <div class="cluster -layout-sm">
+              <input class="input" id="search" name="search" type="search" placeholder="Enter a keyword..." />
+              <button type="submit">
+                Search
+              </button>
+            </div>
+          </label>
+        </form>
+        <TagFilter hasReset={true} tags={allTags.map(tag=> (tag as string).toLowerCase())} tagName="Categories"
+          tagRootUrl={`${Navigation.digitalGardenTagPage.url}/`} selected="" hasPagination={false} />
+      </section>
+      <IdeaList ideas={formattedIdeas} />
     </div>
-</div>
+  </div>
 </DefaultLayout>

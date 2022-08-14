@@ -1,0 +1,311 @@
+[
+  {
+    "title": "Aspect Ratio Fix",
+    "description": "Fix for browser that don't yet support aspect-ratio.",
+    "link": "/digital-garden/aspect-ratio-fix",
+    "headers": [],
+    "content": "<p>Since Safari doesn’t support <code>aspect-ratio</code> yet:</p><pre is:raw=\"\" class=\"astro-code\" style=\"background-color: var(--astro-code-color-background); overflow-x: auto;\"><code><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">  </span><span style=\"color: var(--astro-code-token-string-expression)\">aspect-ratio</span><span style=\"color: var(--astro-code-color-text)\">: 16 / 9;</span></span><span class=\"line\"></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">  </span><span style=\"color: var(--astro-code-token-keyword)\">@supports</span><span style=\"color: var(--astro-code-color-text)\"> (</span><span style=\"color: var(--astro-code-token-keyword)\">not</span><span style=\"color: var(--astro-code-color-text)\"> (</span><span style=\"color: var(--astro-code-token-constant)\">aspect-ratio</span><span style=\"color: var(--astro-code-token-keyword)\">:</span><span style=\"color: var(--astro-code-color-text)\"> </span><span style=\"color: var(--astro-code-token-constant)\">16 / 9</span><span style=\"color: var(--astro-code-color-text)\">)) {</span></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">    position: relative;</span></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">    </span><span style=\"color: var(--astro-code-token-string-expression)\">padding-bottom</span><span style=\"color: var(--astro-code-color-text)\">: calc(9 / 16 </span><span style=\"color: var(--astro-code-token-string-expression)\">*</span><span style=\"color: var(--astro-code-color-text)\"> 100%);</span></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">    height: 0;</span></span><span class=\"line\"></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">    </span><span style=\"color: var(--astro-code-token-string-expression)\">img</span><span style=\"color: var(--astro-code-color-text)\"> {</span></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">      </span><span style=\"color: var(--astro-code-token-constant)\">position</span><span style=\"color: var(--astro-code-token-keyword)\">:</span><span style=\"color: var(--astro-code-color-text)\"> </span><span style=\"color: var(--astro-code-token-constant)\">absolute</span><span style=\"color: var(--astro-code-color-text)\">;</span></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">    }</span></span><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">  }</span></span></code></pre>"
+  },
+  {
+    "title": "Quick Image Manipulations",
+    "description": "Random snippets for image manipulation.",
+    "link": "/digital-garden/quick-image-manipulations",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "script-for-resize-and-creating-source-sets",
+        "text": "Script for resize and creating source sets"
+      },
+      {
+        "depth": 2,
+        "slug": "resize-a-directory-of-images",
+        "text": "Resize a directory of images"
+      },
+      {
+        "depth": 2,
+        "slug": "tool-recommendations",
+        "text": "Tool Recommendations"
+      }
+    ],
+    "content": "<p>This will probably updated, when I run into more practical solutions.</p><h2 id=\"script-for-resize-and-creating-source-sets\">Script for resize and creating source sets</h2><p>Simple deno script for creating and optimising a set of images. Needs to be adapted to your needs, but maybe it’s helpful to you:</p><p><a href=\"https://git.sr.ht/~jshsj/jshsj-haus/tree/master/item/public/content/utils/images.ts\">https://git.sr.ht/~jshsj/jshsj-haus/tree/master/item/public/content/utils/images.ts</a></p><h2 id=\"resize-a-directory-of-images\">Resize a directory of images</h2><ul><li>Download <a href=\"https://imagemagick.org/index.php\">ImageMagick</a></li><li>Run <code>mogrify -resize [w] *.jpg</code></li></ul><h2 id=\"tool-recommendations\">Tool Recommendations</h2><ul><li><a href=\"https://squoosh.app/\">Squoosh</a> - Resize and optimse an image in your browser. Built by Google.</li><li><a href=\"https://pixlr.com/de/e/\">Pixlr</a> - Edit images in your browser. Has some nice features, is fairly cheap and easy to use.</li></ul>"
+  },
+  {
+    "title": "Writing userstories",
+    "description": "A mini template for writing user stories.",
+    "link": "/digital-garden/writing-userstories",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "a-classic-user-story",
+        "text": "A classic user story"
+      },
+      {
+        "depth": 3,
+        "slug": "alternatives",
+        "text": "Alternatives"
+      }
+    ],
+    "content": "<h2 id=\"a-classic-user-story\">A classic user story</h2><p>As <role>, I would like to <goal>[, so <value>]</value></goal></role></p><p><strong>Role</strong> needs to be the person, that profits from this. Might be the customer, might be your boss.</p><h3 id=\"alternatives\">Alternatives</h3><ul><li>To achieve <value> as <role>, I would like to <goal>.</goal></role></value></li><li>As <role>, I would like <what>, because <why></why></what></role></li><li>As <who> <when> <where>, I would like <what> <why>.</why></what></where></when></who></li></ul><p><a href=\"https://1qtspv2a8qad3nf2xr3pzat3-wpengine.netdna-ssl.com/wp-content/uploads/2020/10/HW-Story-Splitting-Flowchart.pdf\">https://1qtspv2a8qad3nf2xr3pzat3-wpengine.netdna-ssl.com/wp-content/uploads/2020/10/HW-Story-Splitting-Flowchart.pdf</a></p>"
+  },
+  {
+    "title": "Fluid dynamic typography",
+    "description": "Optimise your fonts by only providing what's needed.",
+    "link": "/digital-garden/fluid-dynamic-typography",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "explanation",
+        "text": "Explanation"
+      },
+      {
+        "depth": 2,
+        "slug": "script",
+        "text": "Script"
+      },
+      {
+        "depth": 2,
+        "slug": "inspiration",
+        "text": "Inspiration"
+      }
+    ],
+    "content": "<h2 id=\"explanation\">Explanation</h2><p>Modular scales and fluid typography scales are not very new, although still not widely popular. They have their upsides and downsides, but I like them.</p><p>The basic idea is, that they scale with the devices viewport. Larger viewports have larger fonts (and spacing).</p><p>The scale is not linear, but modular, which is supposed to create a more harmonic visual effect. Read more about it under <a href=\"#inspiration\">Inpspirations</a>.</p><h2 id=\"script\">Script</h2><p>This is script I wrote to generate my fluid typography scale.</p><p><a href=\"https://paste.sr.ht/~jshsj/bcb0ca3a49ab0550b8d21e16f9f09025cad7c8d2\">https://paste.sr.ht/~jshsj/bcb0ca3a49ab0550b8d21e16f9f09025cad7c8d2</a></p><h2 id=\"inspiration\">Inspiration</h2><p>Basic explanation and source of inspiration: <a href=\"https://every-layout.dev/rudiments/modular-scale/\">https://every-layout.dev/rudiments/modular-scale/</a></p><p>I copied and adapted the math from <a href=\"https://www.aleksandrhovhannisyan.com/blog/fluid-type-scale-with-css-clamp/\">https://www.aleksandrhovhannisyan.com/blog/fluid-type-scale-with-css-clamp/</a>. He also has a <a href=\"https://www.fluid-type-scale.com/\">online calculator</a>, that’s pretty good, but didn’t completely fit my needs.</p>"
+  },
+  {
+    "title": "Font Subsetting",
+    "description": "Optimise your fonts by only providing what's needed.",
+    "link": "/digital-garden/font-subsetting",
+    "headers": [],
+    "content": "<p>Just read this:<a href=\"https://www.sarasoueidan.com/blog/glyphhanger/\">https://www.sarasoueidan.com/blog/glyphhanger/</a></p><p>TLDR:Run <code>glyphhanger {your(dev)domain} --spider-limit=0 --subset=\"*.ttf\"</code>.</p><ul><li>Replace <code>*ttf</code> with your font’s actual name, if or suffix.</li><li>Needs to be called in font directory.</li></ul>"
+  },
+  {
+    "title": "Performant image loading",
+    "description": "The basics and a few tips for faster image loading.",
+    "link": "/digital-garden/performant-image-loading",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "the-basics",
+        "text": "The basics"
+      },
+      {
+        "depth": 3,
+        "slug": "add-width-height-and-alt-attributes",
+        "text": "Add width, height and alt attributes"
+      },
+      {
+        "depth": 3,
+        "slug": "create-a-sourceset-and-provide-sizes",
+        "text": "Create a sourceset and provide sizes"
+      },
+      {
+        "depth": 3,
+        "slug": "adding-lazy-loading-and-async-decoding",
+        "text": "Adding lazy loading and async decoding"
+      },
+      {
+        "depth": 3,
+        "slug": "a-few-more-tips",
+        "text": "A few more tips"
+      },
+      {
+        "depth": 3,
+        "slug": "links--further-reading",
+        "text": "Links & Further reading"
+      }
+    ],
+    "content": "<p>Loading images is what we do. Oftentimes. How to do it well is a different thing. Here are a few tips.</p><h2 id=\"the-basics\">The basics</h2><h3 id=\"add-width-height-and-alt-attributes\">Add width, height and alt attributes</h3><p>Providing width and height will provide the browser with the necessary information to prevent layout shifts. Getting them is sometimes harder to do, because you’ll either need to set them manually or get them automatically at buildtime or from an API.</p><p>Check my deno script at the bottom to see how you can do it yourself.</p><p>Providing alt attributes is great for accessibility. That’s your main concern. This will also make for better SEO, so that’s neat.</p><h3 id=\"create-a-sourceset-and-provide-sizes\">Create a sourceset and provide sizes</h3><p>Sourceset combined with sizes will help the browser load the approriate image based on the viewport width.</p><p>Generating <strong>sourceset</strong> is fairly straight forward: Use an online converter or do it yourself. It’s just resizing images, creating the filenames and dumping them into a single string, that looks like this:</p><pre is:raw=\"\" class=\"astro-code\" style=\"background-color: var(--astro-code-color-background); overflow-x: auto;\"><code><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">/content/images/sources/2021-12-31_flur_neues-namensschild_480.jpg 480w, /content/images/sources/2021-12-31_flur_neues-namensschild_800.jpg 800w, /content/images/sources/2021-12-31_flur_neues-namensschild_1280.jpg 1280w, /content/images/2021-12-31_flur_neues-namensschild.jpg 1440w</span></span></code></pre><p>The format is: <code>{imagePath}{imageName}{containerWidth*},</code></p><p>The container width is set with the <strong>sizes</strong> attribute, which looks like this:</p><pre is:raw=\"\" class=\"astro-code\" style=\"background-color: var(--astro-code-color-background); overflow-x: auto;\"><code><span class=\"line\"><span style=\"color: var(--astro-code-color-text)\">(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1280px) 1280px, 1440px</span></span></code></pre><p>Format is: <code>(max-width:{width}): {containerWidth}</code>.</p><p>This practically means: Up to <code>{width}</code> this container will be <code>{containerWidth}</code> wide.</p><p><em>Note: You can use different media queries here, too.</em></p><h3 id=\"adding-lazy-loading-and-async-decoding\">Adding lazy loading and async decoding</h3><p>Most browser now natively support <code>loading=\"lazy\"</code>, which loads images when they are close to the currently shown viewport. Your page will load faster and load images as needed.</p><p><em>Careful: You don’t want to lazyload your “above the fold” image. Set them to <code>loading=\"eager\"</code> instead, so your page will look nice when loading for the first time</em></p><p><code>decoding=\"async\"</code> will do something similar: Defer the image decoding to a later point in time, so your page can load even if the image is not yet decoded.</p><h3 id=\"a-few-more-tips\">A few more tips</h3><ul><li><strong>Cropping your mobile images</strong> can be very helpful to reduce the file size while keeping what you want to show. Basically crop your image around what you want to show in a vertical orientation. (Credits go to <a href=\"https://www.reddit.com/user/Citrous_Oyster/\">u/Citrous_Oyster</a>).</li><li><strong>Resize and optimise your images beforehand</strong>. You can do that in your build, manually or through your image cloud service. Only load images in the sizes you actually need and set the quality to around 70% is a good starting point.</li><li><strong>Load graphics as svg</strong>: If you have them, load your logos and graphics as SVGs. They’re smaller in size.</li><li>If you use a different image host, it might be beneficial to preconnect to that service using: <code>&#x3C;link rel=\"preconnect\" href=\"{yourService}\" /></code></li><li>While you’re at it: You can also preload your header image, if you have one: <code>&#x3C;link rel=\"preload\" href=\"{imagePath}\" as=\"image\" crossorigin=\"anonymous\"></code></li></ul><h3 id=\"links--further-reading\">Links &#x26; Further reading</h3><ul><li><a href=\"https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/\">https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/</a></li><li>My example image generating script: <a href=\"https://git.sr.ht/~jshsj/jshsj-haus/tree/master/item/public/content/utils/images.ts\">https://git.sr.ht/~jshsj/jshsj-haus/tree/master/item/public/content/utils/images.ts</a></li></ul><p>I’ll add to this, when I learn more.</p>"
+  },
+  {
+    "title": "Excellence",
+    "description": "A special degree of good.",
+    "link": "/digital-garden/excellence",
+    "headers": [],
+    "content": "<p>Not yet thought.</p>"
+  },
+  {
+    "title": "Loyalty",
+    "description": "More than just a temporary thing",
+    "link": "/digital-garden/loyalty",
+    "headers": [],
+    "content": "<p>More than just a temporary things.</p><p>TBC.</p>"
+  },
+  {
+    "title": "Mastery",
+    "description": "Being truely good at something.",
+    "link": "/digital-garden/mastery",
+    "headers": [],
+    "content": "<p>Not yet thought.</p>"
+  },
+  {
+    "title": "Vulnerability",
+    "description": "Not good at anything, but in a lot of things",
+    "link": "/digital-garden/vulnerability",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "the-powerful",
+        "text": "The powerful"
+      },
+      {
+        "depth": 2,
+        "slug": "avoidance",
+        "text": "Avoidance"
+      }
+    ],
+    "content": "<p>One of the central aspects of interpersonal relationships. Even with yourself. It’s very powerful to be vulnerable. Truely honest, truely “there”, in this very moment for this very person. You’ll feel everything: youself, a certain fear, a certain excitement. What’s going to happen next?</p><h2 id=\"the-powerful\">The powerful</h2><p>Vulnerability can cause the impossible. If you dare, you can love deply. It can be the motivation for your greatest challenge, can be the basis for the most intimate friendships. You show <em>yourself</em>, the way you are. You’re afraid, but your there regardless.</p><h2 id=\"avoidance\">Avoidance</h2><p>The opposite is the complete avoidance of vulnerability. It leads to weird relationships, odd communication that leads nowhere. It remains fleeting and trivial. You’re looking to get out of it as soon as possible, but you’re safe. You’ll stay invulnerable, yet injured. By crawling away, you’ll validate and sustain your fears. It doesn’t lead anywhere, except a weird form of security.</p><p>Always afraid, never happy, because nothing can truely be.</p><p><strong>So be you, be vulnerable. Show yourself. That’s the how you live.</strong></p>"
+  },
+  {
+    "title": "Food recommendations",
+    "description": "List of various food recommendations",
+    "link": "/digital-garden/food-recommendations",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "recommended-to-me",
+        "text": "Recommended to me"
+      },
+      {
+        "depth": 2,
+        "slug": "recommended-by-me",
+        "text": "Recommended by me"
+      },
+      {
+        "depth": 3,
+        "slug": "raw-products",
+        "text": "Raw Products"
+      },
+      {
+        "depth": 3,
+        "slug": "food-blogs",
+        "text": "Food Blogs"
+      }
+    ],
+    "content": "<h2 id=\"recommended-to-me\">Recommended to me</h2><h2 id=\"recommended-by-me\">Recommended by me</h2><h3 id=\"raw-products\">Raw Products</h3><ul><li><a href=\"https://www.theobroma-cacao.de/shop/product/valrhona-kakaopulver-pures-kakaopulver-von-valrhona-3655044?search=valrhona\">Valrhona Kakao</a><ul><li>The very best cocao I know. There is no alternative (so far)</li></ul></li><li><a href=\"https://www.flyingroasters.de\">Flying Roasters Kaffee</a><ul><li>Good and fair coffee subscription</li></ul></li></ul><h3 id=\"food-blogs\">Food Blogs</h3><ul><li><a href=\"https://fuchsbau.io/\">https://fuchsbau.io/</a><ul><li>Mein eigener, (aktuell nicht maintainter) Essenblogs</li></ul></li></ul>"
+  },
+  {
+    "title": "Recommendations",
+    "description": "A meta list of recommendations by me and for me.",
+    "link": "/digital-garden/recommendations",
+    "headers": [],
+    "content": "<ul><li><a class=\"internal new\" href=\"/digital-garden/viewing-recommendations\">Viewing Recommendations</a></li><li><a class=\"internal new\" href=\"/digital-garden/tech-recommendations\">Tech recommendations</a></li><li><a class=\"internal new\" href=\"/digital-garden/food-recommendations\">Food recommendations</a></li></ul>"
+  },
+  {
+    "title": "Tech recommendations",
+    "description": "List of various tech recommendations",
+    "link": "/digital-garden/tech-recommendations",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "recommended-to-me",
+        "text": "Recommended to me"
+      },
+      {
+        "depth": 2,
+        "slug": "recommended-by-me",
+        "text": "Recommended by me"
+      },
+      {
+        "depth": 3,
+        "slug": "tools",
+        "text": "Tools"
+      },
+      {
+        "depth": 3,
+        "slug": "people",
+        "text": "People"
+      }
+    ],
+    "content": "<h2 id=\"recommended-to-me\">Recommended to me</h2><h2 id=\"recommended-by-me\">Recommended by me</h2><h3 id=\"tools\">Tools</h3><ul><li><a href=\"https://www.hey.com/index.html\">Hey Email</a><ul><li>Sort of email client revisited. Faily expensive, but interesting features.</li></ul></li></ul><h3 id=\"people\">People</h3><ul><li><a href=\"https://heydonworks.com/\">Heydon Pickering</a><ul><li>Creator of <a href=\"https://every-layout.dev/\">Every Layout</a> and more. Fun guy with smart ideas</li></ul></li></ul>"
+  },
+  {
+    "title": "Viewing recommendations",
+    "description": "A list of viewing recommendations that were given to me.",
+    "link": "/digital-garden/viewing-recommendations",
+    "headers": [
+      {
+        "depth": 2,
+        "slug": "recommended-to-me",
+        "text": "Recommended to me"
+      },
+      {
+        "depth": 3,
+        "slug": "movies",
+        "text": "Movies"
+      },
+      {
+        "depth": 3,
+        "slug": "anime",
+        "text": "Anime"
+      },
+      {
+        "depth": 2,
+        "slug": "recommended-by-me",
+        "text": "Recommended by me"
+      }
+    ],
+    "content": "<h2 id=\"recommended-to-me\">Recommended to me</h2><h3 id=\"movies\">Movies</h3><ul><li>Clou (1985)</li><li>Tremors</li></ul><h3 id=\"anime\">Anime</h3><ul><li>Neon Genesis Evangelion</li><li>Cowbow Beebop</li></ul><h2 id=\"recommended-by-me\">Recommended by me</h2><blockquote><p>See all <a class=\"internal new\" href=\"/digital-garden/recommendations\">Recommendations</a></p></blockquote>"
+  },
+  {
+    "title": "Quotes",
+    "description": "Quotes from various people, that I liked",
+    "link": "/digital-garden/quotes",
+    "headers": [],
+    "content": "<blockquote><p>If you don’t learn, you’re a fool</p></blockquote>"
+  },
+  {
+    "title": "Taking notes",
+    "description": "Writing down things is a genius idea.",
+    "link": "/digital-garden/taking-notes",
+    "headers": [],
+    "content": "<p>It’s an exciting process. Once you start, you’re thoughts expand. Your mind starts looking for connections, comes up with similar thoughts and ideas (see <a class=\"internal new\" href=\"/digital-garden/written-thoughts\">Written thoughts</a>). It’s therapeutic, while also being exhausting. It empties your mind, might help the unraveling.</p>"
+  },
+  {
+    "title": "The broad focus",
+    "description": "Not good at anything, but in a lot of things",
+    "link": "/digital-garden/the-broad-focus",
+    "headers": [],
+    "content": "<p>I don’t have a focus in life. Not one, maybe multiple, which sounds contradictory. There’s nothing that fascinates me enough to sink into it for the rest of the foreseeable future, like a deep passion for music where everything else is meaningless.</p><p>That’s not bad though. The question is: What do I do with it. <em>Professionally?</em> <em>Personally?</em>I <em>would like</em> to have something, that I’m very good at. Concepts like <a class=\"internal new\" href=\"/digital-garden/excellence\">excellence</a> and <a class=\"internal new\" href=\"/digital-garden/mastery\">mastery</a> fascinate and impress me, but I’m not sure I can achieve it.</p><p>Sometimes I find things, that fascinate me, that I do a lot and want to be good at, and then I let them go ago. Few things persist.</p>"
+  },
+  {
+    "title": "The limbo after a breakup",
+    "description": "It's a weird floating state between to people.",
+    "link": "/digital-garden/the-limbo-after-a-breakup",
+    "headers": [],
+    "content": "<p>This weird floating state between to ex-lovers (please don’t generalise too much). A desire for contact, built over time, mixed with remnants of love, while trying to avoid emotions and keeping anything meaningful (topics that might hurt) out of the conversation. Sharing, but not too much. Keeping distance, but not too much. It seems like a very fragile state that needs to be upheld.</p><p>Why though? What’s there to lose?</p><p>I think it’s about <a class=\"internal new\" href=\"/digital-garden/vulnerability\">vulnerability</a>. Two ways.</p><p>On the one hand it’s a sort of self-defence against disappointment. Not hoping for things that won’t be - cannot be again, on both sides. Not getting involved in something, that might end badly.</p><p>On the other hand it’s a fear of losing someone forever. It might be out of habit. Maybe there’s something worth sustaining. A friendship, hopes, a dream. Keeping a foot in the door. Maybe you’ll need it one day.</p><p>What becomes a weird paradoxon. Not too much, not too little. Everything and nothing at the same time.</p>"
+  },
+  {
+    "title": "The observer",
+    "description": "He observes",
+    "link": "/digital-garden/the-observer",
+    "headers": [],
+    "content": "<p>He roams, he sees, he observers. Oftentimes cursory, sometimes very thoroughly. What’s he looking for? <strong>Nothing</strong>.</p><p>He’s either searching or looking to go somewhere, it’s the process. He is observing.</p>"
+  },
+  {
+    "title": "The way of the water",
+    "description": "The past of least resistance is a simple one.",
+    "link": "/digital-garden/the-way-of-the-water",
+    "headers": [],
+    "content": "<p>It’s the way of my life - the path of least resistance. Opportunistic. Impossible to fight the way you are for very long. And why would you.</p><p>It feels straightforward. There is no fight. Some people try, but there’s only one path. My path.</p><p>To be, that’s the purpose.</p><p>Sometimes I need to remind myself about this, it helps.</p>"
+  },
+  {
+    "title": "(Un)conditional love",
+    "description": "What is it and does it exist",
+    "link": "/digital-garden/unconditional-love",
+    "headers": [],
+    "content": "<p>I think, love, or whatever it is we call love, is always conditional. This opens up a huge wormhole, but let’s keep it simple.</p><p>I think love is always tied to something: be it time, location, reciprocality, simple physical attractiveness and most of all: that the other person is the person you think you know. That could be an idealistic version, but it’s usually enough no to be disillusioned / disappointed by them. No strong break, no murder,  no deception, no cheating - the usual.</p><p>And that’s it. It’s conditional, even in family (or even MORE in family.)</p>"
+  },
+  {
+    "title": "Written thoughts",
+    "description": "Writing down things is a genius idea.",
+    "link": "/digital-garden/written-thoughts",
+    "headers": [],
+    "content": "<p>It’s fascinating what writing down my thoughts does for me. It  pulls them out of my head and lays them to rest. They’re often gone afterwards.</p><p>Can I revisit them later and pick up where I left of? I need to try that sometimes.</p><p>It’s just good for me. It calms, it clears, it categorises and creates room for other things and by thus, new things.</p><p>Even though I haven’t left many things here, I’m sure that it has helped me immensely. Emotionally, professionally, personally. It pushed me into the right directions. It also opens up a new way to share things with others.</p><p>Last but not least, it helps my <a class=\"internal new\" href=\"/digital-garden/writing-style\">writing style</a>. I think so, anyways. I’m thinking how I write things down, sometimes delete, sometimes play with sentences. Doing that in English is different again. It’s very exciting though - It’s definitely a habit I’d like to pick up and build upon.</p>"
+  },
+  {
+    "title": "Writing style",
+    "description": "It's like a personality, but in written form.",
+    "link": "/digital-garden/writing-style",
+    "headers": [],
+    "content": "<p>It’s like a personality, but in written form.</p>"
+  }
+]

@@ -3,3 +3,17 @@
 .mt-header {
   margin-top: var(--size-relative-3xl);
 }
+
+.astro-code {
+  --astro-code-color-text: var(--color-code-text);
+  --astro-code-color-background: var(--color-code-background);
+  --astro-code-token-constant: var(--color-code-string);
+  --astro-code-token-string: var(--color-code-string);
+  --astro-code-token-comment: var(--color-text-2);
+  --astro-code-token-keyword: var(--color-code-keyword);
+  --astro-code-token-parameter: var(--color-code-tag);
+  --astro-code-token-function: var(--color-code-operator);
+  --astro-code-token-string-expression: var(--color-brand-2);
+  --astro-code-token-punctuation: var(--color-code-punctuation);
+  --astro-code-token-link: var(--color-code-punctuation);
+}

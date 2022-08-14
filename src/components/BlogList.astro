@@ -40,7 +40,7 @@ const {blogPosts} = Astro.props;
           </a>
           <p>
           {blogPost.description}</p>
-          <div class="cluster typo-s -layout-s | meta">
+          <div class="cluster typo-sm -layout-sm | meta">
           <time datetime={blogPost.date} class="-bold font-headline">from {new Date(blogPost.date).toLocaleDateString()}</time> - <div class="cluster | badges">{blogPost.tags.map((tag, i) => (
             <span class="badge">{tag}</span>
           ))}

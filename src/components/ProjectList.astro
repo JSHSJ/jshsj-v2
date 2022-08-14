@@ -10,7 +10,7 @@ const {projects} = Astro.props;
           <a href={`${Navigation.projectDetails.url}/${project.slug}`}><h3 class="typo-xl -bold font-headline">
           {project.title}
           </h3></a>
-          <div class="cluster typo-s -layout-s"><time datetime={project.year} class="-bold">{project.year}</time> - <a href={project.link} target="_blank" rel="noopener noreferrer" data-external>{project.link}</a>
+          <div class="cluster typo-sm -layout-sm"><time datetime={project.year} class="-bold">{project.year}</time> - <a href={project.link} target="_blank" rel="noopener noreferrer" data-external>{project.link}</a>
           </div>
           <p>{project.description}</p>
         </article>

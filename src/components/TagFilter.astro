@@ -11,18 +11,16 @@ const {tags, tagName, tagRootUrl, selected, hasPagination, hasReset} = Astro.pro
 ---
 
 <style>
-  .tagFilter {
-    @media screen and (min-width: 1560px) {
-      grid-column-start: 2 !important;
-      grid-column-end: 3 !important;
-      grid-row-start: 2 !important;
-      grid-row-end: 5 !important;
-    }
+  .filter-title {
+    font-family: var(--font-family-mono);
+  color: var(--color-text-1);
+  display: block;
+  font-size: var(--font-size-base);
   }
 </style>
 
-<div class="stack -layout-s | tagFilter" data-filter>
-<p class="-medium">
+<div class="stack -layout-sm | tagFilter" data-filter>
+<p class="filter-title">
 <span>
  Filter by
 </span>

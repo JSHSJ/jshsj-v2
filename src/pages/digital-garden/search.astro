@@ -1,0 +1,42 @@
+---
+import Search from "@/components/search/Search.svelte";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { Navigation } from "@/src/config";
+import { GardenIdea } from "@/src/types/GardenIdea.type";
+import { slugify } from "@/src/utils/slugify";
+import fs from 'node:fs/promises';
+
+try {
+  const allIdeas = await Astro.glob<GardenIdea>("/src/content/DigitalGarden/**/*.md");
+
+  const contentForSave = await Promise.all(allIdeas.map(async idea => {
+    const headings = await idea.getHeadings()
+    const content = await idea.compiledContent()
+    return {
+      title: idea.frontmatter.title,
+      description: idea.frontmatter.description,
+      link: `${Navigation.digitalGardenDetailPage.url}/${slugify(idea.frontmatter.title)}`,
+      headers: headings,
+      content: content.replaceAll('\n', ''),
+    }
+  }))
+
+  const writePath = new URL("../../../public/search.json", import.meta.url)
+
+  await fs.writeFile(writePath, JSON.stringify(contentForSave, null, 2))
+  console.log('File written successfully.:', writePath);
+} catch (error) {
+  console.log(error)
+}
+
+const readPath = '/search.json'
+---
+
+<DefaultLayout canonical={new URL(Astro.url.pathname, Astro.site)}>
+  <section class="layout-container mt-header section">
+    <div class="full-width stack">
+      <h1 class="section-title">Looking for something?</h1>
+      <Search client:only filePath={readPath} />
+    </div>
+  </section>
+</DefaultLayout>

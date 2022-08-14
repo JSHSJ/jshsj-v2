@@ -31,7 +31,7 @@ const {crumbs} = Astro.props;
 </style>
 
 
-<section class="box -layout-s | breadcrumbs">
+<section class="box -layout-sm | breadcrumbs">
   {crumbs.map((part) => (<a href={part.url}>{part.name}</a>
   ))}
 </section>
