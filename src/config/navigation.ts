@@ -8,7 +8,7 @@ export const Navigation = {
     name: "Projects",
   },
   projectDetails: {
-    url: "/projekte/details",
+    url: "/projects/details",
     name: "Project Details",
   },
   blogRoot: {

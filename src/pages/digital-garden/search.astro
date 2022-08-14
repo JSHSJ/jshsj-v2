@@ -35,7 +35,7 @@ const readPath = '/search.json'
 <DefaultLayout canonical={new URL(Astro.url.pathname, Astro.site)}>
   <section class="layout-container mt-header section">
     <div class="full-width stack">
-      <h1 class="section-title">Looking for something?</h1>
+      <h1 class="typo-3xl -with-dot -dot-top-right">Search the garden</h1>
       <Search client:only filePath={readPath} />
     </div>
   </section>

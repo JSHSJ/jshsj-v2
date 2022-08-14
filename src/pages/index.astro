@@ -4,7 +4,6 @@ import { slugify } from "@/utils/slugify"
 import { sortByDateDesc } from "@/utils/sortByDate"
 
 import Welcome from '@/components/Welcome.astro';
-import ProjectReel from '@/components/ProjectReel.astro';
 import PersonalReel from '@/components/PersonalReel.astro';
 import ShareTheMeal from "@/components/ShareTheMeal.astro";
 
@@ -21,7 +20,6 @@ const formattedProjects = allProjects.map(project => ({
 <div class="stack -layout-xl">
     <Welcome></Welcome>
     <ShareTheMeal></ShareTheMeal>
-    <!-- <ProjectReel projects={formattedProjects}></ProjectReel> -->
     <PersonalReel></PersonalReel>
 </div>
 </DefaultLayout>

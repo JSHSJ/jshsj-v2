@@ -56,7 +56,7 @@ const {page, title, description, currentRoute, allLangs} = Astro.props;
 
 <DefaultLayout title={title} description={description} canonical={new URL(Astro.url.pathname, Astro.site)}>
 <div class="section layout-container blog-layout stack -stretched | mt-header">
-    <h1 class="section-title -with-dot -dot-top" data-translate="blog.headline">
+    <h1 class="typo-3xl -with-dot -dot-top" data-translate="blog.headline">
       Blog
     </h1>
     <!-- <TagFilter hasReset={true} tags={allLangs.map(lang => lang.toLowerCase())} tagName="general.language" tagRootUrl="/blog/" selected="" hasPagination={true}/> -->
