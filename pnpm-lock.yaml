@@ -6,9 +6,9 @@ specifiers:
   '@astrojs/rss': ^1.0.0
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/svelte': ^1.0.0
+  '@jshsj/design': 1.0.0
   astro: 1.0.2
   canvas-confetti: ^1.5.1
-  jshsj-design: github:JSHSJ/jshsj-design
   remark-gfm: ^3.0.1
   remark-smartypants: ^2.0.0
   remark-wiki-link: ^1.0.4
@@ -17,8 +17,8 @@ specifiers:
 
 dependencies:
   '@astrojs/rss': 1.0.0
+  '@jshsj/design': 1.0.0
   canvas-confetti: 1.5.1
-  jshsj-design: github.com/JSHSJ/jshsj-design/2641b61be1de26772bc83069560451c1a2b98b39
 
 devDependencies:
   '@astrojs/image': 0.3.4
@@ -509,6 +509,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@jshsj/design/1.0.0:
+    resolution: {integrity: sha512-oRvm4+HHutmmBOTbtko8IG9Z5JoMVqQB88f069oR9m/XlxEHc6Us99+Ptn3Ek2Pwp3oi0ke8iG0fPt75h0pJhg==, tarball: download/@jshsj/design/1.0.0/ad674d7fc7f5d112f780f816963adb5510d004cd869fa1573a25f67f96d28c2c}
+    dev: false
+
   /@ljharb/has-package-exports-patterns/0.0.2:
     resolution: {integrity: sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==}
     dev: true
@@ -688,8 +692,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
-  /@types/node/18.7.3:
-    resolution: {integrity: sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w==}
+  /@types/node/18.7.4:
+    resolution: {integrity: sha512-RzRcw8c0B8LzryWOR4Wj7YOTFXvdYKwvrb6xQQyuDfnlTxwYXGCV5RZ/TEbq5L5kn+w3rliHAUyRcG1RtbmTFg==}
     dev: true
 
   /@types/parse5/6.0.3:
@@ -707,7 +711,7 @@ packages:
   /@types/sass/1.43.1:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
-      '@types/node': 18.7.3
+      '@types/node': 18.7.4
     dev: true
 
   /@types/sax/1.2.4:
@@ -975,7 +979,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001375
+      caniuse-lite: 1.0.30001376
       electron-to-chromium: 1.4.219
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
@@ -1004,8 +1008,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite/1.0.30001375:
-    resolution: {integrity: sha512-kWIMkNzLYxSvnjy0hL8w1NOaWNr2rn39RTAVyIwcw8juu60bZDWiF1/loOYANzjtJmy6qPgNmn38ro5Pygagdw==}
+  /caniuse-lite/1.0.30001376:
+    resolution: {integrity: sha512-I27WhtOQ3X3v3it9gNs/oTpoE5KpwmqKR5oKPA8M0G7uMXh9Ty81Q904HpKUrM30ei7zfcL5jE7AXefgbOfMig==}
     dev: true
 
   /canvas-confetti/1.5.1:
@@ -4300,9 +4304,3 @@ packages:
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
     dev: true
-
-  github.com/JSHSJ/jshsj-design/2641b61be1de26772bc83069560451c1a2b98b39:
-    resolution: {tarball: https://codeload.github.com/JSHSJ/jshsj-design/tar.gz/2641b61be1de26772bc83069560451c1a2b98b39}
-    name: jshsj-design
-    version: 1.0.0
-    dev: false
