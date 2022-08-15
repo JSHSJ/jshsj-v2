@@ -55,15 +55,15 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-            node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        - run: pnpm install
+        run: pnpm install
 
       - name: Build
         run: |
           pnpm build
           touch ./dist/.nojekyll
-          
+
       - name: Deploy to FTP
         run: lftp -e "open ${{ secrets.FTP_USERNAME }}.kasserver.com; user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}; mirror -X .* -X .*/ --reverse --verbose --delete ./dist/ /joshuastuebner.com/; bye"
