@@ -13,11 +13,13 @@ jobs:
         node-version: [16]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/checkout@v2
         with:
           repository: JSHSJ/flow
           path: content
           token: ${{ secrets.REPO_PAT }}
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - name: Install lftp
         run: sudo apt install lftp
       - run: mkdir -p src/content/Projekte
@@ -39,8 +41,6 @@ jobs:
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-      - name: Install pnpm
-        run: curl -f https://get.pnpm.io/v6.7.js | node - add --global pnpm@6
       - run: pnpm install
       - name: Build
         run: |
