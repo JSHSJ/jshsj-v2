@@ -89,24 +89,24 @@
 
 
   if (colorScheme) {
-    document.body.setAttribute('color-scheme', colorScheme);
+    document.documentElement.setAttribute('color-scheme', colorScheme);
     button.setAttribute('color-scheme', colorScheme);
   } else if (window.matchMedia(DARK)) {
-    document.body.setAttribute('color-scheme', 'dark');
+    document.documentElement.setAttribute('color-scheme', 'dark');
     button.setAttribute('color-scheme', 'dark');
   } else {
-    document.body.setAttribute('color-scheme', 'light');
+    document.documentElement.setAttribute('color-scheme', 'light');
     button.setAttribute('color-scheme', 'light');
   }
 
   button.addEventListener('click', () => {
-    const currentTheme = document.body.getAttribute('color-scheme');
+    const currentTheme = document.documentElement.getAttribute('color-scheme');
     if (currentTheme === "dark") {
-      document.body.setAttribute('color-scheme', 'light');
+      document.documentElement.setAttribute('color-scheme', 'light');
       button.setAttribute('color-scheme', 'light');
       localStorage.setItem('color-scheme', 'light')
     } else {
-      document.body.setAttribute('color-scheme', 'dark');
+      document.documentElement.setAttribute('color-scheme', 'dark');
       button.setAttribute('color-scheme', 'dark');
       localStorage.setItem('color-scheme', 'dark')
     }
