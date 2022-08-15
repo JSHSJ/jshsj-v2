@@ -5,10 +5,25 @@ packages:
   - rsync
 sources:
   - https://git.sr.ht/~jshsj/jshsj-v2
+  - https://git.sr.ht/~jshsj/Flow
 secrets:
   - 1fb7cf75-d90f-4df5-9cad-233d4559a311
   - 43473a2b-32b2-4c49-9f79-cebf8e61cf87
 tasks:
+  - create-dirs: |
+      cd jshsj-v2
+      mkdir -p src/content/Projekte
+      mkdir -p src/content/Blog
+      mkdir -p src/content/DigitalGarden
+      mkdir -p public/assets/attachments
+  - copy-files: |
+      mv Flow/flow/Projekte/attachments/* jshsj-v2/public/assets/attachments/
+      mv Flow/flow/Blog/attachments/* jshsj-v2/public/assets/attachments/
+      mv Flow/flow/DigitalGarden/attachments/* jshsj-v2/public/assets/attachments/
+      mv Flow/flow/Projekte/*.md jshsj-v2/src/content/Projekte/
+      mv Flow/flow/Blog/*.md jshsj-v2/src/content/Blog/
+      mv Flow/flow/DigitalGarden/**/*.md jshsj-v2/src/content/DigitalGarden/
+
   - setup: |
       cd jshsj-v2
       npm install

@@ -58,7 +58,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pwd
+          ls
+          pnpm install
 
       - name: Build
         run: |
