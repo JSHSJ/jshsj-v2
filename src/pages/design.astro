@@ -3,8 +3,9 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 
 ---
 
-<DefaultLayout title={"Design Test"} description={"A html test page to test the design used in jshsj-design."} canonical={new URL(Astro.url.pathname, Astro.site)}>
-    <div class="layout-container">
+<DefaultLayout title={"Design Test"} description={"A html test page to test the design used in jshsj-design."}
+    canonical={new URL(Astro.url.pathname, Astro.site)}>
+    <div id="top" role="document" class="layout-container stack -layout-2xl">
     <header>
         <h1>HTML5 Test Page</h1>
         <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building
@@ -12,7 +13,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
         <p>It's been modified to show the "components" included.</p>
     </header>
     <nav>
-        <ul>
+        <ul class="-layout-reset">
             <li>
                 <a href="#text">Text</a>
                 <ul>
@@ -74,8 +75,8 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
             </li>
         </ul>
     </nav>
-    <main>
-        <section id="text">
+    <main class="stack -layout-2xl">
+        <section id="text" class="stack -layout-lg">
             <header><h1>Text</h1></header>
             <article id="text__headings">
                 <header>
@@ -114,9 +115,9 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                 </div>
                 <footer><p><a href="#top">[Top]</a></p></footer>
             </article>
-            <article id="text__lists">
+            <article id="text__lists" class="stack -layout-lg">
                 <header><h2>Lists</h2></header>
-                <div>
+                <div class="stack -layout-lg">
                     <h3>Definition list</h3>
                     <dl>
                         <dt>Definition List Title</dt>
@@ -302,7 +303,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
   @ A B C D E F G H I J K L M N O
   P Q R S T U V W X Y Z [ \ ] ^ _
   ` a b c d e f g h i j k l m n o
-  p q r s t u v w x y z { } ~ </pre>
+  p q r s t u v w x y z ~ </pre>
                 </div>
                 <footer><p><a href="#top">[Top]</a></p></footer>
             </article>
@@ -355,11 +356,11 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                 <footer><p><a href="#top">[Top]</a></p></footer>
             </article>
         </section>
-        <section id="embedded">
+        <section id="embedded" class="stack -layout-lg">
             <header><h2>Embedded content</h2></header>
-            <article id="embedded__images">
+            <article id="embedded__images" class="stack -layout-lg">
                 <header><h2>Images</h2></header>
-                <div>
+                <div class="stack -layout-lg">
                     <h3>Plain <code>&lt;img&gt;</code> element</h3>
                     <p><img src="https://placekitten.com/480/480" alt="Photo of a kitten"></p>
                     <h3><code>&lt;figure&gt;</code> element with <code>&lt;img&gt;</code> element</h3>
@@ -452,10 +453,10 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                 <footer><p><a href="#top">[Top]</a></p></footer>
             </article>
         </section>
-        <section id="forms">
+        <section id="forms" class="stack -layout-lg">
             <header><h2>Form elements</h2></header>
-            <form>
-                <fieldset id="forms__input">
+            <form class="stack -layout-lg">
+                <fieldset id="forms__input" class="stack -layout-md">
                     <legend>Input fields</legend>
                     <p>
                         <label for="input__text">Text Input</label>
@@ -491,7 +492,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                     </p>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__select">
+                <fieldset id="forms__select" class="stack -layout-md">
                     <legend>Select menus</legend>
                     <p>
                         <label for="select">Select</label>
@@ -545,7 +546,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                     </p>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__html5">
+                <fieldset id="forms__html5" class="stack -layout-md">
                     <legend>HTML5 inputs</legend>
                     <p>
                         <label for="ic">Color input</label>
@@ -590,25 +591,25 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                     </p>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__action">
+                <fieldset id="forms__action" class="stack">
                     <legend>Action buttons</legend>
-                    <p>
-                        <input type="submit" value="<input type=submit>" />
-                        <input type="button" value="<input type=button>" />
-                        <input type="reset" value="<input type=reset>" />
-                        <input type="submit" value="<input disabled>" disabled />
-                    </p>
-                    <p>
+                    <div class="cluster">
+                        <input type="submit" value="<input type=submit>">
+                        <input type="button" value="<input type=button>">
+                        <input type="reset" value="<input type=reset>">
+                        <input type="submit" value="<input disabled>" disabled>
+                    </div>
+                    <div class="cluster">
                         <button type="submit">&lt;button type=submit&gt;</button>
                         <button type="button">&lt;button type=button&gt;</button>
                         <button type="reset">&lt;button type=reset&gt;</button>
                         <button type="button" disabled>&lt;button disabled&gt;</button>
-                    </p>
+                    </div>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
             </form>
         </section>
-        <section>
+        <section class="stack -layout-lg">
             <h2 id="components">Components</h2>
               <p class="note">
                 Inspect the HTML in your browser for implementation details
@@ -617,9 +618,8 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                 <legend id="components__headlines">Special headlines</legend>
                 <h3 class="-with-dot">Special headline <code>-with-dot</code></h3>
             </fieldset>
-            <fieldset>
+            <fieldset class="stack -layout-md">
                 <legend id="components__inputs">Inputs</legend>
-                <p>
                 <div class="input-field">
                     <label for="some-input" class="stack">
                         <span class="input-label">Label (optional)</span>
@@ -633,9 +633,59 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                         </div>
                     </label>
                 </div>
-                </p>
+                <div class="input-field">
+                    <label for="some-input-disabled" class="stack">
+                        <span class="input-label">Label (optional)</span>
+                        <span class="input-hint">I'm a hint</span>
+                        <span class="input-error">I'm an error</span>
+                        <div class="cluster">
+                            <input class="input" id="some-input-disabled" name="some-input" disabled />
+                            <button type="button" class="CTA-button">
+                                Slot for content
+                            </button>
+                        </div>
+                    </label>
+                </div>
+                    <div class="input-field | cluster | checkbox-input">
+                      <label for="checkbox-input" class="stack">
+                        <span class="input-label">Checkbox</span>
+                      </label>
+                    <input id="checkbox-input" name="checkbox" type="checkbox">
+                    </div>
+                    <div class="input-field | cluster | checkbox-input">
+                      <label for="checkbox-input-disabled" class="stack">
+                        <span class="input-label">Checkbox</span>
+                      </label>
+                    <input id="checkbox-input-disabled" name="checkbox" type="checkbox" disabled>
+                    </div>
+                    <div class="input-field | cluster | checkbox-input">
+                      <label for="radio-input" class="stack">
+                        <span class="input-label">Radio</span>
+                      </label>
+                    <input id="radio-input" name="radio" type="radio">
+                    <input id="radio-input-2" name="radio" type="radio">
+                    </div>
+                    <div class="input-field | cluster | checkbox-input">
+                      <label for="radio-input-disabled" class="stack">
+                        <span class="input-label">Radio</span>
+                      </label>
+                    <input id="radio-input-disabled" name="radio" type="radio" disabled>
+                    <input id="radio-input-disabled-2" name="radio" type="radio" disabled>
+                    </div>
+                    <div class="input-field | cluster | checkbox-input">
+                      <label for="switch-input" class="stack">
+                        <span class="input-label">Switch</span>
+                      </label>
+                    <input id="switch-input" name="switch" type="checkbox" class="switch">
+                    </div>
+                    <div class="input-field | cluster | checkbox-input">
+                      <label for="switch-input-disabled" class="stack">
+                        <span class="input-label">Switch</span>
+                      </label>
+                    <input id="switch-input-disabled" name="switch" type="checkbox" class="switch" disabled>
+                    </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="stack">
                 <legend id="components__buttons">Buttons</legend>
               <h4>Variants</h4>
               <p class="cluster">
@@ -653,7 +703,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
             </fieldset>
             <fieldset>
                 <legend id="components__note">Note</legend>
-                <div class="stack -layout-md">
+                <div class="stack -layout-m">
                     <div class="note -info">
                 Info note
             </div>
@@ -679,11 +729,11 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                 </div>
             </fieldset>
             <fieldset>
-                <legend id="components__tags">Tags</legend>
+                <legend id="components__tags">Badges</legend>
                 <div class="cluster">
-                    <span class="tag">Tag</span>
-                    <span class="tag -light">Tag</span>
-                    <span class="tag -dark">Tag</span>
+                    <span class="badge">Tag</span>
+                    <span class="badge -light">Tag</span>
+                    <span class="badge -dark">Tag</span>
                 </div>
             </fieldset>
             <p><a href="#top">[Top]</a></p>
@@ -693,12 +743,12 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
             <fieldset class="stack">
                 <legend>Box</legend>
                 <p class="note">A box with padding.</p>
-                    <div class="box" style="border: 1px solid var(--color-brand-1);">Box</div>
+                    <div class="box" style="border: 1px solid var(--color-brand-2);">Box</div>
             </fieldset>
             <fieldset class="stack">
                 <legend>Stack</legend>
                 <p class="note">A vertical stack of items with spacing between.</p>
-                <div class="stack -layout-lg" style="border: 1px solid var(--color-brand-1);">
+                <div class="stack -layout-l" style="border: 1px solid var(--color-brand-2);">
                     <p>element 1</p>
                     <p>element 2</p>
                 </div>
@@ -706,7 +756,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
             <fieldset class="stack">
                 <legend>Cluster</legend>
                 <p class="note">A automatically wrapping container</p>
-                <div class="cluster -layout-lg" style="border: 1px solid var(--color-brand-1);">
+                <div class="cluster -layout-l" style="border: 1px solid var(--color-brand-2);">
                     <p>element</p>
                     <p>element</p>
                     <p>element</p>
@@ -725,7 +775,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
                 <p class="note">A container for rich text or blog texts. Adds spacing between the elements, that I removed
 
                  in the reset, because I prefer it that way</p>
-                <div class="flow" style="border: 1px solid var(--color-brand-1);">
+                <div class="flow" style="border: 1px solid var(--color-brand-2);">
                     <h1>h1 element</h1>
                     <p>element</p>
                     <p>element</p>
@@ -745,7 +795,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
             <fieldset class="stack">
                 <legend>With Sidebar</legend>
                 <p class="note"><a href="https://every-layout.dev/layouts/sidebar/">https://every-layout.dev/layouts/sidebar/</a></p>
-                <div class="with-sidebar" style="border: 1px solid var(--color-brand-1);">
+                <div class="with-sidebar" style="border: 1px solid var(--color-brand-2);">
                     <div data-grow style="--min-size: 60%">
                     <h1>h1 element</h1>
                     <p>element</p>
@@ -763,5 +813,6 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
         <p>Original HTML5 testpage by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a
                 href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
     </footer>
+</div>
 </div>
 </DefaultLayout>

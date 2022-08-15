@@ -1,4 +1,4 @@
-@import "jshsj-design/bundle";
+@import "@jshsj/design/bundle";
 
 .mt-header {
   margin-top: var(--size-relative-3xl);
